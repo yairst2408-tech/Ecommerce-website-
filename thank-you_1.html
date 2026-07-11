@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thank You - Aura Stock Finds</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '4025435161082806');
+  fbq('track', 'PageView');
+
+  // Only fire Purchase if PayPal actually redirected here with real
+  // transaction proof (token + PayerID in the URL). A direct/random
+  // visit to this page (refresh, bookmark, curiosity, crawler) will
+  // NOT have these params, so it will NOT count as a fake purchase.
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var hasToken = params.has('token');
+    var hasPayerID = params.has('PayerID');
+
+    // De-dupe: if someone refreshes this exact confirmed URL, don't fire twice.
+    var alreadyFired = sessionStorage.getItem('purchase_pixel_fired');
+
+    if (hasToken && hasPayerID && !alreadyFired) {
+      fbq('track', 'Purchase', {value: 89.00, currency: 'USD'});
+      sessionStorage.setItem('purchase_pixel_fired', '1');
+    }
+  })();
+  </script>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(135deg,#17A3B5,#0F7A8A);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;color:#123B44}
+    .card{background:#FBFAF5;max-width:520px;width:100%;border-radius:20px;padding:48px 36px;text-align:center;box-shadow:0 30px 60px rgba(0,0,0,.25)}
+    .icon{font-size:64px;margin-bottom:10px}
+    h1{font-family:'Fredoka',sans-serif;font-size:28px;color:#0F7A8A;margin-bottom:14px}
+    p{font-size:16px;line-height:1.6;color:#3C5C63;margin-bottom:10px}
+    .contact{margin-top:28px;padding-top:24px;border-top:1px solid #E4EEF0}
+    .contact a{display:inline-block;margin:6px 8px;text-decoration:none;font-weight:700;font-size:14px;padding:10px 20px;border-radius:999px;border:2px solid #17A3B5;color:#0F7A8A}
+    .contact a.tg{background:#17A3B5;color:#fff;border:none}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">🐚✅</div>
+    <h1>Thank You For Your Order!</h1>
+    <p>Your Magical Mermaid Seashell Float is on its way. You'll receive a confirmation email shortly with your order details.</p>
+    <p>Questions about your order or shipping? We're happy to help.</p>
+    <div class="contact">
+      <a href="mailto:yairst2408@gmail.com">✉️ Email Us</a>
+      <a href="https://t.me/aurastockfinds" target="_blank" rel="noopener" class="tg">💬 Telegram</a>
+    </div>
+  </div>
+</body>
+</html>
