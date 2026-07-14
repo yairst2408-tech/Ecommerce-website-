@@ -43,20 +43,77 @@
 
       <!-- Payment Badges -->
       <div class="flex justify-center gap-6 mt-10 opacity-90">
-        <img src="badges/paypal.png" alt="PayPal" class="h-9">
-        <img src="badges/visa.png" alt="Visa" class="h-9">
-        <img src="badges/mastercard.png" alt="Mastercard" class="h-9">
-        <img src="badges/applepay.png" alt="Apple Pay" class="h-9">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.svg" alt="PayPal" class="h-8">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" class="h-8">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Mastercard_2019_logo.svg" alt="Mastercard" class="h-8">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_Pay_logo.svg" alt="Apple Pay" class="h-8">
       </div>
     </div>
   </section>
 
-  <!-- Rest of your page (Bundle, Gallery, Contact, Footer) remains the same as last version -->
-  <!-- ... (I kept it short here to save space) ... -->
+  <!-- BUNDLE DEAL -->
+  <section class="py-16 bg-white border-b-4 border-teal-500">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="heading text-4xl font-bold mb-4 text-teal-900">🎉 Special Bundle Deal</h2>
+      <p class="text-xl text-gray-600 mb-8">Buy more & save more - Perfect for parties or gifts!</p>
+      
+      <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+        <div onclick="addToCart()" class="border-2 border-teal-600 rounded-3xl p-8 hover:shadow-xl cursor-pointer transition">
+          <p class="font-bold text-lg">1x Seashell Float</p>
+          <p class="text-4xl font-bold text-teal-600 mt-2">$69.99</p>
+        </div>
+        
+        <div onclick="buyBundle()" class="border-2 border-orange-500 bg-orange-50 rounded-3xl p-8 hover:shadow-xl cursor-pointer transition relative">
+          <div class="absolute -top-3 right-6 bg-orange-500 text-white text-xs font-bold px-4 py-1 rounded-full">BEST VALUE</div>
+          <p class="font-bold text-lg">2x Seashell Floats</p>
+          <p class="text-4xl font-bold text-orange-600 mt-2">$129</p>
+          <p class="text-sm text-orange-600 font-medium">Save $10.98 + Free Shipping</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="py-20 bg-[#F1F5F9]">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="heading text-4xl font-bold text-center mb-12">Real Families, Real Fun</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <img src="IMAGE1.jpg" alt="Family enjoying Seashell Float" class="rounded-3xl shadow-2xl w-full">
+        <img src="IMAGE2.jpg" alt="Kids playing on Seashell Float" class="rounded-3xl shadow-2xl w-full">
+        <img src="IMAGE3.jpg" alt="Relaxing on Seashell Float at sunset" class="rounded-3xl shadow-2xl w-full">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="heading text-3xl font-bold mb-8">Have Questions?</h2>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <a href="mailto:yairst2408@gmail.com" 
+           class="flex items-center gap-3 bg-gray-100 hover:bg-gray-200 px-8 py-4 rounded-2xl transition">
+          ✉️ Email Us: yairst2408@gmail.com
+        </a>
+        <a href="https://t.me/aurastockfinds" target="_blank"
+           class="flex items-center gap-3 bg-[#229ED9] text-white px-8 py-4 rounded-2xl hover:bg-[#1a8ac0] transition">
+          💬 Chat on Telegram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-gray-400 py-12 text-center">
+    <p class="text-2xl mb-2">🐚 Seashell Float</p>
+    <p>© 2026 Aura Stock Finds • Free Shipping Worldwide</p>
+  </footer>
 
   <script>
     function addToCart() {
       window.open('https://www.paypal.com/ncp/payment/HDJML4YTTSBCA', '_blank');
+    }
+
+    function buyBundle() {
+      window.open('https://www.paypal.com/ncp/payment/GMBX3KK8RC9B4', '_blank');
     }
   </script>
 </body>
