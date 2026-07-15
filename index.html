@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seashell Float™ | The Viral Mermaid Pool Float</title>
+  
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '4025435161082806');
+    fbq('track', 'PageView');
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    body { font-family: 'Inter', system_ui, sans-serif; }
+    .heading { font-family: 'Playfair Display', sans-serif; }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-gray-800">
+
+  <!-- HERO SECTION -->
+  <section class="bg-gradient-to-br from-[#0F766E] to-[#164E63] text-white py-20">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      
+      <!-- Urgency Banner -->
+      <div class="inline-flex items-center gap-2 bg-red-600 px-6 py-2 rounded-full text-sm font-bold mb-6 animate-pulse">
+        🔥 Only 50 First Buyers Get This Deal - Hurry!
+      </div>
+
+      <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm mb-6">
+        ⭐️ 4.98 • 127+ Happy Floaters
+      </div>
+      
+      <h1 class="heading text-5xl md:text-6xl font-bold leading-tight mb-6">
+        Turn Your Pool Into a<br>Mermaid Paradise
+      </h1>
+      
+      <p class="text-xl md:text-2xl text-teal-100 max-w-2xl mx-auto mb-8">
+        The stunning Seashell Float with matching pearl ball. Holds 2 people • Ultra-durable
+      </p>
+      
+      <div class="mb-8">
+        <span class="line-through text-teal-300 text-3xl">$129</span>
+        <span class="text-6xl font-bold ml-4">$69.99</span>
+      </div>
+
+      <p class="text-red-300 font-bold text-lg mb-4">⏰ Limited Offer - First 50 Buyers Only!</p>
+
+      <!-- Buy Single -->
+      <button onclick="buySingle()" 
+              class="bg-[#FF5E6C] hover:bg-[#FF4757] text-white font-semibold text-xl px-12 py-6 rounded-2xl shadow-xl transition mb-4 w-full md:w-auto">
+        Buy 1 — Only $69.99 (50 Left)
+      </button>
+
+      <!-- Buy Bundle 2X -->
+      <button onclick="buyBundle()" 
+              class="bg-white text-teal-900 font-semibold text-xl px-12 py-6 rounded-2xl shadow-xl transition mb-8 w-full md:w-auto">
+        Buy 2X Bundle — Only $129 (Limited)
+      </button>
+
+      <!-- Contact Buttons -->
+      <div class="flex flex-col md:flex-row gap-4 justify-center mb-8">
+        <a href="https://t.me/aurastockfinds" target="_blank"
+           class="bg-[#229ED9] hover:bg-[#1a8ac4] text-white font-semibold text-lg px-8 py-4 rounded-2xl shadow-xl transition flex items-center justify-center gap-2">
+          💬 Chat on Telegram @aurastockfinds
+        </a>
+        
+        <a href="mailto:yairst2408@gmail.com" 
+           class="bg-gray-800 hover:bg-gray-700 text-white font-semibold text-lg px-8 py-4 rounded-2xl shadow-xl transition flex items-center justify-center gap-2">
+          ✉️ Email Us
+        </a>
+      </div>
+
+      <p class="text-xl font-bold text-teal-100">🚚 <span class="text-white">FREE SHIPPING WORLDWIDE</span></p>
+      <p class="text-sm text-teal-200 mt-2">
+        5-7 days in USA • 7-12 days Worldwide
+      </p>
+
+      <!-- Payment Badges -->
+      <div class="flex justify-center gap-6 mt-10 opacity-90">
+        <img src="https://i.imgur.com/2v8zQ8J.png" alt="PayPal" class="h-9">
+        <img src="https://i.imgur.com/5V9vL2P.png" alt="Visa" class="h-9">
+        <img src="https://i.imgur.com/7XzZ3mN.png" alt="Mastercard" class="h-9">
+        <img src="https://i.imgur.com/8fK8z8K.png" alt="Apple Pay" class="h-9">
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Anti-Copy Protection
+    document.addEventListener('copy', e => e.preventDefault());
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('selectstart', e => e.preventDefault());
+    document.addEventListener('keydown', e => {
+      if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's')) e.preventDefault();
+    });
+
+    function isBot() {
+      return /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent);
+    }
+
+    function buySingle() {
+      if (isBot()) return;
+      fbq('track', 'InitiateCheckout');
+      window.open('https://www.paypal.com/ncp/payment/HDJML4YTTSBCA', '_blank');
+    }
+
+    function buyBundle() {
+      if (isBot()) return;
+      fbq('track', 'InitiateCheckout');
+      window.open('https://www.paypal.com/ncp/payment/GMBX3KK8RC9B4', '_blank');
+    }
+  </script>
+</body>
+</html>
