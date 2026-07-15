@@ -1,120 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seashell Float™ | The Viral Mermaid Pool Float</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', system_ui, sans-serif; }
-    .heading { font-family: 'Playfair Display', sans-serif; }
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 25.0px Menlo; color: #6b0001; -webkit-text-stroke: #6b0001; background-color: #ffffff}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 25.0px Menlo; color: #6b0001; -webkit-text-stroke: #6b0001; background-color: #ffffff; min-height: 29.0px}
+    span.s1 {font-kerning: none}
   </style>
 </head>
-<body class="bg-[#F8FAFC] text-gray-800">
-
-  <!-- HERO -->
-  <section class="bg-gradient-to-br from-[#0F766E] to-[#164E63] text-white py-20">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm mb-6">
-        ⭐️ 4.98 • 127+ Happy Floaters
-      </div>
-      <h1 class="heading text-5xl md:text-6xl font-bold leading-tight mb-6">
-        Turn Your Pool Into a<br>Mermaid Paradise
-      </h1>
-      <p class="text-xl md:text-2xl text-teal-100 max-w-2xl mx-auto mb-8">
-        The stunning Seashell Float with matching pearl ball. Holds 2 people • Ultra-durable
-      </p>
-      
-      <div class="mb-8">
-        <span class="line-through text-teal-300 text-3xl">$129</span>
-        <span class="text-6xl font-bold ml-4">$69.99</span>
-      </div>
-
-      <button onclick="addToCart()" 
-              class="bg-[#FF5E6C] hover:bg-[#FF4757] text-white font-semibold text-xl px-12 py-6 rounded-2xl shadow-xl transition mb-6">
-        Buy Now — Only $69.99
-      </button>
-
-      <p class="text-xl font-bold text-teal-100">🚚 <span class="text-white">FREE SHIPPING WORLDWIDE</span></p>
-      <p class="text-sm text-teal-200 mt-2">
-        5-7 days in USA • 7-12 days Worldwide
-      </p>
-
-      <!-- Payment Badges -->
-      <div class="flex justify-center gap-6 mt-10 opacity-90">
-        <img src="paypal.jpg" alt="PayPal" class="h-8">
-        <img src="visa.jpg" alt="Visa" class="h-8">
-        <img src="mastercard.jpg" alt="Mastercard" class="h-8">
-        <img src="applepay.jpg" alt="Apple Pay" class="h-8">
-      </div>
-    </div>
-  </section>
-
-  <!-- BUNDLE DEAL -->
-  <section class="py-16 bg-white border-b-4 border-teal-500">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="heading text-4xl font-bold mb-4 text-teal-900">🎉 Special Bundle Deal</h2>
-      <p class="text-xl text-gray-600 mb-8">Buy more & save more - Perfect for parties or gifts!</p>
-      
-      <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-        <div onclick="addToCart()" class="border-2 border-teal-600 rounded-3xl p-8 hover:shadow-xl cursor-pointer transition">
-          <p class="font-bold text-lg">1x Seashell Float</p>
-          <p class="text-4xl font-bold text-teal-600 mt-2">$69.99</p>
-        </div>
-        
-        <div onclick="buyBundle()" class="border-2 border-orange-500 bg-orange-50 rounded-3xl p-8 hover:shadow-xl cursor-pointer transition relative">
-          <div class="absolute -top-3 right-6 bg-orange-500 text-white text-xs font-bold px-4 py-1 rounded-full">BEST VALUE</div>
-          <p class="font-bold text-lg">2x Seashell Floats</p>
-          <p class="text-4xl font-bold text-orange-600 mt-2">$129</p>
-          <p class="text-sm text-orange-600 font-medium">Save $10.98 + Free Shipping</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section class="py-20 bg-[#F1F5F9]">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="heading text-4xl font-bold text-center mb-12">Real Families, Real Fun</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <img src="IMAGE1.jpg" alt="Family enjoying Seashell Float" class="rounded-3xl shadow-2xl w-full">
-        <img src="IMAGE2.jpg" alt="Kids playing on Seashell Float" class="rounded-3xl shadow-2xl w-full">
-        <img src="IMAGE3.jpg" alt="Relaxing on Seashell Float at sunset" class="rounded-3xl shadow-2xl w-full">
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="py-16 bg-white">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="heading text-3xl font-bold mb-8">Have Questions?</h2>
-      <div class="flex flex-col sm:flex-row gap-6 justify-center">
-        <a href="mailto:yairst2408@gmail.com" 
-           class="flex items-center gap-3 bg-gray-100 hover:bg-gray-200 px-8 py-4 rounded-2xl transition">
-          ✉️ Email Us: yairst2408@gmail.com
-        </a>
-        <a href="https://t.me/aurastockfinds" target="_blank"
-           class="flex items-center gap-3 bg-[#229ED9] text-white px-8 py-4 rounded-2xl hover:bg-[#1a8ac0] transition">
-          💬 Chat on Telegram
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="bg-gray-900 text-gray-400 py-12 text-center">
-    <p class="text-2xl mb-2">🐚 Seashell Float</p>
-    <p>© 2026 Aura Stock Finds • Free Shipping Worldwide</p>
-  </footer>
-
-  <script>
-    function addToCart() {
-      window.open('https://www.paypal.com/ncp/payment/HDJML4YTTSBCA', '_blank');
-    }
-
-    function buyBundle() {
-      window.open('https://www.paypal.com/ncp/payment/GMBX3KK8RC9B4', '_blank');
-    }
-  </script>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;Seashell Float™ | The Viral Mermaid Pool Float&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>body { font-family: 'Inter', system_ui, sans-serif; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.heading { font-family: 'Playfair Display', sans-serif; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body class="bg-[#F8FAFC] text-gray-800"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- HERO --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;section class="bg-gradient-to-br from-[#0F766E] to-[#164E63] text-white py-20"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="max-w-6xl mx-auto px-6 text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm mb-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>⭐️ 4.98 • 127+ Happy Floaters</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h1 class="heading text-5xl md:text-6xl font-bold leading-tight mb-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>Turn Your Pool Into a&lt;br&gt;Mermaid Paradise</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="text-xl md:text-2xl text-teal-100 max-w-2xl mx-auto mb-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>The stunning Seashell Float with matching pearl ball. Holds 2 people • Ultra-durable</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="mb-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;span class="line-through text-teal-300 text-3xl"&gt;$129&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;span class="text-6xl font-bold ml-4"&gt;$69.99&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button onclick="addToCart()"<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>class="bg-[#FF5E6C] hover:bg-[#FF4757] text-white font-semibold text-xl px-12 py-6 rounded-2xl shadow-xl transition mb-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>Buy Now — Only $69.99</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/button&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="text-xl font-bold text-teal-100"&gt;🚚 &lt;span class="text-white"&gt;FREE SHIPPING WORLDWIDE&lt;/span&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="text-sm text-teal-200 mt-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>5-7 days in USA • 7-12 days Worldwide</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- Payment Badges --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="flex justify-center gap-6 mt-10 opacity-90"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;img src="badges/paypal.png" alt="PayPal" class="h-9"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;img src="badges/visa.png" alt="Visa" class="h-9"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;img src="badges/mastercard.png" alt="Mastercard" class="h-9"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;img src="badges/applepay.png" alt="Apple Pay" class="h-9"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- Rest of your page (Bundle, Gallery, Contact, Footer) remains the same as last version --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ... (I kept it short here to save space) ... --&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function addToCart() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>window.open('https://www.paypal.com/ncp/payment/HDJML4YTTSBCA', '_blank');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
 </body>
 </html>
