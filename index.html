@@ -86,7 +86,7 @@
       <!-- Buttons Section -->
       <div class="flex flex-col md:flex-row gap-4 justify-center items-center mt-2">
         <!-- Buy 1 -->
-        <a href="https://www.paypal.com/ncp/payment/HDJML4YTTSBCA" target="_blank"
+        <a href="#" onclick="buySingle()"
            class="bg-[#FF5E6C] hover:bg-[#FF4757] text-white font-semibold text-xl px-10 py-6 rounded-2xl shadow-2xl transition flex-1 md:flex-none text-center">
           Buy 1 — Only $69.99 <span class="text-sm block">(50 Left)</span>
         </a>
@@ -212,10 +212,23 @@
     function isBot() {
       return /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent);
     }
+
+    function buySingle() {
+      if (isBot()) return;
+      fbq('track', 'InitiateCheckout');
+      // Small delay so the pixel has time to fire before redirect
+      setTimeout(function() {
+        window.open('https://www.paypal.com/ncp/payment/HDJML4YTTSBCA', '_blank');
+      }, 350);
+    }
+
     function buyBundle() {
       if (isBot()) return;
       fbq('track', 'InitiateCheckout');
-      window.open('https://www.paypal.com/ncp/payment/GMBX3KK8RC9B4', '_blank');
+      // Small delay so the pixel has time to fire before redirect
+      setTimeout(function() {
+        window.open('https://www.paypal.com/ncp/payment/GMBX3KK8RC9B4', '_blank');
+      }, 350);
     }
   </script>
 </body>
