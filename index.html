@@ -180,14 +180,71 @@
     </div>
   </section>
 
-  <!-- Simple FAQ -->
+  <!-- PRODUCT SPECIFICATIONS -->
   <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-semibold text-center mb-10">Product Specifications</h2>
+      
+      <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <div class="space-y-4 text-sm">
+            <div class="flex justify-between border-b pb-3">
+              <span class="font-medium text-gray-600">Size</span>
+              <span class="font-semibold">Large</span>
+            </div>
+            <div class="flex justify-between border-b pb-3">
+              <span class="font-medium text-gray-600">Color</span>
+              <span class="font-semibold">White</span>
+            </div>
+            <div class="flex justify-between border-b pb-3">
+              <span class="font-medium text-gray-600">Material</span>
+              <span class="font-semibold">Premium PVC</span>
+            </div>
+            <div class="flex justify-between border-b pb-3">
+              <span class="font-medium text-gray-600">Item Form</span>
+              <span class="font-semibold">Giant Clam Shell</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <div class="space-y-4 text-sm">
+            <div class="flex justify-between border-b pb-3">
+              <span class="font-medium text-gray-600">Dimensions</span>
+              <span class="font-semibold">45.2" L × 33.5" W</span>
+            </div>
+            <div class="flex justify-between border-b pb-3">
+              <span class="font-medium text-gray-600">Weight</span>
+              <span class="font-semibold">3.4 lbs</span>
+            </div>
+            <div class="flex justify-between border-b pb-3">
+              <span class="font-medium text-gray-600">Weight Limit</span>
+              <span class="font-semibold">200 lbs</span>
+            </div>
+            <div class="flex justify-between border-b pb-3">
+              <span class="font-medium text-gray-600">Age Range</span>
+              <span class="font-semibold">Kids 3+ years old</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="text-center text-gray-500 text-sm mt-8">
+        Perfect for pool parties, photo props, and fun summer days!
+      </p>
+    </div>
+  </section>
+
+  <!-- Simple FAQ -->
+  <section class="py-16 bg-white border-t">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="text-3xl font-semibold text-center mb-10">Frequently Asked Questions</h2>
       <div class="space-y-6 text-gray-700">
         <div>
           <p class="font-semibold">Is this float durable?</p>
-          <p class="mt-1 text-gray-600">Yes! Made from premium, puncture-resistant material. 1-year warranty included.</p>
+          <p class="mt-1 text-gray-600">Yes! Made from premium, puncture-resistant PVC material. 1-year warranty included.</p>
         </div>
         <div>
           <p class="font-semibold">How long does shipping take?</p>
@@ -196,6 +253,10 @@
         <div>
           <p class="font-semibold">What if I'm not happy?</p>
           <p class="mt-1 text-gray-600">30-day money-back guarantee. Just contact us.</p>
+        </div>
+        <div>
+          <p class="font-semibold">What is the weight limit?</p>
+          <p class="mt-1 text-gray-600">Holds up to 200 pounds — perfect for kids and adults.</p>
         </div>
       </div>
     </div>
@@ -216,7 +277,6 @@
     function buySingle() {
       if (isBot()) return;
       fbq('track', 'InitiateCheckout');
-      // Small delay so the pixel has time to fire before redirect
       setTimeout(function() {
         window.open('https://www.paypal.com/ncp/payment/HDJML4YTTSBCA', '_blank');
       }, 350);
@@ -225,7 +285,6 @@
     function buyBundle() {
       if (isBot()) return;
       fbq('track', 'InitiateCheckout');
-      // Small delay so the pixel has time to fire before redirect
       setTimeout(function() {
         window.open('https://www.paypal.com/ncp/payment/GMBX3KK8RC9B4', '_blank');
       }, 350);
