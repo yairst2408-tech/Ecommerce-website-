@@ -18,7 +18,7 @@
     fbq('init', '4025435161082806');
     fbq('track', 'PageView');
 
-    // Smart Purchase tracking - only fires if coming from real PayPal success
+    // Dynamic Purchase tracking
     (function () {
       var params = new URLSearchParams(window.location.search);
       var hasToken = params.has('token');
@@ -26,8 +26,9 @@
       var alreadyFired = sessionStorage.getItem('purchase_pixel_fired');
 
       if (hasToken && hasPayerID && !alreadyFired) {
-        // You can make value dynamic later if needed. Currently set for bundle price.
-        fbq('track', 'Purchase', { value: 89.00, currency: 'USD' });
+        // Get amount from URL or default to 89.99
+        var amount = parseFloat(params.get('amount')) || 89.99;
+        fbq('track', 'Purchase', { value: amount, currency: 'USD' });
         sessionStorage.setItem('purchase_pixel_fired', '1');
       }
     })();
@@ -62,6 +63,26 @@
         Thank You!
       </h1>
       <p class="text-xl text-teal-600 font-semibold mb-6">Your order has been placed successfully.</p>
+
+      <!-- Dynamic Order Summary -->
+      <div id="order-summary" class="bg-gray-50 rounded-2xl p-6 mb-8 text-left">
+        <h3 class="font-semibold text-gray-700 mb-4 text-center">Order Summary</h3>
+        
+        <div class="space-y-3 text-sm">
+          <div class="flex justify-between items-center">
+            <div>
+              <span id="product-name" class="font-medium text-gray-800"></span>
+              <span id="quantity" class="text-gray-500 ml-1"></span>
+            </div>
+            <span id="product-price" class="font-semibold text-gray-800"></span>
+          </div>
+          
+          <div class="border-t pt-3 flex justify-between font-semibold">
+            <span>Total Paid</span>
+            <span id="total-price" class="text-lg"></span>
+          </div>
+        </div>
+      </div>
 
       <!-- Message -->
       <div class="text-gray-600 space-y-4 text-[15px] leading-relaxed mb-8">
@@ -122,6 +143,46 @@
       Aura Stock Finds • 30-Day Money Back Guarantee
     </p>
   </div>
+
+  <script>
+    // Dynamic Order Summary
+    function updateOrderSummary() {
+      const params = new URLSearchParams(window.location.search);
+      const type = params.get('type') || 'bundle'; // default to bundle
+      const amountParam = parseFloat(params.get('amount'));
+
+      let productName = '';
+      let quantity = '';
+      let price = 0;
+
+      if (type === 'single' || amountParam === 69.99) {
+        productName = 'Seashell Float';
+        quantity = '× 1';
+        price = 69.99;
+      } else {
+        // bundle or default
+        productName = 'Seashell Float Bundle';
+        quantity = '× 2';
+        price = 89.99;
+      }
+
+      // Override price if amount is explicitly passed
+      if (!isNaN(amountParam)) {
+        price = amountParam;
+      }
+
+      // Update DOM
+      document.getElementById('product-name').textContent = productName;
+      document.getElementById('quantity').textContent = quantity;
+      document.getElementById('product-price').textContent = '$' + price.toFixed(2);
+      document.getElementById('total-price').textContent = '$' + price.toFixed(2);
+    }
+
+    // Run on page load
+    window.onload = function() {
+      updateOrderSummary();
+    };
+  </script>
 
 </body>
 </html>
