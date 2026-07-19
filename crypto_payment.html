@@ -19,7 +19,8 @@
     
     <!-- Logo -->
     <div class="flex justify-center mb-8">
-      <img src="IMAGE7.jpg" alt="Aura Stock Finds" class="h-20 object-contain">
+      <img src="IMAGE7.jpg" alt="Aura Stock Finds" class="h-20 object-contain" loading="lazy"
+      >
     </div>
 
     <div class="text-center mb-10">
@@ -27,23 +28,27 @@
       <p class="text-teal-200 text-lg">Thank you for choosing Aura Stock Finds</p>
     </div>
 
-    <!-- Package Selector -->
+    
+      <!-- Package Selector -->
     <div class="flex flex-wrap justify-center gap-3 mb-8">
       <button onclick="selectPackage(1)" id="btn-single"
-        class="px-6 py-3 rounded-2xl font-semibold transition-all active-package">
+        class="px-8 py-3 rounded-2xl font-semibold transition-all border-2 border-transparent hover:border-emerald-400 hover:bg-white/10 active-package">
         Single — $79.99
       </button>
+      
       <button onclick="selectPackage(2)" id="btn-bundle"
-        class="px-6 py-3 rounded-2xl font-semibold transition-all">
+        class="px-8 py-3 rounded-2xl font-semibold transition-all border-2 border-transparent hover:border-emerald-400 hover:bg-white/10">
         2X Bundle — $129.99
       </button>
-      <button onclick="selectPackage(3)" id="btn-wholesale"
-        class="px-6 py-3 rounded-2xl font-semibold transition-all bg-amber-500 hover:bg-amber-600">
+      
+            <button onclick="selectPackage(3)" id="btn-wholesale"
+        class="px-8 py-3 rounded-2xl font-semibold transition-all border-2 border-transparent hover:border-emerald-400 hover:bg-white/10">
         Wholesale / Bulk
       </button>
     </div>
+    
 
-    <!-- Order Summary -->
+     <!-- Order Summary -->
     <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 mb-10">
       <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
         <i class="fas fa-receipt"></i> Order Summary
@@ -67,9 +72,60 @@
         <p class="text-teal-200 mt-2">Please contact us for the best wholesale pricing and custom offer.</p>
       </div>
     </div>
+     <!-- Customer Information Form -->
+    <div class="mt-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 mx-auto max-w-lg">
+      <h2 class="text-xl font-semibold mb-4 text-center flex items-center justify-center gap-2">
+        <i class="fas fa-shipping-fast"></i> Shipping Details
+      </h2>
+      <p class="text-teal-200 text-sm mb-6 text-center">Please provide your info + payment proof</p>
+      
+      <form id="customerForm" class="space-y-4">
+        <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+            <label class="block text-xs text-teal-200 mb-1">Full Name *</label>
+            <input type="text" id="fullName" required
+                   class="w-full bg-white/10 border border-white/30 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-400"
+                   oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')"
+                   placeholder="Enter your full name">
+          </div>
+          <div>
+            <label class="block text-xs text-teal-200 mb-1">Email *</label>
+            <input type="email" id="email" required
+                   class="w-full bg-white/10 border border-white/30 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-400">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs text-teal-200 mb-1">Full Shipping Address *</label>
+          <textarea id="address" rows="2" required
+                    class="w-full bg-white/10 border border-white/30 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-400"></textarea>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs text-teal-200 mb-1">City *</label>
+            <input type="text" id="city" required
+                   class="w-full bg-white/10 border border-white/30 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-400">
+          </div>
+          <div>
+            <label class="block text-xs text-teal-200 mb-1">Country *</label>
+            <input type="text" id="country" value="United States" required
+                   class="w-full bg-white/10 border border-white/30 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-400">
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="flex justify-center pt-4">
+          <button type="button" onclick="submitCustomerInfo()"
+                  class="w-full md:w-80 bg-emerald-500 hover:bg-emerald-600 transition py-4 rounded-3xl font-semibold text-lg">
+            Submit & Send to Telegram →
+          </button>
+        </div>
+      </form>
+    </div>
 
     <!-- Payment Options -->
-    <div class="space-y-6">
+    <div class="mt-12 space-y-6">
       <!-- Bitcoin -->
       <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 hover:border-emerald-400 transition-all">
         <div class="flex items-center gap-4 mb-4">
@@ -96,16 +152,8 @@
       </div>
     </div>
 
-    <!-- Notice -->
-    <div class="mt-10 bg-amber-500/10 border border-amber-500/30 rounded-2xl p-5 text-sm">
-      <p class="flex items-start gap-3">
-        <span class="text-amber-400 text-xl mt-0.5">⚠️</span>
-        <span>
-          Send <strong>exactly</strong> the amount shown above.<br>
-          Wrong amount or network may delay processing.
-        </span>
-      </p>
-    </div>
+        </div>
+  
 
     <!-- Contact -->
     <div class="mt-12 pt-8 border-t border-white/20 text-center">
@@ -130,7 +178,7 @@
 
   </div>
 
-  <script>
+    <script>
     function selectPackage(type) {
       const singleBtn = document.getElementById('btn-single');
       const bundleBtn = document.getElementById('btn-bundle');
@@ -138,34 +186,119 @@
       const wholesaleMsg = document.getElementById('wholesale-message');
 
       // Reset all buttons
-      singleBtn.classList.remove('active-package', 'bg-emerald-500', 'text-white');
-      bundleBtn.classList.remove('active-package', 'bg-emerald-500', 'text-white');
-      wholesaleBtn.classList.remove('active-package', 'bg-emerald-500', 'text-white');
+      singleBtn.classList.remove('active-package', 'bg-emerald-500', 'text-white', 'border-emerald-400');
+      bundleBtn.classList.remove('active-package', 'bg-emerald-500', 'text-white', 'border-emerald-400');
+      wholesaleBtn.classList.remove('active-package', 'bg-emerald-500', 'text-white', 'border-emerald-400');
 
       if (type === 1) {
         document.getElementById('item-name').textContent = "Giant Seashell Float × 1";
         document.getElementById('item-price').textContent = "$79.99";
         document.getElementById('total-amount').textContent = "$79.99";
-        singleBtn.classList.add('active-package', 'bg-emerald-500', 'text-white');
+        singleBtn.classList.add('active-package', 'bg-emerald-500', 'text-white', 'border-emerald-400');
         wholesaleMsg.classList.add('hidden');
       } 
       else if (type === 2) {
         document.getElementById('item-name').textContent = "Giant Seashell Float × 2 (Bundle)";
         document.getElementById('item-price').textContent = "$129.99";
         document.getElementById('total-amount').textContent = "$129.99";
-        bundleBtn.classList.add('active-package', 'bg-emerald-500', 'text-white');
+        bundleBtn.classList.add('active-package', 'bg-emerald-500', 'text-white', 'border-emerald-400');
         wholesaleMsg.classList.add('hidden');
       } 
       else if (type === 3) {
         document.getElementById('item-name').textContent = "Wholesale / Bulk Order";
-        document.getElementById('item-price').textContent = "$1.00";
-        document.getElementById('total-amount').textContent = "$1.00";
-        wholesaleBtn.classList.add('active-package', 'bg-emerald-500', 'text-white');
+        document.getElementById('item-price').textContent = "Contact for Price";
+        document.getElementById('total-amount').textContent = "Contact for Price";
+        wholesaleBtn.classList.add('active-package', 'bg-emerald-500', 'text-white', 'border-emerald-400');
         wholesaleMsg.classList.remove('hidden');
       }
     }
 
-    // Default selection
+    // Default selection on page load
+    window.onload = () => selectPackage(1);
+  </script>
+   <script>
+    let currentPackage = "Single — $79.99";
+    let currentTotal = "$79.99";
+
+    function selectPackage(type) {
+      const singleBtn = document.getElementById('btn-single');
+      const bundleBtn = document.getElementById('btn-bundle');
+      const wholesaleBtn = document.getElementById('btn-wholesale');
+      const wholesaleMsg = document.getElementById('wholesale-message');
+
+      singleBtn.classList.remove('active-package', 'bg-emerald-500', 'text-white');
+      bundleBtn.classList.remove('active-package', 'bg-emerald-500', 'text-white');
+      wholesaleBtn.classList.remove('active-package', 'bg-emerald-500', 'text-white');
+
+      if (type === 1) {
+        currentPackage = "Giant Seashell Float × 1";
+        currentTotal = "$79.99";
+        document.getElementById('item-name').textContent = "Giant Seashell Float × 1";
+        document.getElementById('item-price').textContent = "$79.99";
+        document.getElementById('total-amount').textContent = "$79.99";
+        wholesaleMsg.classList.add('hidden');
+        singleBtn.classList.add('active-package', 'bg-emerald-500', 'text-white');
+      } 
+      else if (type === 2) {
+        currentPackage = "Giant Seashell Float × 2 (Bundle)";
+        currentTotal = "$129.99";
+        document.getElementById('item-name').textContent = "Giant Seashell Float × 2 (Bundle)";
+        document.getElementById('item-price').textContent = "$129.99";
+        document.getElementById('total-amount').textContent = "$129.99";
+        wholesaleMsg.classList.add('hidden');
+        bundleBtn.classList.add('active-package', 'bg-emerald-500', 'text-white');
+      } 
+      else if (type === 3) {
+        currentPackage = "Wholesale / Bulk";
+        currentTotal = "Contact for Price";
+        document.getElementById('item-name').textContent = "Wholesale / Bulk Order";
+        document.getElementById('item-price').textContent = "Contact for Price";
+        document.getElementById('total-amount').textContent = "Contact for Price";
+        wholesaleMsg.classList.remove('hidden');
+        wholesaleBtn.classList.add('active-package', 'bg-emerald-500', 'text-white');
+      }
+    }
+
+    function submitCustomerInfo() {
+      const name = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const address = document.getElementById('address').value.trim();
+
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+      if (!name) {
+        alert("Please enter your Full Name");
+        return;
+      }
+      if (!email) {
+        alert("Please enter your Email address");
+        return;
+      }
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address (e.g. name@example.com)");
+        return;
+      }
+      if (!address) {
+        alert("Please enter your Shipping Address");
+        return;
+      }
+
+      const orderNumber = "ASF" + Math.floor(100000 + Math.random() * 900000);
+
+      let message = `🛒 New Crypto Order Received!%0A%0A`;
+      message += `🔖 Order Number: ${orderNumber}%0A%0A`;
+      message += `👤 Name: ${encodeURIComponent(name)}%0A`;
+      message += `📧 Email: ${encodeURIComponent(email)}%0A`;
+      message += `📦 Package: ${encodeURIComponent(currentPackage)}%0A`;
+      message += `💰 Total: ${currentTotal}%0A%0A`;
+      message += `📍 Address: ${encodeURIComponent(address)}%0A`;
+      message += `🌍 Country: ${encodeURIComponent(document.getElementById('country').value)}`;
+
+      window.open(`https://t.me/aurastockfinds?text=${message}`, '_blank');
+
+      alert(`✅ Thank you ${name}!\n\nOrder Number: ${orderNumber}\n\nTelegram chat opened.`);
+    }
+
     window.onload = () => selectPackage(1);
   </script>
 </body>
