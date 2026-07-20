@@ -99,7 +99,7 @@
         <!-- Quantity Selector -->
         <div class="text-center pt-2">
           <p class="text-gray-800 mb-3 font-medium">Select Quantity</p>
-          <select id="quantity" onchange="updateTotal()"
+          <select id="quantity"
                   class="w-full max-w-xs mx-auto bg-gray-50 text-gray-800 border border-gray-300 rounded-2xl px-6 py-4 text-lg font-semibold focus:outline-none focus:border-teal-500">
           </select>
         </div>
@@ -177,6 +177,18 @@
 
   </div>
  <script>
+  // Tracks the current quantity outside the DOM read, kept in sync by
+  // several events (see below) so a single stale read of select.value
+  // on mobile can't desync the Telegram message / thank-you page from
+  // what the customer actually picked in the wheel.
+  let currentQty = 2;
+
+  function calcTotal(qty) {
+    if (qty === 1) return 79.99;
+    if (qty === 2) return 129.99;
+    return qty * 37 * 1.5;
+  }
+
   // Generate 1–100 quantity options
   (function() {
     const select = document.getElementById('quantity');
@@ -185,19 +197,12 @@
     select.innerHTML = '';
 
     for (let qty = 1; qty <= 100; qty++) {
-      let total = 0;
+      const total = calcTotal(qty);
       let label = '';
 
-      if (qty === 1) {
-        total = 79.99;
-        label = `1 Unit — $${total.toFixed(2)}`;
-      } else if (qty === 2) {
-        total = 129.99;
-        label = `2 Units (Bundle) — $${total.toFixed(2)}`;
-      } else {
-        total = qty * 37 * 1.5;
-        label = `${qty} Units — $${total.toFixed(2)}`;
-      }
+      if (qty === 1) label = `1 Unit — $${total.toFixed(2)}`;
+      else if (qty === 2) label = `2 Units (Bundle) — $${total.toFixed(2)}`;
+      else label = `${qty} Units — $${total.toFixed(2)}`;
 
       const option = document.createElement('option');
       option.value = qty;
@@ -205,27 +210,36 @@
       if (qty === 2) option.selected = true;
       select.appendChild(option);
     }
+
+    // 'change' fires when a value is committed. 'input' fires on more
+    // browsers/timings (helps iOS Safari's wheel picker, which can lag
+    // 'change'). 'blur' is a final safety-net sync point.
+    select.addEventListener('change', updateTotal);
+    select.addEventListener('input', updateTotal);
+    select.addEventListener('blur', updateTotal);
   })();
 
-  // Update total display
+  // Update total display (and the tracked quantity)
   function updateTotal() {
     const select = document.getElementById('quantity');
     let qty = parseInt(select.value, 10);
 
     if (isNaN(qty) || qty < 1) qty = 2;
 
-    let total = 0;
-    if (qty === 1) total = 79.99;
-    else if (qty === 2) total = 129.99;
-    else total = qty * 37 * 1.5;
-
-    document.getElementById('total-display').textContent = '$' + total.toFixed(2);
+    currentQty = qty;
+    document.getElementById('total-display').textContent = '$' + calcTotal(qty).toFixed(2);
   }
 
   // Submit order
   function submitOrder() {
     const select = document.getElementById('quantity');
-    let qty = parseInt(select.value, 10);
+
+    // Force the mobile picker to commit any pending selection before we
+    // read it — this is the key fix for the mobile quantity mismatch.
+    select.blur();
+    updateTotal();
+
+    let qty = currentQty;
 
     // Extra safety for mobile
     if (isNaN(qty) || qty < 1 || qty > 100) {
@@ -257,10 +271,7 @@
     }
 
     // Calculate total
-    let total = 0;
-    if (qty === 1) total = 79.99;
-    else if (qty === 2) total = 129.99;
-    else total = qty * 37 * 1.5;
+    const total = calcTotal(qty);
 
     const orderNumber = "#ORD-" + Math.floor(1000 + Math.random() * 9000);
 
@@ -290,6 +301,7 @@ Please process this order. Thank you!`
   }
 
   // Initialize
+  currentQty = 2;
   updateTotal();
 </script>
 
