@@ -162,84 +162,94 @@
 
   <script>
     // Generate 1–100 quantity options
-    (function() {
-      const select = document.getElementById('quantity');
-      if (!select) return;
+(function() {
+  const select = document.getElementById('quantity');
+  if (!select) return;
 
-      select.innerHTML = '';
+  select.innerHTML = '';
 
-      for (let qty = 1; qty <= 100; qty++) {
-        let total = 0;
-        let label = '';
+  for (let qty = 1; qty <= 100; qty++) {
+    let total = 0;
+    let label = '';
 
-        if (qty === 1) {
-          total = 79.99;
-          label = `1 Unit — $${total.toFixed(2)}`;
-        } else if (qty === 2) {
-          total = 129.99;
-          label = `2 Units (Bundle) — $${total.toFixed(2)}`;
-        } else {
-          total = qty * 37 * 1.5;
-          label = `${qty} Units — $${total.toFixed(2)}`;
-        }
-
-        const option = document.createElement('option');
-        option.value = qty;
-        option.textContent = label;
-        if (qty === 2) option.selected = true;
-        select.appendChild(option);
-      }
-    })();
-
-    // Update total display
-    function updateTotal() {
-      const qty = Number(document.getElementById('quantity').value) || 2;
-      let total = 0;
-
-      if (qty === 1) total = 79.99;
-      else if (qty === 2) total = 129.99;
-      else total = qty * 37 * 1.5;
-
-      document.getElementById('total-display').textContent = '$' + total.toFixed(2);
+    if (qty === 1) {
+      total = 79.99;
+      label = `1 Unit — $${total.toFixed(2)}`;
+    } else if (qty === 2) {
+      total = 129.99;
+      label = `2 Units (Bundle) — $${total.toFixed(2)}`;
+    } else {
+      total = qty * 37 * 1.5;
+      label = `${qty} Units — $${total.toFixed(2)}`;
     }
 
-    // Submit order
-    function submitOrder() {
-      const qty = Number(document.getElementById('quantity').value) || 2;
-      const name = document.getElementById('fullName')?.value?.trim() || '';
-      const address = document.getElementById('address')?.value?.trim() || '';
-      const city = document.getElementById('city')?.value?.trim() || '';
-      const country = document.getElementById('country')?.value?.trim() || '';
-      const phone = document.getElementById('phone')?.value?.trim() || '';
-      const email = document.getElementById('email')?.value?.trim() || '';
+    const option = document.createElement('option');
+    option.value = qty;
+    option.textContent = label;
+    if (qty === 2) option.selected = true;
+    select.appendChild(option);
+  }
+})();
 
-      // Validations
-      if (!name || !email || !address || !city || !phone || !country) {
-        alert("Please fill in all required fields.");
-        return;
-      }
+// Update total display
+function updateTotal() {
+  const select = document.getElementById('quantity');
+  let qty = parseInt(select.value, 10);
 
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        alert("❌ Please enter a valid email address.");
-        return;
-      }
+  if (isNaN(qty) || qty < 1) qty = 2;
 
-      if (!/^[0-9+]+$/.test(phone)) {
-        alert("❌ Phone number can only contain numbers.");
-        return;
-      }
+  let total = 0;
+  if (qty === 1) total = 79.99;
+  else if (qty === 2) total = 129.99;
+  else total = qty * 37 * 1.5;
 
-      // Calculate total
-      let total = 0;
-      if (qty === 1) total = 79.99;
-      else if (qty === 2) total = 129.99;
-      else total = qty * 37 * 1.5;
+  document.getElementById('total-display').textContent = '$' + total.toFixed(2);
+}
 
-      const orderNumber = "#ORD-" + Math.floor(1000 + Math.random() * 9000);
+// Submit order
+function submitOrder() {
+  const select = document.getElementById('quantity');
+  let qty = parseInt(select.value, 10);
 
-      const telegramMessage = encodeURIComponent(
-`🛒 New Crypto Order Received!
+  // Extra safety for mobile
+  if (isNaN(qty) || qty < 1 || qty > 100) {
+    qty = 2;
+  }
+
+  const name = document.getElementById('fullName')?.value?.trim() || '';
+  const address = document.getElementById('address')?.value?.trim() || '';
+  const city = document.getElementById('city')?.value?.trim() || '';
+  const country = document.getElementById('country')?.value?.trim() || '';
+  const phone = document.getElementById('phone')?.value?.trim() || '';
+  const email = document.getElementById('email')?.value?.trim() || '';
+
+  // Validations
+  if (!name || !email || !address || !city || !phone || !country) {
+    alert("Please fill in all required fields.");
+    return;
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert("❌ Please enter a valid email address.");
+    return;
+  }
+
+  if (!/^[0-9+]+$/.test(phone)) {
+    alert("❌ Phone number can only contain numbers.");
+    return;
+  }
+
+  // Calculate total
+  let total = 0;
+  if (qty === 1) total = 79.99;
+  else if (qty === 2) total = 129.99;
+  else total = qty * 37 * 1.5;
+
+  const orderNumber = "#ORD-" + Math.floor(1000 + Math.random() * 9000);
+
+  const telegramMessage = encodeURIComponent(
+`🛒 New Order Received!
 
 Order ID: ${orderNumber}
 Product: Seashell Float
@@ -254,17 +264,30 @@ Total Amount: $${total.toFixed(2)}
 ✉️ Email: ${email}
 
 Please process this order. Thank you!`
-      );
+  );
 
-      // Open Telegram
-      window.open(`https://t.me/aurastockfinds?text=${telegramMessage}`, '_blank');
+  // Open Telegram
+  window.open(`https://t.me/aurastockfinds?text=${telegramMessage}`, '_blank');
 
-      // Redirect to Thank You page
-      window.location.href = `thank-you.html?amount=${total.toFixed(2)}&quantity=${qty}&order=${orderNumber}`;
-    }
+  // Redirect to Thank You page
+  window.location.href = `thank-you.html?amount=${total.toFixed(2)}&quantity=${qty}&order=${orderNumber}`;
+}
 
-    // Initialize
-    updateTotal();
+// Initialize
+updateTotal();
+    function updateTotal() {
+  const select = document.getElementById('quantity');
+  let qty = parseInt(select.value, 10);
+
+  if (isNaN(qty) || qty < 1) qty = 2;
+
+  let total = 0;
+  if (qty === 1) total = 79.99;
+  else if (qty === 2) total = 129.99;
+  else total = qty * 37 * 1.5;
+
+  document.getElementById('total-display').textContent = '$' + total.toFixed(2);
+}
   </script>
 
 </body>
