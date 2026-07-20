@@ -4,36 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thank You - Aura Stock Finds</title>
-
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
+<!-- Meta Pixel Purchase Tracking -->
+<script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    
     fbq('init', '4025435161082806');
     fbq('track', 'PageView');
 
-    // Dynamic Purchase tracking
-    (function () {
-      var params = new URLSearchParams(window.location.search);
-      var hasToken = params.has('token');
-      var hasPayerID = params.has('PayerID');
-      var alreadyFired = sessionStorage.getItem('purchase_pixel_fired');
+    // Improved Purchase Tracking
+    (function() {
+        var params = new URLSearchParams(window.location.search);
+        var alreadyFired = sessionStorage.getItem('purchase_pixel_fired');
 
-      if (hasToken && hasPayerID && !alreadyFired) {
-        // Get amount from URL or default to 89.99
-        var amount = parseFloat(params.get('amount')) || 89.99;
-        fbq('track', 'Purchase', { value: amount, currency: 'USD' });
+        if (alreadyFired) return;
+
+        var amount = parseFloat(params.get('amount')) || 79.99;   // Updated default
+
+        fbq('track', 'Purchase', {
+            value: amount,
+            currency: 'USD',
+            contents: [{
+                id: 'seashell-float-2',
+                quantity: 1,
+                item_price: amount
+            }]
+        });
+
         sessionStorage.setItem('purchase_pixel_fired', '1');
-      }
     })();
-  </script>
-  <!-- End Meta Pixel Code -->
+</script>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -100,7 +99,7 @@
         </div>
         <div class="flex justify-between">
           <span class="text-gray-500">Estimated Delivery</span>
-          <span class="font-medium">5–12 days</span>
+          <span class="font-medium">4-8 days</span>
         </div>
       </div>
 
@@ -157,10 +156,10 @@
       let quantity = '';
       let price = 0;
 
-      if (type === 'single' || amountParam === 69.99) {
+      if (type === 'single' || amountParam === 79.99) {
         productName = 'Seashell Float';
         quantity = '× 1';
-        price = 69.99;
+        price = 79.99;
       } else {
         // bundle or default
         productName = 'Seashell Float Bundle';
