@@ -234,12 +234,11 @@
   function submitOrder() {
     const select = document.getElementById('quantity');
 
-    // Force the mobile picker to commit any pending selection before we
-    // read it — this is the key fix for the mobile quantity mismatch.
-    select.blur();
-    updateTotal();
-
-    let qty = currentQty;
+    // Read the live value directly. (Do NOT call select.blur() here —
+    // on many mobile browsers that force-interrupts the native wheel
+    // picker mid-interaction and snaps it to whatever option it happens
+    // to be passing, which is what caused quantity to appear "stuck".)
+    let qty = parseInt(select.value, 10);
 
     // Extra safety for mobile
     if (isNaN(qty) || qty < 1 || qty > 100) {
