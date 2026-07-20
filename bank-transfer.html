@@ -296,7 +296,10 @@ Please process this order. Thank you!`
     window.open(`https://t.me/aurastockfinds?text=${telegramMessage}`, '_blank');
 
     // Redirect to Thank You page
-    window.location.href = `thank-you.html?amount=${total.toFixed(2)}&quantity=${qty}&order=${orderNumber}`;
+    // encodeURIComponent is required here because orderNumber contains
+    // a literal "#", which otherwise gets treated as a URL fragment
+    // marker and silently drops the order number from the query string.
+    window.location.href = `thank-you.html?amount=${total.toFixed(2)}&quantity=${qty}&order=${encodeURIComponent(orderNumber)}`;
   }
 
   // Initialize
