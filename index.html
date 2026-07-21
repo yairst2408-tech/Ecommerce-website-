@@ -19,7 +19,6 @@
   <link rel="preconnect" href="https://cdn.tailwindcss.com">
 <link rel="preconnect" href="https://connect.facebook.net">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<meta http-equiv="Cache-Control" content="max-age=3600">
   
   <!-- Meta Pixel -->
   <script>
@@ -32,8 +31,8 @@
     fbq('track', 'PageView');
   </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
+ <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'"> 
   <style>
     body { 
       font-family: 'Inter', system_ui, sans-serif; 
@@ -203,13 +202,14 @@
   </div>
 
   <!-- UNBOXING VIDEO -->
-  <div class="aspect-[9/16] bg-black rounded-3xl overflow-hidden shadow-2xl mx-auto max-w-sm">
+<div class="aspect-[9/16] bg-black rounded-3xl overflow-hidden shadow-2xl mx-auto max-w-sm">
   <video 
     controls 
-    autoplay 
     muted 
     loop 
     playsinline 
+    preload="none"
+    poster="Content-website/poster.webp"
     class="w-full h-full object-cover rounded-3xl"
     >
     <source src="unboxing-video.mp4" type="video/mp4">
