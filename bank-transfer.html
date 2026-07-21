@@ -1,30 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '4025435161082806');
-  fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4025435161082806&ev=PageView&noscript=1" /></noscript>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="max-age=3600">
   <title>Bank Transfer Payment - Seashell Float</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  
+  <!-- Preconnect to critical external resources -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://connect.facebook.net">
+
+  <!-- Critical CSS inline -->
   <style>
-    body { font-family: 'Inter', system_ui, sans-serif; }
+    body { 
+      font-family: 'Inter', system_ui, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
     .heading { font-family: 'Playfair Display', sans-serif; }
+    html, body { margin: 0; padding: 0; }
+    img { max-width: 100%; height: auto; }
   </style>
+
+  <!-- Preload critical fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Meta Pixel Code (Async) -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '4025435161082806');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4025435161082806&ev=PageView&noscript=1" /></noscript>
 </head>
 <body class="bg-[#F8FAFC] text-gray-800">
 
@@ -190,110 +208,116 @@
     </div>
 
   </div>
- <script>
-  // Tracks the current quantity outside the DOM read, kept in sync by
-  // several events (see below) so a single stale read of select.value
-  // on mobile can't desync the Telegram message / thank-you page from
-  // what the customer actually picked in the wheel.
-  let currentQty = 2;
 
-  function calcTotal(qty) {
-    if (qty === 1) return 79.99;
-    if (qty === 2) return 129.99;
-    return qty * 37 * 1.5;
-  }
+  <!-- Tailwind CSS - Load after page content -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
 
-  // Generate 1–100 quantity options
-  (function() {
-    const select = document.getElementById('quantity');
-    if (!select) return;
+  <!-- Font Awesome - Load after page content -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
 
-    select.innerHTML = '';
+  <!-- Main Application Script -->
+  <script defer>
+    // Tracks the current quantity
+    let currentQty = 2;
 
-    for (let qty = 1; qty <= 100; qty++) {
-      const total = calcTotal(qty);
-      let label = '';
-
-      if (qty === 1) label = `1 Unit — $${total.toFixed(2)}`;
-      else if (qty === 2) label = `2 Units (Bundle) — $${total.toFixed(2)}`;
-      else label = `${qty} Units — $${total.toFixed(2)}`;
-
-      const option = document.createElement('option');
-      option.value = qty;
-      option.textContent = label;
-      if (qty === 2) option.selected = true;
-      select.appendChild(option);
+    function calcTotal(qty) {
+      if (qty === 1) return 79.99;
+      if (qty === 2) return 129.99;
+      return qty * 37 * 1.5;
     }
 
-    // 'change' fires when a value is committed. 'input' fires on more
-    // browsers/timings (helps iOS Safari's wheel picker, which can lag
-    // 'change'). 'blur' is a final safety-net sync point.
-    select.addEventListener('change', updateTotal);
-    select.addEventListener('input', updateTotal);
-    select.addEventListener('blur', updateTotal);
-  })();
+    // Initialize quantity selector
+    document.addEventListener('DOMContentLoaded', function() {
+      const select = document.getElementById('quantity');
+      if (!select) return;
 
-  // Update total display (and the tracked quantity)
-  function updateTotal() {
-    const select = document.getElementById('quantity');
-    let qty = parseInt(select.value, 10);
+      select.innerHTML = '';
 
-    if (isNaN(qty) || qty < 1) qty = 2;
+      for (let qty = 1; qty <= 100; qty++) {
+        const total = calcTotal(qty);
+        let label = '';
 
-    currentQty = qty;
-    document.getElementById('total-display').textContent = '$' + calcTotal(qty).toFixed(2);
-  }
- function submitOrder() {
-  const select = document.getElementById('quantity');
-  let qty = parseInt(select.value, 10);
+        if (qty === 1) label = `1 Unit — $${total.toFixed(2)}`;
+        else if (qty === 2) label = `2 Units (Bundle) — $${total.toFixed(2)}`;
+        else label = `${qty} Units — $${total.toFixed(2)}`;
 
-  if (isNaN(qty) || qty < 1 || qty > 100) {
-    qty = 2;
-  }
+        const option = document.createElement('option');
+        option.value = qty;
+        option.textContent = label;
+        if (qty === 2) option.selected = true;
+        select.appendChild(option);
+      }
 
-  const name = document.getElementById('fullName')?.value?.trim() || '';
-  const address = document.getElementById('address')?.value?.trim() || '';
-  const city = document.getElementById('city')?.value?.trim() || '';
-  const country = document.getElementById('country')?.value?.trim() || '';
-  const phone = document.getElementById('phone')?.value?.trim() || '';
-  const email = document.getElementById('email')?.value?.trim() || '';
+      select.addEventListener('change', updateTotal);
+      select.addEventListener('input', updateTotal);
+      select.addEventListener('blur', updateTotal);
 
-  // Validations
-  if (!name || !email || !address || !city || !phone || !country) {
-    alert("Please fill in all required fields.");
-    return;
-  }
+      // Initialize display
+      updateTotal();
+    });
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    alert("❌ Please enter a valid email address.");
-    return;
-  }
+    // Update total display
+    function updateTotal() {
+      const select = document.getElementById('quantity');
+      let qty = parseInt(select.value, 10);
 
-  if (!/^[0-9+]+$/.test(phone)) {
-    alert("❌ Phone number can only contain numbers.");
-    return;
-  }
+      if (isNaN(qty) || qty < 1) qty = 2;
 
-  // ✅ CALCULATE TOTAL FIRST
-  let total = 0;
-  if (qty === 1) total = 79.99;
-  else if (qty === 2) total = 129.99;
-  else total = qty * 37 * 1.5;
+      currentQty = qty;
+      document.getElementById('total-display').textContent = '$' + calcTotal(qty).toFixed(2);
+    }
 
-  // ✅ THEN fire the pixel event
-  fbq('track', 'InitiateCheckout', {
-    content_name: 'Seashell Float',
-    content_ids: ['seashell-float'],
-    content_type: 'product',
-    value: total.toFixed(2),
-    currency: 'USD',
-    num_items: qty
-  });
+    // Submit order
+    function submitOrder() {
+      const select = document.getElementById('quantity');
+      let qty = parseInt(select.value, 10);
 
-  const orderNumber = "#ORD-" + Math.floor(1000 + Math.random() * 9000);
+      if (isNaN(qty) || qty < 1 || qty > 100) {
+        qty = 2;
+      }
 
-  const telegramMessage = encodeURIComponent(
+      const name = document.getElementById('fullName')?.value?.trim() || '';
+      const address = document.getElementById('address')?.value?.trim() || '';
+      const city = document.getElementById('city')?.value?.trim() || '';
+      const country = document.getElementById('country')?.value?.trim() || '';
+      const phone = document.getElementById('phone')?.value?.trim() || '';
+      const email = document.getElementById('email')?.value?.trim() || '';
+
+      // Validations
+      if (!name || !email || !address || !city || !phone || !country) {
+        alert("Please fill in all required fields.");
+        return;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert("❌ Please enter a valid email address.");
+        return;
+      }
+
+      if (!/^[0-9+]+$/.test(phone)) {
+        alert("❌ Phone number can only contain numbers.");
+        return;
+      }
+
+      // Calculate total
+      let total = calcTotal(qty);
+
+      // Fire Meta Pixel InitiateCheckout event
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'InitiateCheckout', {
+          content_name: 'Seashell Float',
+          content_ids: ['seashell-float'],
+          content_type: 'product',
+          value: total.toFixed(2),
+          currency: 'USD',
+          num_items: qty
+        });
+      }
+
+      const orderNumber = "#ORD-" + Math.floor(1000 + Math.random() * 9000);
+
+      const telegramMessage = encodeURIComponent(
 `🛒 New Order Received!
 
 Order ID: ${orderNumber}
@@ -309,12 +333,12 @@ Total Amount: $${total.toFixed(2)}
 ✉️ Email: ${email}
 
 Please process this order. Thank you!`
-  );
+      );
 
-  window.open(`https://t.me/aurastockfinds?text=${telegramMessage}`, '_blank');
-  window.location.href = `thank-you.html?amount=${total.toFixed(2)}&quantity=${qty}&order=${encodeURIComponent(orderNumber)}`;
-}
-</script>
+      window.open(`https://t.me/aurastockfinds?text=${telegramMessage}`, '_blank');
+      window.location.href = `thank-you.html?amount=${total.toFixed(2)}&quantity=${qty}&order=${encodeURIComponent(orderNumber)}`;
+    }
+  </script>
 
 </body>
 </html>
