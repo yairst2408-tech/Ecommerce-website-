@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '4025435161082806');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4025435161082806&ev=PageView&noscript=1" /></noscript>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bank Transfer Payment - Seashell Float</title>
@@ -229,52 +243,57 @@
     currentQty = qty;
     document.getElementById('total-display').textContent = '$' + calcTotal(qty).toFixed(2);
   }
+ function submitOrder() {
+  const select = document.getElementById('quantity');
+  let qty = parseInt(select.value, 10);
 
-  // Submit order
-  function submitOrder() {
-    const select = document.getElementById('quantity');
+  if (isNaN(qty) || qty < 1 || qty > 100) {
+    qty = 2;
+  }
 
-    // Read the live value directly. (Do NOT call select.blur() here —
-    // on many mobile browsers that force-interrupts the native wheel
-    // picker mid-interaction and snaps it to whatever option it happens
-    // to be passing, which is what caused quantity to appear "stuck".)
-    let qty = parseInt(select.value, 10);
+  const name = document.getElementById('fullName')?.value?.trim() || '';
+  const address = document.getElementById('address')?.value?.trim() || '';
+  const city = document.getElementById('city')?.value?.trim() || '';
+  const country = document.getElementById('country')?.value?.trim() || '';
+  const phone = document.getElementById('phone')?.value?.trim() || '';
+  const email = document.getElementById('email')?.value?.trim() || '';
 
-    // Extra safety for mobile
-    if (isNaN(qty) || qty < 1 || qty > 100) {
-      qty = 2;
-    }
+  // Validations
+  if (!name || !email || !address || !city || !phone || !country) {
+    alert("Please fill in all required fields.");
+    return;
+  }
 
-    const name = document.getElementById('fullName')?.value?.trim() || '';
-    const address = document.getElementById('address')?.value?.trim() || '';
-    const city = document.getElementById('city')?.value?.trim() || '';
-    const country = document.getElementById('country')?.value?.trim() || '';
-    const phone = document.getElementById('phone')?.value?.trim() || '';
-    const email = document.getElementById('email')?.value?.trim() || '';
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert("❌ Please enter a valid email address.");
+    return;
+  }
 
-    // Validations
-    if (!name || !email || !address || !city || !phone || !country) {
-      alert("Please fill in all required fields.");
-      return;
-    }
+  if (!/^[0-9+]+$/.test(phone)) {
+    alert("❌ Phone number can only contain numbers.");
+    return;
+  }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      alert("❌ Please enter a valid email address.");
-      return;
-    }
+  // ✅ CALCULATE TOTAL FIRST
+  let total = 0;
+  if (qty === 1) total = 79.99;
+  else if (qty === 2) total = 129.99;
+  else total = qty * 37 * 1.5;
 
-    if (!/^[0-9+]+$/.test(phone)) {
-      alert("❌ Phone number can only contain numbers.");
-      return;
-    }
+  // ✅ THEN fire the pixel event
+  fbq('track', 'InitiateCheckout', {
+    content_name: 'Seashell Float',
+    content_ids: ['seashell-float'],
+    content_type: 'product',
+    value: total.toFixed(2),
+    currency: 'USD',
+    num_items: qty
+  });
 
-    // Calculate total
-    const total = calcTotal(qty);
+  const orderNumber = "#ORD-" + Math.floor(1000 + Math.random() * 9000);
 
-    const orderNumber = "#ORD-" + Math.floor(1000 + Math.random() * 9000);
-
-    const telegramMessage = encodeURIComponent(
+  const telegramMessage = encodeURIComponent(
 `🛒 New Order Received!
 
 Order ID: ${orderNumber}
@@ -290,21 +309,11 @@ Total Amount: $${total.toFixed(2)}
 ✉️ Email: ${email}
 
 Please process this order. Thank you!`
-    );
+  );
 
-    // Open Telegram
-    window.open(`https://t.me/aurastockfinds?text=${telegramMessage}`, '_blank');
-
-    // Redirect to Thank You page
-    // encodeURIComponent is required here because orderNumber contains
-    // a literal "#", which otherwise gets treated as a URL fragment
-    // marker and silently drops the order number from the query string.
-    window.location.href = `thank-you.html?amount=${total.toFixed(2)}&quantity=${qty}&order=${encodeURIComponent(orderNumber)}`;
-  }
-
-  // Initialize
-  currentQty = 2;
-  updateTotal();
+  window.open(`https://t.me/aurastockfinds?text=${telegramMessage}`, '_blank');
+  window.location.href = `thank-you.html?amount=${total.toFixed(2)}&quantity=${qty}&order=${encodeURIComponent(orderNumber)}`;
+}
 </script>
 
 </body>
