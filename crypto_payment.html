@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '4025435161082806');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4025435161082806&ev=PageView&noscript=1" /></noscript>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Secure Crypto Payment - Aura Stock Finds</title>
@@ -191,27 +205,11 @@
   }
 })();
 
-// Update total display
-function updateTotal() {
+ 
+ function submitOrder() {
   const select = document.getElementById('quantity');
   let qty = parseInt(select.value, 10);
 
-  if (isNaN(qty) || qty < 1) qty = 2;
-
-  let total = 0;
-  if (qty === 1) total = 79.99;
-  else if (qty === 2) total = 129.99;
-  else total = qty * 37 * 1.5;
-
-  document.getElementById('total-display').textContent = '$' + total.toFixed(2);
-}
-
-// Submit order
-function submitOrder() {
-  const select = document.getElementById('quantity');
-  let qty = parseInt(select.value, 10);
-
-  // Extra safety for mobile
   if (isNaN(qty) || qty < 1 || qty > 100) {
     qty = 2;
   }
@@ -240,11 +238,21 @@ function submitOrder() {
     return;
   }
 
-  // Calculate total
+  // ✅ CALCULATE TOTAL FIRST
   let total = 0;
   if (qty === 1) total = 79.99;
   else if (qty === 2) total = 129.99;
   else total = qty * 37 * 1.5;
+
+  // ✅ THEN fire the pixel event
+  fbq('track', 'InitiateCheckout', {
+    content_name: 'Seashell Float',
+    content_ids: ['seashell-float'],
+    content_type: 'product',
+    value: total.toFixed(2),
+    currency: 'USD',
+    num_items: qty
+  });
 
   const orderNumber = "#ORD-" + Math.floor(1000 + Math.random() * 9000);
 
@@ -266,15 +274,9 @@ Total Amount: $${total.toFixed(2)}
 Please process this order. Thank you!`
   );
 
-  // Open Telegram
   window.open(`https://t.me/aurastockfinds?text=${telegramMessage}`, '_blank');
-
-  // Redirect to Thank You page
-  window.location.href = `thank-you.html?amount=${total.toFixed(2)}&quantity=${qty}&order=${orderNumber}`;
+  window.location.href = `thank-you.html?amount=${total.toFixed(2)}&quantity=${qty}&order=${encodeURIComponent(orderNumber)}`;
 }
-
-// Initialize
-updateTotal();
     function updateTotal() {
   const select = document.getElementById('quantity');
   let qty = parseInt(select.value, 10);
