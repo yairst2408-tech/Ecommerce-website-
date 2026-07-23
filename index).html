@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta Pixel -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '4025435161082806');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4025435161082806&ev=PageView&noscript=1"/></noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrendFloat - Seashell Float | Summer's Must-Have</title>
+    <meta name="description" content="The viral seashell float that's breaking TikTok. Premium quality, Instagram-worthy design. Free shipping on orders over $50.">
+    <style>
+
+        .info-section { padding: 60px 0; }
+.info-section h2 { text-align: center; font-size: 36px; margin-bottom: 50px; color: #1a1a1a; }
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 900px; margin: 0 auto; }
+.info-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    border: 1px solid #f0f0f0;
+    text-align: center;
+}
+.info-card h3 { font-size: 22px; margin-bottom: 15px; color: #1a1a1a; }
+.info-card p { font-size: 15px; color: #666; line-height: 1.7; }
+.info-icon { font-size: 48px; margin-bottom: 15px; }
+@media (max-width: 768px) {
+    .info-grid { grid-template-columns: 1fr; }
+}
+
+        .video-section {
+    padding: 60px 0;
+    text-align: center;
+    background: white;
+}
+.video-section h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+.video-section p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+.video-section video {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+        .urgency-banner {
+    background: #ff6b9d;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* ── Header ── */
+        .header {
+            background: #f0fdfb;
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-size: 26px; font-weight: 700; color: #ff6b9d; }
+
+        .trust-badge { display: flex; gap: 20px; font-size: 12px; color: #666; }
+        .badge { display: flex; align-items: center; gap: 5px; }
+
+        /* ── Hero ── */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            padding: 60px 0;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: #1a1a1a;
+        }
+
+        .hero-content h1 .highlight { color: #00d4ff; }
+
+        .subheading { font-size: 18px; color: #666; margin-bottom: 30px; }
+
+        .features-list { list-style: none; margin-bottom: 30px; }
+        .features-list li {
+            padding: 10px 0;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .features-list li::before {
+            content: "\2713";
+            color: #00d4ff;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+         .hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+}
+
+        .product-image {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.15);
+            object-fit: cover;
+            animation: floatAnim 3s ease-in-out infinite;
+        }
+
+        @keyframes floatAnim {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .viral-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #ff6b9d;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+        }
+        .viral-badge span { display: block; font-size: 10px; opacity: 0.9; }
+
+        /* ── Pricing ── */
+      .pricing-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 30px;
+    border: 2px solid #f0f0f0;
+    text-align: center;
+}
+
+        .price { font-size: 42px; font-weight: 700; color: #1a1a1a; margin-bottom: 5px; }
+        .price-note { font-size: 14px; color: #999; text-decoration: line-through; margin-bottom: 20px; }
+
+       .cta-buttons { display: flex; gap: 15px; margin-top: 20px; justify-content: center; }
+
+        .btn-primary {
+            flex: 1;
+            display: inline-block;
+            padding: 16px;
+            background: #ff6b9d;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .btn-primary:hover { background: #ff5289; }
+
+        .btn-secondary {
+            flex: 1;
+            padding: 16px;
+            background: white;
+            color: #ff6b9d;
+            border: 2px solid #ff6b9d;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .btn-secondary:hover { background: #fff0f5; }
+
+
+
+        /* ── Social Proof ── */
+        .social-proof {
+            background: white;
+            padding: 60px 0;
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; }
+        .stat-number { font-size: 36px; font-weight: 700; color: #00d4ff; margin-bottom: 10px; }
+        .stat-label { font-size: 14px; color: #666; font-weight: 500; }
+
+        /* ── Testimonials ── */
+        .testimonials-section { padding: 60px 0; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 36px; margin-bottom: 10px; color: #1a1a1a; }
+        .section-header p { color: #666; font-size: 16px; }
+
+        .testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s;
+        }
+        .testimonial:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.08); transform: translateY(-5px); }
+
+        .review-img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            object-fit: cover;
+            max-height: 220px;
+        }
+        .stars { color: #ffc107; font-size: 18px; margin-bottom: 15px; letter-spacing: 5px; }
+        .testimonial-text { font-size: 16px; color: #555; margin-bottom: 15px; line-height: 1.6; }
+        .customer-name { font-weight: 600; color: #1a1a1a; margin-bottom: 5px; }
+        .customer-title { font-size: 13px; color: #999; }
+
+        /* ── Features ── */
+        .features-section { padding: 60px 0; }
+        .features-section h2 { text-align: center; font-size: 36px; margin-bottom: 50px; color: #1a1a1a; }
+
+        .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            border: 1px solid #f0f0f0;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .feature-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.08); transform: translateY(-5px); }
+
+        .feature-icon { font-size: 48px; margin-bottom: 15px; }
+        .feature-card h3 { font-size: 20px; margin-bottom: 10px; color: #1a1a1a; }
+        .feature-card p { font-size: 14px; color: #666; line-height: 1.6; }
+
+        /* ── FAQ ── */
+        .faq-section { padding: 60px 0; }
+        .faq-section h2 { text-align: center; font-size: 36px; margin-bottom: 50px; color: #1a1a1a; }
+
+        .faq-container { max-width: 700px; margin: 0 auto; }
+
+        .faq-item {
+            background: white;
+            border: 1px solid #f0f0f0;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .faq-question:hover { background: #f8f9fa; }
+        .faq-question.active { background: #f0fdfb; color: #ff6b9d; }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+            background: #f8f9fa;
+        }
+        .faq-answer.active { padding: 20px; max-height: 500px; }
+        .faq-answer p { color: #666; font-size: 15px; line-height: 1.6; }
+
+        /* ── Final CTA ── */
+        .final-cta {
+            padding: 60px 0;
+            background: #f0fdfb;
+            text-align: center;
+        }
+        .final-cta h2 { font-size: 36px; margin-bottom: 20px; color: #1a1a1a; }
+        .final-cta p { font-size: 18px; color: #666; margin-bottom: 30px; }
+
+ 
+
+        /* ── Footer ── */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 0;
+        }
+        .footer-brand { margin-bottom: 30px; }
+        .footer-brand strong { font-size: 18px; }
+        .footer-brand p { color: #999; margin-top: 10px; }
+        .footer-links { display: flex; gap: 30px; margin-bottom: 20px; flex-wrap: wrap; }
+        .footer-links a { color: #999; text-decoration: none; font-size: 14px; }
+        .footer-links a:hover { color: #00d4ff; }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #666;
+            font-size: 12px;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: 1fr; padding: 40px 0; gap: 30px; }
+            .hero-content h1 { font-size: 32px; }
+            .stats { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .testimonials { grid-template-columns: 1fr; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; }
+            .trust-badge { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+
+    
+<div class="urgency-banner">
+    🔥 Summer Sale — Free Worldwide Shipping + $10 Cashback for the first buyers!
+</div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">TrendFloat</div>
+                <div class="trust-badge">
+                    <div class="badge"><span>&#10003;</span> <span>Premium Quality</span></div>
+                    <div class="badge"><span>&#128666;</span> <span>Fast Shipping</span></div>
+                    <div class="badge"><span>&#128274;</span> <span>Secure Checkout</span></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section>
+        <div class="container">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>The <span class="highlight">Seashell Float</span> That's Breaking TikTok</h1>
+                    <p class="subheading">Trendy, Instagram-worthy, and actually comfortable. Join 47K+ customers making waves this summer.</p>
+
+                    <ul class="features-list">
+                        <li>Premium PVC construction built to last</li>
+                        <li>Pearl white aesthetic design</li>
+                        <li>Supports up to 200 lbs</li>
+                        <li>Product Dimensions	45.3"L x 37.5"W Item Weight	5 Pounds</li>
+                        <li>Order today and receive a $10 cashback reward for the first buyers</li>
+                    </ul>
+
+                     <div class="pricing-section">
+                        <div class="price">$79.99</div>
+                        <div class="price-note">Regular price $89.00</div>
+                        <div class="cta-buttons">
+                            <div>
+  <style>.pp-HDJML4YTTSBCA{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
+  <form action="https://www.paypal.com/ncp/payment/HDJML4YTTSBCA" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+    <input class="pp-HDJML4YTTSBCA" type="submit" value="Buy Now" />
+    <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
+    <section style="font-size: 0.75rem;"> Secured with  <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+  </form>
+</div>
+                         
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <img class="product-image" src="Content-website/img20.webp" alt="TrendFloat Seashell Float">
+                    <div class="viral-badge">
+                        <span>TRENDING</span>
+                        <span>2.4M Views</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+            <!--  Unboxing Video -->
+<section class="video-section">
+    <div class="container">
+        <h2>See It in Action</h2>
+        <p>Watch the unboxing and see the quality for yourself</p>
+        <video controls playsinline preload="metadata" poster="">
+            <source src="Content-website/unboxing-video.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
+
+    <!-- Social Proof Stats -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="stats">
+                <div>
+                    <div class="stat-number">47K+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div>
+                    <div class="stat-number">2.4M</div>
+                    <div class="stat-label">Social Media Views</div>
+                </div>
+                <div>
+                    <div class="stat-number">4.9</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+                <div>
+                    <div class="stat-number">30 Days</div>
+                    <div class="stat-label">Money-Back Guarantee</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Loved by Thousands</h2>
+                <p>Real reviews from real customers</p>
+            </div>
+
+            <div class="testimonials">
+                <div class="testimonial">
+                    <img class="review-img" src="Content-website/IMAGE8.webp" alt="Customer review photo">
+                    <div class="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                    <div class="testimonial-text">"This is absolutely stunning! My friends are so jealous. Already got 500+ likes on my TikTok post. Worth every penny!"</div>
+                    <div class="customer-name">Sarah M.</div>
+                    <div class="customer-title">Verified Buyer</div>
+                </div>
+
+                <div class="testimonial">
+                    <img class="review-img" src="Content-website/IMAGE9.webp" alt="Customer review photo">
+                    <div class="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                    <div class="testimonial-text">"Quality is premium, arrived faster than expected. The carrying bag makes it so convenient for beach trips. Highly recommend!"</div>
+                    <div class="customer-name">Jessica L.</div>
+                    <div class="customer-title">Verified Buyer</div>
+                </div>
+
+                <div class="testimonial">
+                    <img class="review-img" src="Content-website/IMAGE10.webp" alt="Customer review photo">
+                    <div class="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                    <div class="testimonial-text">"Best investment for summer. Customer service is amazing - they responded to my questions in minutes. 10/10!"</div>
+                    <div class="customer-name">Emma K.</div>
+                    <div class="customer-title">Verified Buyer</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <h2>Why Choose TrendFloat?</h2>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">&#127958;</div>
+                    <h3>Premium Quality</h3>
+                    <p>Industrial-grade PVC built to last multiple seasons without wear or damage.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">&#128248;</div>
+                    <h3>Aesthetic Design</h3>
+                    <p>Instagram-worthy pearl white finish that photographs beautifully every time.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">&#128524;</div>
+                    <h3>Maximum Comfort</h3>
+                    <p>Plush cushioned interior for hours of comfortable floating and relaxation.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">&#9889;</div>
+                    <h3>Easy Inflation</h3>
+                    <p>Quick-valve system inflates in under 2 minutes.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">&#128640;</div>
+                    <h3>Viral Potential</h3>
+                    <p>Trending design gets engagement on TikTok, Instagram, and YouTube Shorts.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">&#128230;</div>
+                    <h3>Complete Package</h3>
+                    <p> Includes the float with a decorative inflatable pearl accent </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What's included in my order?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Your order includes the Seashell Float and inflatable pearl ball (8 inches in diameter).</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How fast is shipping?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We ship worldwide! Estimated delivery time is 4-8 business days. All orders include tracking information so you can follow your package every step of the way.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you offer a guarantee?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! We offer a 30-day money-back guarantee. If you're not completely satisfied with your purchase, contact us for a full refund — no questions asked.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What's the weight capacity?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>The Seashell Float supports up to 200 lbs, making it perfect for teens and adults alike.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How do I care for my float?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Rinse with fresh water after use and air dry. Deflate and store in the included bag when not in use. Avoid sharp objects and extreme temperatures.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="order">
+        <div class="container">
+            <h2>Ready to Join 47K+ Happy Customers?</h2>
+            <p>Free worldwide shipping · $10 cashback · 30-day guarantee</p>
+             
+        </div>
+    </section>
+
+<!-- Shipping & Returns -->
+<section class="info-section" id="shipping" id="returns">
+    <div class="container">
+        <h2>Shipping &amp; Returns</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-icon">&#128666;</div>
+                <h3>Shipping Details</h3>
+                <p>Domestic orders ship directly from our US warehouse for fast delivery. International orders are fulfilled through our global partner warehouses, with an estimated delivery time of 4-8 business days for most countries.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">&#128260;</div>
+                <h3>Returns &amp; Refunds</h3>
+                <p>Not satisfied? No problem. All orders are eligible for returns within 30 days of delivery. We offer a full refund or replacement — no hassle, no questions asked.</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Footer -->
+    <footer class="footer">
+    <div class="container" style="text-align: center;">
+        <div class="footer-brand">
+            <strong>TrendFloat</strong>
+            <p>Premium seashell floats for the trendy summer</p>
+        </div>
+
+        
+
+        <div style="margin: 25px 0; text-align: center;">
+            <a href="mailto:yairst2408@gmail.com" style="display: inline-block; padding: 12px 30px; background: #00d4ff; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 15px;">&#9993; Email Us</a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>TrendFloat. All rights reserved. | 30-day money-back guarantee | Secure checkout</p>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        function toggleFAQ(el) {
+            var answer = el.nextElementSibling;
+            var all = document.querySelectorAll('.faq-answer.active');
+            for (var i = 0; i < all.length; i++) {
+                if (all[i] !== answer) {
+                    all[i].classList.remove('active');
+                    all[i].previousElementSibling.classList.remove('active');
+                }
+            }
+            answer.classList.toggle('active');
+            el.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
