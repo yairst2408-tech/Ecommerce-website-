@@ -33,7 +33,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrendFloat - Seashell Float | Summer's Must-Have</title>
-    <meta name="description" content="The viral seashell float that's breaking TikTok. Premium quality, Instagram-worthy design. Free shipping on orders over $50.">
+    <meta name="description" content="The viral seashell float that's breaking TikTok. Premium quality, Instagram-worthy design.">
     <style>
 
         .info-section { padding: 60px 0; }
@@ -114,8 +114,8 @@
 
         .logo { font-size: 26px; font-weight: 700; color: #d4456b; }
 
-        .trust-badge { display: flex; gap: 20px; font-size: 12px; color: #666; }
-        .badge { display: flex; align-items: center; gap: 5px; }
+         .trust-badge { display: flex; gap: 20px; font-size: 12px; color: #666; flex-wrap: wrap; justify-content: center; align-items: center; text-align: center; width: 100%; }
+.badge { display: flex; align-items: center; gap: 5px; justify-content: center; }
 
         /* ── Hero ── */
         .hero {
@@ -378,7 +378,9 @@
             .testimonials { grid-template-columns: 1fr; }
             .feature-grid { grid-template-columns: 1fr; }
             .cta-buttons { flex-direction: column; }
-            .trust-badge { display: none; }
+            .trust-badge { justify-content: center; gap: 10px; }
+            .header-content { flex-direction: column; gap: 10px; text-align: center; }
+
         }
     </style>
 </head>
@@ -395,9 +397,7 @@
             <div class="header-content">
                 <div class="logo">TrendFloat</div>
                 <div class="trust-badge">
-                    <div class="badge"><span>&#10003;</span> <span>Premium Quality</span></div>
-                    <div class="badge"><span>&#128666;</span> <span>Fast Shipping</span></div>
-                    <div class="badge"><span>&#128274;</span> <span>Secure Checkout</span></div>
+                
                 </div>
             </div>
         </div>
@@ -626,7 +626,11 @@
     <section class="final-cta" id="order">
         <div class="container">
             <h2>Ready to Join 47K+ Happy Customers?</h2>
-            <p>Free worldwide shipping · $10 cashback · 30-day guarantee</p>
+            <p>Free shipping · $10 cashback · 30-day guarantee</p>
+                 <div class="badge"><span>&#128230;</span> <span>Ordering in bulk? Email us for wholesale rates and special pricing</span></div>
+                    <div class="badge"><span>&#10003;</span> <span>Premium Quality</span></div>
+                    <div class="badge"><span>&#128666;</span> <span>Fast Shipping</span></div>
+                    <div class="badge"><span>&#128274;</span> <span>Secure Checkout</span></div>
              
         </div>
     </section>
@@ -639,7 +643,7 @@
             <div class="info-card">
                 <div class="info-icon">&#128666;</div>
                 <h3>Shipping Details</h3>
-                <p>Domestic orders ship directly from our US warehouse for fast delivery. International orders are fulfilled through our global partner warehouses, with an estimated delivery time of 4-8 business days for most countries.</p>
+               <p>Domestic US orders ship directly from our warehouse with free standard shipping. We ship worldwide! International orders are fulfilled through our global partner warehouses, with an estimated delivery time of 4-8 business days. Please note that international shipping rates may vary by destination — hence, please email us your shipping country and we'll provide an exact shipping quote.</p>
             </div>
             <div class="info-card">
                 <div class="info-icon">&#128260;</div>
