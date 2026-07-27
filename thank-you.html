@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thank You for Your Order! | TrendFloat</title>
+<meta name="description" content="Thank you for your order at TrendFloat. A confirmation has been sent to your email." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://connect.facebook.net">
+<link rel="preload" href="fonts/nunito-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/nunito-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+<!-- Meta Pixel: Purchase (fires only if the customer already accepted cookies) -->
+<script>
+  window.TF_PIXEL_ID = '4025435161082806';
+  function tfLoadMetaPixel(){
+    if(window.fbq) return;
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', window.TF_PIXEL_ID);
+  }
+  (function() {
+    try {
+      if (localStorage.getItem('tf_consent') === 'accepted') {
+        tfLoadMetaPixel();
+        fbq('track', 'Purchase', {
+          value: 21.99,
+          currency: 'USD',
+          content_name: 'Smart Interactive Cat Ball',
+          content_ids: ['trendfloat-cat-ball'],
+          content_type: 'product'
+        });
+      }
+    } catch(e) {}
+  })();
+</script>
+<!-- End Meta Pixel -->
+
+<style>
+  @font-face { font-family:'Nunito'; font-style:normal; font-weight:400; font-display:swap;
+    src:url('fonts/nunito-latin-400-normal.woff2') format('woff2'); }
+  @font-face { font-family:'Nunito'; font-style:normal; font-weight:600; font-display:swap;
+    src:url('fonts/nunito-latin-600-normal.woff2') format('woff2'); }
+  @font-face { font-family:'Nunito'; font-style:normal; font-weight:700; font-display:swap;
+    src:url('fonts/nunito-latin-700-normal.woff2') format('woff2'); }
+  @font-face { font-family:'Nunito'; font-style:normal; font-weight:800; font-display:swap;
+    src:url('fonts/nunito-latin-800-normal.woff2') format('woff2'); }
+  @font-face { font-family:'Nunito'; font-style:normal; font-weight:900; font-display:swap;
+    src:url('fonts/nunito-latin-900-normal.woff2') format('woff2'); }
+
+  :root {
+    --brown: #3d2414;
+    --brown-light: #5a3a24;
+    --cream: #fdf9f4;
+    --yellow: #ffd140;
+    --yellow-hover: #f5c020;
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+    --border: #e5e5e5;
+    --green: #2a8a4a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { overflow-x: hidden; }
+  body {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* Header */
+  .header {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+  }
+  .header-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo {
+    font-weight: 900;
+    font-size: 26px;
+    color: var(--brown);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo-mark {
+    width: 34px; height: 34px;
+    background: var(--brown);
+    color: var(--yellow);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+  }
+
+  /* Main content */
+  .main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(61,36,20,0.08);
+    max-width: 560px;
+    width: 100%;
+    padding: 48px 40px;
+    text-align: center;
+  }
+  .check-circle {
+    width: 84px;
+    height: 84px;
+    background: #e8f5ec;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+  }
+  .check-circle svg { width: 42px; height: 42px; }
+  h1 {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--brown);
+    margin-bottom: 12px;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+  .order-info {
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 20px 22px;
+    text-align: left;
+    margin-bottom: 28px;
+  }
+  .order-info h3 {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--brown);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .order-info ul { list-style: none; }
+  .order-info li {
+    font-size: 14.5px;
+    color: #333;
+    padding: 6px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.5;
+  }
+  .divider { border-top: 1px solid var(--border); margin: 24px 0; }
+  .continue-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    background: var(--yellow);
+    color: #000;
+    font-weight: 900;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    padding: 16px;
+    border-radius: 8px;
+    transition: background 0.15s, transform 0.05s;
+  }
+  .continue-btn:hover { background: var(--yellow-hover); }
+  .continue-btn:active { transform: scale(0.99); }
+
+  .support-line {
+    margin-top: 24px;
+    font-size: 14.5px;
+    color: var(--muted);
+  }
+  .support-line a {
+    color: var(--brown);
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  /* Footer */
+  .footer {
+    background: var(--brown);
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 24px 20px;
+    font-size: 13px;
+  }
+  .footer a { color: var(--yellow); }
+
+  @media (max-width: 480px) {
+    .card { padding: 36px 24px; }
+    h1 { font-size: 23px; }
+    .check-circle { width: 68px; height: 68px; }
+    .check-circle svg { width: 34px; height: 34px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <span class="logo">
+      <span class="logo-mark">T</span>
+      <span>TrendFloat</span>
+    </span>
+  </div>
+</header>
+
+<main class="main">
+  <div class="card">
+    <div class="check-circle">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6L9 17L4 12" stroke="#2a8a4a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <h1>Thank you for your order!</h1>
+    <p class="subtitle">Your payment was successful and your Smart Interactive Cat Ball is on its way. A confirmation email with your receipt has been sent by PayPal.</p>
+
+    <div class="order-info">
+      <h3>What happens next</h3>
+      <ul>
+        <li>📦 Your order will be prepared and dispatched from our partner warehouse</li>
+        <li>🚚 Estimated delivery: 5–11 business days</li>
+        <li>📧 You'll receive tracking information by email once your order ships</li>
+        <li>💬 Questions about your order? We're happy to help</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <a href="index.html" target="_blank" rel="noopener" class="continue-btn">🐾 Continue Shopping →</a>
+
+    <p class="support-line">
+      Need help with your order?<br>
+      📧 <a href="mailto:yairst2408@gmail.com">yairst2408@gmail.com</a>
+    </p>
+  </div>
+</main>
+
+<footer class="footer">
+  © 2026 TrendFloat. All rights reserved.
+</footer>
+
+</body>
+</html>
