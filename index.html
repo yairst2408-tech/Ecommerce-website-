@@ -964,22 +964,46 @@
       <li><span>🔋</span><span>USB-C Rechargeable – Long Battery Life</span></li>
     </ul>
 
-    <form class="cta-form" action="https://www.paypal.com/ncp/payment/HDJML4YTTSBCA" method="post" target="_blank" onsubmit="tfTrackCheckout();">
-      <div class="stock-urgency">
-        <span class="stock-dot"></span>
-        <span>Only 43 units left in our USA warehouse — order today</span>
-      </div>
-      <button class="cta" type="submit">
-        <span class="cta-lock">🔒</span>
-        <span>BUY NOW – SECURE CHECKOUT</span>
-      </button>
-      <div class="payment-icons">
-        <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="Cards" />
-      </div>
-      <div class="powered">
-        Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="PayPal" />
-      </div>
-    </form>
+    <div class="stock-urgency">
+      <span class="stock-dot"></span>
+      <span>Only 43 units left in our USA warehouse — order today</span>
+    </div>
+    <div style="width:100%;display:flex;justify-content:center;">
+      <style>
+        .pp-HDJML4YTTSBCA{
+          text-align:center;
+          border:none;
+          border-radius:0.5rem;
+          width:100%;
+          max-width:28rem;
+          padding:0 2rem;
+          height:3.75rem;
+          font-weight:bold;
+          background-color:#FFD140;
+          color:#000000;
+          font-family:"Helvetica Neue",Arial,sans-serif;
+          font-size:1.375rem;
+          line-height:1.5rem;
+          cursor:pointer;
+        }
+        .pp-form-HDJML4YTTSBCA{
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          gap:0.6rem;
+          width:100%;
+          max-width:28rem;
+        }
+        @media (max-width:480px){
+          .pp-HDJML4YTTSBCA{ height:3.25rem; font-size:1.125rem; }
+        }
+      </style>
+      <form class="pp-form-HDJML4YTTSBCA" action="https://www.paypal.com/ncp/payment/HDJML4YTTSBCA" method="post" target="_blank" onsubmit="tfTrackCheckout();">
+        <button class="pp-HDJML4YTTSBCA" type="submit">Pay with <span style="color:#253B80;font-weight:800;">Pay</span><span style="color:#179BD7;font-weight:800;">Pal</span></button>
+        <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
+        <section style="font-size: 0.75rem;">Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+      </form>
+    </div>
 
     <div class="shipping-note">
       🚚 <span>Ships worldwide within 5–11 days from our partner warehouses</span>
