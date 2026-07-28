@@ -6,7 +6,7 @@
 <title>Smart Interactive Cat Ball – Auto Rolling USB Rechargeable Toy | TrendFloat</title>
 <meta name="description" content="Smart Interactive Cat Ball – Auto rolling, USB rechargeable electric cat toy. Two smart modes, whisper-quiet, bite-resistant. Free worldwide shipping." />
 <link rel="preconnect" href="https://connect.facebook.net">
-<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://www.statcounter.com">
 <link rel="preload" href="fonts/nunito-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/nunito-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
 
@@ -53,28 +53,34 @@
 </script>
 <!-- End Meta Pixel -->
 
-<!-- Google Analytics (GA4, loaded only after consent) -->
+<!-- Statcounter (loaded only after consent) -->
 <script>
-  window.TF_GA_ID = 'G-BSTR97N0SN';
-  function tfLoadGA4(){
-    if(window.TF_GA_LOADED) return;
-    window.TF_GA_LOADED = true;
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    window.gtag = gtag;
-    gtag('js', new Date());
-    gtag('config', window.TF_GA_ID);
+  function tfLoadStatcounter(){
+    if(window.TF_SC_LOADED) return;
+    window.TF_SC_LOADED = true;
+    var sc = document.createElement('script');
+    sc.type = 'text/javascript';
+    sc.text = 'var sc_project=13338728; var sc_invisible=1; var sc_security="e47e4595";';
+    document.head.appendChild(sc);
     var s = document.createElement('script');
+    s.type = 'text/javascript';
     s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.TF_GA_ID;
+    s.src = 'https://www.statcounter.com/counter/counter.js';
     document.head.appendChild(s);
   }
-  // Fire GA immediately if consent was previously granted
+  // Fire immediately if consent was previously granted
   try {
-    if(localStorage.getItem('tf_consent') === 'accepted') tfLoadGA4();
+    if(localStorage.getItem('tf_consent') === 'accepted') tfLoadStatcounter();
   } catch(e) {}
 </script>
-<!-- End Google Analytics -->
+<!-- End Statcounter -->
+<noscript>
+  <div class="statcounter">
+    <a title="Web Analytics" href="https://statcounter.com/" target="_blank">
+      <img class="statcounter" src="https://c.statcounter.com/13338728/0/e47e4595/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade">
+    </a>
+  </div>
+</noscript>
 
 <style>
   /* Self-hosted Nunito */
@@ -1352,7 +1358,7 @@
     <h3>5. Who we share data with</h3>
     <ul class="policy-list info">
       <li><strong>Meta Platforms Inc.</strong> (Facebook, Instagram) – for advertising and analytics</li>
-      <li><strong>Google LLC</strong> (Google Analytics) – for website analytics</li>
+      <li><strong>Statcounter</strong> – for basic, aggregated website analytics</li>
       <li><strong>PayPal Inc.</strong> – for payment processing</li>
       <li><strong>Our hosting provider</strong> – for serving the website</li>
       <li><strong>Shipping carriers</strong> – to deliver your order (shipping address only)</li>
@@ -1385,7 +1391,7 @@
     <p>Our site uses the following cookies, and only if you have accepted via the cookie banner:</p>
     <ul class="policy-list info">
       <li><code>_fbp</code> – set by Meta Pixel for advertising. Lifespan: up to 90 days.</li>
-      <li><code>_ga</code>, <code>_ga_*</code> – set by Google Analytics to distinguish users and sessions. Lifespan: up to 2 years.</li>
+      <li><code>sc_*</code> – set by Statcounter for basic visit analytics. No personal data is collected.</li>
     </ul>
     <p>We do not use any other cookies. You can withdraw consent at any time by clearing your browser cookies for our domain and reloading the site.</p>
 
@@ -1505,7 +1511,7 @@
     try { localStorage.setItem('tf_consent', 'accepted'); } catch(e) {}
     document.getElementById('cookieBanner').classList.remove('show');
     tfLoadMetaPixel();
-    tfLoadGA4();
+    tfLoadStatcounter();
     if (window.tfUpdateBackToTop) window.tfUpdateBackToTop();
   }
   function tfRejectCookies() {
