@@ -26,9 +26,24 @@
     fbq('init', window.TF_PIXEL_ID);
     fbq('track', 'PageView');
   }
-  function tfTrackCheckout(){
+  function tfTrackCheckout(e){
+    // Prevent instant navigation so the pixel event has time to actually send
+    // before the browser leaves the page (important now that checkout opens
+    // in the same tab instead of a new one).
+    if (e) e.preventDefault();
+    var form = e ? e.target : null;
+
+    function goToPayPal(){
+      if (form) form.submit();
+    }
+
     if(typeof fbq === 'function'){
       fbq('track','InitiateCheckout',{value:21.99,currency:'USD',content_name:'Smart Interactive Cat Ball',content_ids:['trendfloat-cat-ball']});
+      // Give the pixel request a brief moment to fire, then continue to PayPal
+      setTimeout(goToPayPal, 250);
+    } else {
+      // Pixel not loaded (e.g. cookies not yet accepted) — don't block checkout
+      goToPayPal();
     }
   }
   // Fire pixel immediately if consent was previously granted
@@ -999,10 +1014,11 @@
           .pp-HDJML4YTTSBCA{ height:3.25rem; font-size:1.125rem; }
         }
       </style>
-      <form class="pp-form-HDJML4YTTSBCA" action="https://www.paypal.com/ncp/payment/HDJML4YTTSBCA" method="post" target="_blank" onsubmit="tfTrackCheckout();">
+      <form class="pp-form-HDJML4YTTSBCA" action="https://www.paypal.com/ncp/payment/HDJML4YTTSBCA" method="post" target="_self" onsubmit="tfTrackCheckout(event);">
         <button class="pp-HDJML4YTTSBCA" type="submit">Pay with <span style="color:#253B80;font-weight:800;">Pay</span><span style="color:#179BD7;font-weight:800;">Pal</span></button>
         <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
         <section style="font-size: 0.75rem;">Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+        <section style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:6px;">🔒 Secure checkout · SSL encrypted · Buyer protection by PayPal</section>
       </form>
     </div>
 
