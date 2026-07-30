@@ -38,7 +38,7 @@
     }
 
     if(typeof fbq === 'function'){
-      fbq('track','InitiateCheckout',{value:21.99,currency:'USD',content_name:'Smart Interactive Cat Ball',content_ids:['trendfloat-cat-ball']});
+      fbq('track','InitiateCheckout',{value:17.99,currency:'USD',content_name:'Smart Interactive Cat Ball',content_ids:['trendfloat-cat-ball']});
       // Give the pixel request a brief moment to fire, then continue to PayPal
       setTimeout(goToPayPal, 250);
     } else {
@@ -919,7 +919,7 @@
 <!-- Top announcement bar -->
 <div class="topbar">
   <div class="topbar-inner">
-    <div class="topbar-item">🎉 <span>SUMMER SALE – Save 63% Today</span></div>
+    <div class="topbar-item">🎉 <span>SUMMER SALE – Save 70% Today</span></div>
     <div class="topbar-item">🐾 <span>68,000+ Happy Cat Parents</span></div>
     <div class="topbar-item">🚚 <span>Free Worldwide Shipping</span></div>
   </div>
@@ -961,7 +961,7 @@
   </div>
 
   <div class="info">
-    <div class="sale-banner">⏰ LIMITED TIME: 63% OFF → Only $21.99 (was $59.99) + FREE Shipping</div>
+    <div class="sale-banner">⏰ LIMITED TIME: 70% OFF → Only $17.99 (was $59.99) + FREE Shipping</div>
 
     <h1>Watch Your Cat Go Absolutely Crazy 🐱<br><span style="font-size: 0.85em; color: var(--muted);">Smart Auto-Rolling Ball That Keeps Them Playing for Hours</span></h1>
 
@@ -971,7 +971,7 @@
     </div>
 
     <div class="price-row">
-      <span class="price">$21.99</span>
+      <span class="price">$17.99</span>
       <span class="price-old">$59.99</span>
       <span class="sale-tag">🏷 SUMMER SALE</span>
     </div>
@@ -1155,6 +1155,189 @@
     </div>
   </div>
 </section>
+
+<!-- Comparison Section -->
+<style>
+  .comparison-compact {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 40px 20px;
+  }
+  
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  
+  .comparison-card {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid #e5e5e5;
+  }
+  
+  .comparison-card-highlight {
+    background: linear-gradient(135deg, #fff9f0 0%, #fff5e6 100%);
+    border: 2px solid #ffd140;
+  }
+  
+  @media (max-width: 768px) {
+    .comparison-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    
+    .comparison-card {
+      padding: 16px;
+    }
+    
+    .comparison-compact {
+      padding: 20px 16px;
+      margin: 40px auto;
+    }
+    
+    .comparison-compact h2 {
+      font-size: 24px !important;
+    }
+    
+    .comparison-compact p {
+      font-size: 14px !important;
+    }
+  }
+</style>
+
+<section class="comparison-compact" style="max-width: 1200px; margin: 60px auto; padding: 40px 20px;">
+  
+  <div style="text-align: center; margin-bottom: 40px;">
+    <h2 style="font-size: 32px; font-weight: 900; color: #1a1a1a; margin-bottom: 8px;">Why Choose TrendFloat Over Others?</h2>
+    <p style="font-size: 16px; color: #6b6b6b;">See how we stack up against the competition</p>
+  </div>
+
+  <div class="comparison-grid">
+    
+    <!-- Competitor Card -->
+    <div style="background: #f9f9f9; border-radius: 12px; padding: 24px; border: 1px solid #e5e5e5;">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <div style="font-size: 14px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Competitor</div>
+        <div style="font-size: 20px; font-weight: 800; color: #1a1a1a;">Other Brands</div>
+      </div>
+
+      <div style="space-y: 16px;">
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5;">
+          <div style="font-size: 12px; color: #999; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Price</div>
+          <div style="font-size: 18px; font-weight: 800; color: #1a1a1a;">€17.95 (~$19.50)</div>
+        </div>
+
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5;">
+          <div style="font-size: 12px; color: #999; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Shipping Cost</div>
+          <div style="font-size: 14px; color: #999;">Variable (cost unclear)</div>
+        </div>
+
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5;">
+          <div style="font-size: 12px; color: #999; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Processing & Delivery</div>
+          <div style="font-size: 14px; color: #999;">24-72 hours processing</div>
+          <div style="font-size: 12px; color: #999; margin-top: 4px;">6-15 days delivery</div>
+        </div>
+
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5;">
+          <div style="font-size: 12px; color: #999; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Reviews</div>
+          <div style="font-size: 14px; color: #999;">⭐⭐⭐⭐⭐ 11 reviews</div>
+        </div>
+
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5;">
+          <div style="font-size: 12px; color: #999; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Guarantee</div>
+          <div style="font-size: 14px; color: #999;">30-day return policy</div>
+        </div>
+
+        <div>
+          <div style="font-size: 12px; color: #999; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Support</div>
+          <div style="font-size: 14px; color: #999;">Standard support</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TrendFloat Card (Highlighted) -->
+    <div style="background: linear-gradient(135deg, #fff9f0 0%, #fff5e6 100%); border-radius: 12px; padding: 24px; border: 2px solid #ffd140; position: relative;">
+      <div style="position: absolute; top: -12px; right: 20px; background: #ffd140; color: #3d2414; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">🏆 Best Value</div>
+      
+      <div style="text-align: center; margin-bottom: 24px; padding-top: 8px;">
+        <div style="font-size: 14px; font-weight: 700; color: #ffd140; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">TrendFloat</div>
+        <div style="font-size: 20px; font-weight: 800; color: #3d2414;">Smart Cat Ball</div>
+      </div>
+
+      <div style="space-y: 16px;">
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255, 209, 64, 0.3);">
+          <div style="font-size: 12px; color: #6b6b6b; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Price</div>
+          <div style="font-size: 18px; font-weight: 800; color: #3d2414;">$17.99 <span style="font-size: 12px; color: #ff6b6b; text-decoration: line-through;">$59.99</span></div>
+          <div style="font-size: 12px; color: #ff6b6b; font-weight: 700; margin-top: 4px;">✓ Lowest Price (70% OFF)</div>
+        </div>
+
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255, 209, 64, 0.3);">
+          <div style="font-size: 12px; color: #6b6b6b; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Shipping Cost</div>
+          <div style="font-size: 14px; color: #3d2414; font-weight: 700;">✓ Completely FREE</div>
+          <div style="font-size: 12px; color: #6b6b6b;">All orders worldwide</div>
+        </div>
+
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255, 209, 64, 0.3);">
+          <div style="font-size: 12px; color: #6b6b6b; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Processing & Delivery</div>
+          <div style="font-size: 14px; color: #3d2414; font-weight: 700;">✓ Express Processing</div>
+          <div style="font-size: 12px; color: #6b6b6b;">24-72 hours preparation</div>
+          <div style="font-size: 14px; color: #3d2414; font-weight: 700; margin-top: 6px;">Ultra-Fast Arrival</div>
+          <div style="font-size: 12px; color: #6b6b6b;">3-7 days (US) | 5-11 days (Worldwide)</div>
+          <div style="font-size: 12px; color: #4CAF50; font-weight: 700; margin-top: 4px;">✓ Tracked in Real-Time</div>
+        </div>
+
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255, 209, 64, 0.3);">
+          <div style="font-size: 12px; color: #6b6b6b; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Reviews</div>
+          <div style="font-size: 14px; color: #3d2414; font-weight: 700;">⭐⭐⭐⭐⭐ 4.9/5</div>
+          <div style="font-size: 12px; color: #6b6b6b;">✓ 300+ Verified</div>
+        </div>
+
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255, 209, 64, 0.3);">
+          <div style="font-size: 12px; color: #6b6b6b; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Guarantee</div>
+          <div style="font-size: 14px; color: #3d2414; font-weight: 700;">✓ 30-Day Risk-Free</div>
+          <div style="font-size: 12px; color: #6b6b6b;">No questions asked</div>
+        </div>
+
+        <div style="background: white; padding: 12px; border-radius: 8px; border-left: 3px solid #ffd140;">
+          <div style="font-size: 12px; color: #6b6b6b; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Support</div>
+          <div style="font-size: 13px; color: #3d2414; font-weight: 700;">24/7 Dedicated Team</div>
+          <div style="font-size: 12px; color: #6b6b6b;">Hassle-free returns</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Key Features -->
+  <div style="background: #f9f9f9; border-radius: 12px; padding: 24px;">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <div style="font-size: 18px; font-weight: 800; color: #1a1a1a;">What Makes TrendFloat Different</div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px;">
+      <div style="text-align: center;">
+        <div style="font-size: 24px; margin-bottom: 8px;">🔋</div>
+        <div style="font-size: 13px; font-weight: 700; color: #3d2414;">8+ Hour Battery</div>
+      </div>
+      <div style="text-align: center;">
+        <div style="font-size: 24px; margin-bottom: 8px;">🔇</div>
+        <div style="font-size: 13px; font-weight: 700; color: #3d2414;">Whisper Quiet</div>
+      </div>
+      <div style="text-align: center;">
+        <div style="font-size: 24px; margin-bottom: 8px;">💪</div>
+        <div style="font-size: 13px; font-weight: 700; color: #3d2414;">Military Grade</div>
+      </div>
+      <div style="text-align: center;">
+        <div style="font-size: 24px; margin-bottom: 8px;">📦</div>
+        <div style="font-size: 13px; font-weight: 700; color: #3d2414;">Tracked Delivery</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- End Comparison Section -->
 
 <!-- Reviews (placeholder) -->
 <section class="reviews" id="reviews">
