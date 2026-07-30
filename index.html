@@ -140,6 +140,47 @@
   .topbar-item { display: flex; align-items: center; gap: 8px; }
   .topbar-item + .topbar-item { border-left: 1px solid rgba(255,255,255,0.2); padding-left: 16px; }
 
+  /* Sticky Mobile Checkout Button */
+  @media (max-width: 768px) {
+    .sticky-checkout-button {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-hover) 100%);
+      padding: 12px 16px;
+      z-index: 999;
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+      border-radius: 12px 12px 0 0;
+      display: block !important;
+    }
+    
+    .sticky-checkout-button button {
+      width: 100%;
+      padding: 12px 16px;
+      background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-hover) 100%);
+      border: none;
+      border-radius: 8px;
+      font-weight: 900;
+      font-size: 14px;
+      color: var(--brown);
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    body {
+      padding-bottom: 60px;
+    }
+  }
+  
+  /* Hide on desktop */
+  @media (min-width: 769px) {
+    .sticky-checkout-button {
+      display: none !important;
+    }
+  }
+
   /* Header */
   .header {
     border-bottom: 1px solid var(--border);
@@ -224,6 +265,39 @@
   }
   .thumb.active { border-color: var(--brown); }
   .thumb img { width: 100%; height: 100%; object-fit: cover; }
+  
+  /* Mobile: Reduce hero image height but keep good aspect ratio */
+  @media (max-width: 768px) {
+    .gallery-main {
+      aspect-ratio: 1/1;
+      width: 100%;
+      max-height: none;
+    }
+    .thumbs {
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .thumb {
+      width: 70px;
+      height: 70px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gallery-main {
+      aspect-ratio: 1/1;
+      width: 100%;
+      max-height: none;
+      border-radius: 8px;
+    }
+    .thumbs {
+      gap: 6px;
+    }
+    .thumb {
+      width: 60px;
+      height: 60px;
+    }
+  }
 
   /* Info panel */
   .sale-banner {
@@ -646,7 +720,22 @@
   .back-to-top:hover { background: var(--brown-light); }
   .back-to-top:active { transform: scale(0.93); }
   @media (max-width: 480px) {
-    .back-to-top { right: 14px; bottom: 14px; width: 44px; height: 44px; font-size: 18px; }
+    .back-to-top { 
+      right: 14px; 
+      bottom: 70px;
+      width: 44px; 
+      height: 44px; 
+      font-size: 18px;
+      z-index: 998;
+    }
+  }
+  
+  /* On mobile with sticky button, move back-to-top above it */
+  @media (max-width: 768px) {
+    .back-to-top {
+      bottom: 70px;
+      z-index: 998;
+    }
   }
 
   /* About section */
@@ -965,6 +1054,19 @@
 
     <h1>Watch Your Cat Go Absolutely Crazy 🐱<br><span style="font-size: 0.85em; color: var(--muted);">Smart Auto-Rolling Ball That Keeps Them Playing for Hours</span></h1>
 
+    <!-- Mobile: Early Trust Signals -->
+    <div style="display: none; background: #f0f8ff; border: 1px solid #d4e8f7; border-radius: 8px; padding: 10px 12px; margin-bottom: 16px; font-size: 13px; font-weight: 700; color: #0052a3; text-align: center;">
+      ⭐ 4.9/5 • 300+ Verified Reviews • ✅ Trusted by Cat Parents Worldwide
+    </div>
+    
+    <style>
+      @media (max-width: 768px) {
+        div[style*="display: none"][style*="#f0f8ff"] {
+          display: block !important;
+        }
+      }
+    </style>
+
     <div class="rating">
       <span class="stars">★★★★★</span>
       <span id="reviewCount">Reviews loading…</span>
@@ -986,9 +1088,16 @@
       <li><span>⚡</span><span>All-Day Battery – Charge Once, Play All Week</span></li>
     </ul>
 
-    <div class="stock-urgency">
+    <div class="stock-urgency" style="flex-wrap: wrap; gap: 8px;">
       <span class="stock-dot"></span>
-      <span>⚡ 42 units left at this price • 300+ cats are already loving this • Ships within 24 hours</span>
+      <span style="flex: 1;">
+        <strong style="color: #d63535;">⚡ HURRY:</strong> Only 42 units left at $17.99<br>
+        <span style="font-size: 0.9em; color: var(--muted);">🚚 Ships today if ordered in next 4 hours</span>
+      </span>
+    </div>
+    
+    <div style="background: #fffaed; border: 1px solid #ffd140; border-radius: 8px; padding: 10px 12px; margin: 12px 0; font-size: 13px; font-weight: 600; text-align: center; color: var(--brown);">
+      ✅ Free Shipping Worldwide • 3-7 Days USA • 5-11 Days International
     </div>
     <div style="width:100%;display:flex;justify-content:center;">
       <style>
@@ -1826,6 +1935,18 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   })();
+</script>
+
+<!-- Sticky Mobile Checkout Button -->
+<div class="sticky-checkout-button" id="stickyCheckout">
+  <button onclick="document.querySelector('.pp-form-HDJML4YTTSBCA').submit();" style="width: 100%; padding: 12px 16px; background: linear-gradient(135deg, #ffd140 0%, #f5c020 100%); border: none; border-radius: 8px; font-weight: 900; font-size: 14px; color: #3d2414; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px;">
+    🛒 TAP TO BUY NOW
+  </button>
+</div>
+
+<script>
+  // Sticky button is now handled by CSS media queries
+  // This ensures it works even if JavaScript doesn't load
 </script>
 
 </body>
