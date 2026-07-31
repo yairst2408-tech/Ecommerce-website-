@@ -1,356 +1,637 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrendFloat - Under Construction</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Smart Interactive Cat Ball – Auto Rolling USB Rechargeable Toy | TrendFloat</title>
+<meta name="description" content="Smart Interactive Cat Ball – Auto rolling, USB rechargeable electric cat toy. Two smart modes, whisper-quiet, bite-resistant. Free worldwide shipping." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brown: #3d2414;
+    --brown-dark: #2a1809;
+    --brown-light: #5a3a24;
+    --cream: #fdf9f4;
+    --yellow: #ffd140;
+    --yellow-hover: #f5c020;
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+    --border: #e5e5e5;
+    --star: #ffb020;
+    --sale: #d63535;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: #fff;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            overflow: hidden;
-        }
+  /* Top bar */
+  .topbar {
+    background: var(--brown);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .topbar-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 20px;
+    gap: 16px;
+  }
+  .topbar-item { display: flex; align-items: center; gap: 8px; }
+  .topbar-item + .topbar-item { border-left: 1px solid rgba(255,255,255,0.2); padding-left: 16px; }
 
-        .bg-decoration {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-        }
+  /* Header */
+  .header {
+    border-bottom: 1px solid var(--border);
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .logo {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 26px;
+    color: var(--brown);
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo-mark {
+    width: 34px; height: 34px;
+    background: var(--brown);
+    color: var(--yellow);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+  }
+  .nav { display: flex; gap: 28px; font-weight: 700; font-size: 15px; }
+  .nav a:hover { color: var(--brown); }
+  .header-icons { display: flex; gap: 18px; font-size: 20px; color: var(--brown); }
 
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.1;
-        }
+  /* Product section */
+  .product {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+  .gallery-main {
+    background: #f5f5f5;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gallery-main img { width: 100%; height: 100%; object-fit: cover; }
+  .thumbs { display: flex; gap: 10px; margin-top: 12px; overflow-x: auto; }
+  .thumb {
+    width: 90px; height: 90px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    cursor: pointer;
+    background: #f5f5f5;
+    flex-shrink: 0;
+  }
+  .thumb.active { border-color: var(--brown); }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; }
 
-        .circle1 {
-            width: 300px;
-            height: 300px;
-            top: -100px;
-            right: -100px;
-            animation: float 20s infinite ease-in-out;
-        }
+  /* Info panel */
+  .sale-banner {
+    border: 2px solid var(--text);
+    padding: 16px 20px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    color: var(--text);
+  }
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 15px;
+    color: var(--muted);
+  }
+  .stars { color: var(--star); font-size: 18px; letter-spacing: 2px; }
+  .price-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+  .price { font-size: 28px; font-weight: 900; color: var(--sale); }
+  .price-old { font-size: 20px; color: var(--muted); text-decoration: line-through; }
+  .sale-tag {
+    background: var(--brown);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 6px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .offer-ends {
+    color: var(--sale);
+    font-weight: 800;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  .divider { border-top: 1px solid var(--border); margin: 20px 0; }
+  .benefits { list-style: none; margin-bottom: 24px; }
+  .benefits li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .benefits li span:first-child { font-size: 20px; }
 
-        .circle2 {
-            width: 200px;
-            height: 200px;
-            bottom: -50px;
-            left: -50px;
-            animation: float 25s infinite ease-in-out reverse;
-        }
+  .options-label { font-weight: 800; margin-bottom: 8px; font-size: 15px; }
+  .colors { display: flex; gap: 10px; margin-bottom: 20px; }
+  .color-opt {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.15s;
+  }
+  .color-opt:hover { border-color: var(--brown); }
+  .color-opt.selected { border-color: var(--brown); background: #fdf6ee; }
+  .color-swatch { width: 16px; height: 16px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.1); }
 
-        .circle3 {
-            width: 150px;
-            height: 150px;
-            top: 50%;
-            left: 10%;
-            animation: float 30s infinite ease-in-out;
-        }
+  .qty-row { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+  .qty-label { font-weight: 800; font-size: 15px; }
+  .qty-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .qty-btn {
+    width: 40px; height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    background: #fff;
+    transition: background 0.15s;
+  }
+  .qty-btn:hover { background: #f5f5f5; }
+  .qty-input {
+    width: 50px; height: 40px;
+    text-align: center;
+    border: none;
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+  }
 
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px) translateX(0px);
-            }
-            50% {
-                transform: translateY(30px) translateX(20px);
-            }
-        }
+  .cta-form { display: block; }
+  .cta {
+    width: 100%;
+    background: var(--yellow);
+    color: #000;
+    font-weight: 900;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding: 18px;
+    border-radius: 6px;
+    transition: background 0.15s, transform 0.05s;
+    font-family: inherit;
+  }
+  .cta:hover { background: var(--yellow-hover); }
+  .cta:active { transform: scale(0.99); }
+  .payment-icons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+  .payment-icons img { height: 24px; opacity: 0.9; }
+  .powered {
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 8px;
+  }
+  .powered img { display: inline; height: 12px; vertical-align: middle; margin-left: 4px; }
 
-        .container {
-            max-width: 700px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            z-index: 10;
-            position: relative;
-            animation: slideUp 0.6s ease;
-        }
+  .shipping-note {
+    background: #f9f5ef;
+    padding: 14px 16px;
+    border-radius: 6px;
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+  /* Features strip */
+  .features {
+    background: var(--cream);
+    padding: 60px 20px;
+    margin-top: 40px;
+  }
+  .features-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .features h2 {
+    font-size: 32px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 12px;
+    color: var(--brown);
+  }
+  .features-sub {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 40px;
+    font-size: 16px;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  .feature {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .feature-img { aspect-ratio: 1/1; background: #f5f5f5; }
+  .feature-img img { width: 100%; height: 100%; object-fit: cover; }
+  .feature-text { padding: 30px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-text h3 { font-size: 22px; font-weight: 900; margin-bottom: 10px; color: var(--brown); }
+  .feature-text p { color: var(--muted); font-size: 15px; }
 
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 60px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
+  /* Reviews */
+  .reviews {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 20px;
+  }
+  .reviews h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 30px;
+  }
+  .reviews-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  .reviews-avg .stars { font-size: 24px; }
+  .reviews-avg { text-align: center; }
+  .reviews-avg-num { font-weight: 800; font-size: 18px; margin-top: 4px; }
+  .reviews-avg-count { color: var(--muted); font-size: 14px; }
+  .write-review {
+    background: var(--brown);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 15px;
+  }
+  .review-placeholder {
+    text-align: center;
+    color: var(--muted);
+    font-style: italic;
+    padding: 40px;
+    background: var(--cream);
+    border-radius: 8px;
+  }
 
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-        }
+  /* Footer */
+  .footer {
+    background: var(--brown);
+    color: #fff;
+    padding: 60px 20px 30px;
+    margin-top: 40px;
+  }
+  .footer-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  .footer-brand .logo { color: var(--yellow); font-size: 30px; }
+  .footer-brand p { margin-top: 12px; color: rgba(255,255,255,0.7); font-size: 14px; }
+  .footer h4 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 18px;
+    color: #fff;
+  }
+  .footer ul { list-style: none; }
+  .footer li { margin-bottom: 10px; color: rgba(255,255,255,0.8); font-size: 15px; }
+  .footer li a:hover { color: var(--yellow); }
+  .footer-bottom {
+    max-width: 1400px;
+    margin: 40px auto 0;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    text-align: center;
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+  }
 
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 200px;
-            height: 200px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .error-code {
-            font-size: 120px;
-            font-weight: 900;
-            color: white;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            margin: 0;
-            line-height: 1;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-
-        .status-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 13px;
-            font-weight: 600;
-            margin-top: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .content {
-            padding: 60px 40px;
-            text-align: center;
-        }
-
-        .content h1 {
-            font-size: 32px;
-            color: #333;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .content p {
-            color: #666;
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .construction-icon {
-            font-size: 80px;
-            margin: 30px 0;
-            animation: bounce 2s ease-in-out infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin: 40px 0;
-            text-align: left;
-        }
-
-        .feature {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 4px solid #667eea;
-        }
-
-        .feature-icon {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .feature h3 {
-            font-size: 14px;
-            color: #333;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-
-        .feature p {
-            font-size: 12px;
-            color: #999;
-            margin: 0;
-        }
-
-        .footer {
-            background: #f8f9fa;
-            padding: 30px 40px;
-            text-align: center;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .footer p {
-            color: #999;
-            font-size: 13px;
-            margin: 0;
-        }
-
-        .social-links {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .social-links a {
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 50%;
-            color: #667eea;
-            text-decoration: none;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: #667eea;
-            color: white;
-            border-color: #667eea;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                margin: 20px;
-            }
-
-            .header {
-                padding: 40px 30px;
-            }
-
-            .error-code {
-                font-size: 80px;
-            }
-
-            .content {
-                padding: 40px 30px;
-            }
-
-            .content h1 {
-                font-size: 24px;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  /* Responsive */
+  @media (max-width: 900px) {
+    .topbar-inner { flex-direction: column; gap: 8px; padding: 10px; font-size: 12px; }
+    .topbar-item + .topbar-item { border-left: none; padding-left: 0; }
+    .nav { display: none; }
+    .product { grid-template-columns: 1fr; gap: 30px; padding: 20px; }
+    h1 { font-size: 24px; }
+    .price { font-size: 24px; }
+    .features-grid { grid-template-columns: 1fr; }
+    .feature { grid-template-columns: 1fr; }
+    .feature-text { padding: 20px; }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 30px; }
+    .reviews-summary { flex-direction: column; gap: 16px; }
+  }
+  @media (max-width: 500px) {
+    .footer-inner { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
-    <div class="bg-decoration">
-        <div class="circle circle1"></div>
-        <div class="circle circle2"></div>
-        <div class="circle circle3"></div>
+
+<!-- Top announcement bar -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-item">🎉 <span>SUMMER SALE – Save 35% Today</span></div>
+    <div class="topbar-item">🐾 <span>68,000+ Happy Cat Parents</span></div>
+    <div class="topbar-item">🚚 <span>Free Worldwide Shipping</span></div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <span class="logo-mark">T</span>
+      <span>TrendFloat</span>
+    </a>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#features">Features</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#footer">Support</a>
+    </nav>
+    <div class="header-icons">
+      <span>🔍</span>
+      <span>👤</span>
+      <span>🛒</span>
+    </div>
+  </div>
+</header>
+
+<!-- Product section -->
+<section class="product">
+  <div>
+    <div class="gallery-main">
+      <img id="mainImg" src="img/product-hero.jpg" alt="Smart Interactive Cat Ball" />
+    </div>
+    <div class="thumbs">
+      <div class="thumb active" onclick="setImg(this,'img/product-hero.jpg')"><img src="img/product-hero.jpg" alt="" /></div>
+      <div class="thumb" onclick="setImg(this,'img/product-3.jpg')"><img src="img/product-3.jpg" alt="" /></div>
+      <div class="thumb" onclick="setImg(this,'img/product-5.jpg')"><img src="img/product-5.jpg" alt="" /></div>
+      <div class="thumb" onclick="setImg(this,'img/product-8.jpg')"><img src="img/product-8.jpg" alt="" /></div>
+      <div class="thumb" onclick="setImg(this,'img/product-6.jpg')"><img src="img/product-6.jpg" alt="" /></div>
+      <div class="thumb" onclick="setImg(this,'img/product-2.jpg')"><img src="img/product-2.jpg" alt="" /></div>
+    </div>
+  </div>
+
+  <div class="info">
+    <div class="sale-banner">🐾 SUMMER SALE: Save 35% on your favorite products!</div>
+
+    <h1>Smart Interactive Cat Ball – Auto-Rolling USB Rechargeable Toy</h1>
+
+    <div class="rating">
+      <span class="stars">★★★★★</span>
+      <span id="reviewCount">Reviews loading…</span>
     </div>
 
-    <div class="container">
-        <div class="header">
-            <div class="header-content">
-                <h1 class="error-code">🌊</h1>
-                <span class="status-badge">🚧 Under Construction</span>
-            </div>
-        </div>
-
-        <div class="content">
-            <div class="construction-icon">🔨</div>
-            
-            <h1>We're Building Something Amazing!</h1>
-            <p>Our team is hard at work crafting an incredible experience for you. This page is under construction, but we'll be live very soon.</p>
-
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Lightning Fast</h3>
-                    <p>Optimized performance for you</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🔒</div>
-                    <h3>100% Secure</h3>
-                    <p>Your data is protected</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Beautiful Design</h3>
-                    <p>Modern & user-friendly</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">📱</div>
-                    <h3>Mobile Ready</h3>
-                    <p>Works perfectly on any device</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer">
-            <p>🌊 TrendFloat © 2026 | All Rights Reserved</p>
-            <div class="social-links">
-                <a href="https://facebook.com/trendfloat" title="Facebook">f</a>
-                <a href="https://instagram.com/trendfloat" title="Instagram">📷</a>
-                <a href="https://twitter.com/trendfloat" title="Twitter">𝕏</a>
-                <a href="https://tiktok.com/@trendfloat" title="TikTok">♪</a>
-            </div>
-        </div>
+    <div class="price-row">
+      <span class="price">$21.99</span>
+      <span class="price-old">$33.90</span>
+      <span class="sale-tag">🏷 SUMMER SALE</span>
     </div>
+    <div class="offer-ends" id="offerEnds">Offer ends soon</div>
+
+    <div class="divider"></div>
+
+    <ul class="benefits">
+      <li><span>🧠</span><span>Smart Motion – Wakes on Touch</span></li>
+      <li><span>🔇</span><span>Whisper-Quiet, Day & Night</span></li>
+      <li><span>🦷</span><span>Bite-Resistant, Food-Grade ABS</span></li>
+      <li><span>🔋</span><span>USB-C Rechargeable – Cable Included</span></li>
+    </ul>
+
+    <div class="options-label">Color: <span id="selColor">Emerald Green</span></div>
+    <div class="colors">
+      <button class="color-opt selected" data-color="Emerald Green" onclick="setColor(this,'img/product-green.jpg')">
+        <span class="color-swatch" style="background:#7bc043"></span>Green
+      </button>
+      <button class="color-opt" data-color="Sapphire Blue" onclick="setColor(this,'img/product-blue.jpg')">
+        <span class="color-swatch" style="background:#1f7ae0"></span>Blue
+      </button>
+      <button class="color-opt" data-color="Orange Red" onclick="setColor(this,'img/product-orange.jpg')">
+        <span class="color-swatch" style="background:#e85a2a"></span>Orange
+      </button>
+    </div>
+
+    <form class="cta-form" action="https://www.paypal.com/ncp/payment/HDJML4YTTSBCA" method="post" target="_blank">
+      <button class="cta" type="submit">ADD TO CART</button>
+      <div class="payment-icons">
+        <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="Cards" />
+      </div>
+      <div class="powered">
+        Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="PayPal" />
+      </div>
+    </form>
+
+    <div class="shipping-note">
+      🚚 <span>Ships worldwide within 5–11 days from our partner warehouses</span>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features" id="features">
+  <div class="features-inner">
+    <h2>Why cats love it</h2>
+    <p class="features-sub">Smart, safe, and built to keep your cat entertained – with zero effort from you.</p>
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-img"><img src="img/feature-modes.jpg" alt="Two smart modes" /></div>
+        <div class="feature-text">
+          <h3>Two Smart Modes</h3>
+          <p>Normal mode runs 5 minutes then rests. Smart mode stays in 24h standby and wakes the moment your cat touches it – no wasted battery.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-img"><img src="img/feature-usb.jpg" alt="USB-C charging" /></div>
+        <div class="feature-text">
+          <h3>USB-C Rechargeable</h3>
+          <p>150 mAh battery, charges quickly with the included cable. No batteries to buy, no waste – ready whenever your cat is.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-img"><img src="img/product-5.jpg" alt="Multiple motion states" /></div>
+        <div class="feature-text">
+          <h3>Unpredictable Motion</h3>
+          <p>Randomly triggered motion patterns mimic real prey. Rolls, pivots, bumps off walls – irresistible even to lazy cats.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-img"><img src="img/product-8.jpg" alt="Adjustable speed" /></div>
+        <div class="feature-text">
+          <h3>Adjustable Speed</h3>
+          <p>Kittens, seniors, short-legged breeds – dial the speed to match your cat. Safe grip silicone shell won't scratch floors.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews (placeholder) -->
+<section class="reviews" id="reviews">
+  <h2>Customer Reviews</h2>
+  <div class="reviews-summary">
+    <div class="reviews-avg">
+      <div class="stars">★★★★★</div>
+      <div class="reviews-avg-num">4.9 out of 5</div>
+      <div class="reviews-avg-count">Based on customer reviews</div>
+    </div>
+    <button class="write-review">Write a review</button>
+  </div>
+  <div class="review-placeholder">
+    ⏳ Reviews will be added here — send them over and I'll drop them in.
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" id="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">
+        <span class="logo-mark">T</span>
+        <span>TrendFloat</span>
+      </div>
+      <p>Smart pet products your cat will actually use. Curated, tested, and shipped worldwide.</p>
+    </div>
+    <div>
+      <h4>Legal information</h4>
+      <ul>
+        <li><a href="#">Privacy policy</a></li>
+        <li><a href="#">Terms & conditions</a></li>
+        <li><a href="#">Cancellation policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>General information</h4>
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Shipping & Returns</a></li>
+        <li><a href="#">Track your order</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Help & Support</h4>
+      <ul>
+        <li>📧 <a href="mailto:yairst2408@gmail.com">yairst2408@gmail.com</a></li>
+        <li>🚚 Ships worldwide within 5–11 days</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 TrendFloat. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  // Gallery
+  function setImg(el, src) {
+    document.getElementById('mainImg').src = src;
+    document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+  }
+  // Color selector
+  function setColor(el, src) {
+    document.querySelectorAll('.color-opt').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    document.getElementById('selColor').textContent = el.dataset.color;
+    document.getElementById('mainImg').src = src;
+    document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+  }
+  // Rolling offer-ends date (7 days out)
+  (function() {
+    const d = new Date();
+    d.setDate(d.getDate() + 7);
+    const opts = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+    document.getElementById('offerEnds').textContent = 'Offer ends on ' + d.toLocaleDateString('en-US', opts);
+  })();
+  // Review count placeholder (update after you send reviews)
+  document.getElementById('reviewCount').textContent = '4.9 · 300+ reviews';
+</script>
+
 </body>
 </html>
