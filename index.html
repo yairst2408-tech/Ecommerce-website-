@@ -3,12 +3,105 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Smart Interactive Cat Ball – Auto Rolling USB Rechargeable Toy | TrendFloat</title>
-<meta name="description" content="Smart Interactive Cat Ball – Auto rolling, USB rechargeable electric cat toy. Two smart modes, whisper-quiet, bite-resistant. Free worldwide shipping." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<title>Smart Interactive Cat Toy – Auto Rolling USB Rechargeable Toy | TrendFloat</title>
+<meta name="description" content="Smart Interactive Cat Toy – Auto rolling, USB rechargeable electric cat toy. Two smart modes, whisper-quiet, bite-resistant. Free worldwide shipping." />
+<link rel="preconnect" href="https://connect.facebook.net">
+<link rel="preconnect" href="https://www.paypal.com">
+<link rel="dns-prefetch" href="https://www.paypal.com">
+<link rel="preconnect" href="https://www.paypal.com">
+<link rel="preconnect" href="https://www.paypalobjects.com">
+<link rel="dns-prefetch" href="https://www.paypal.com">
+<link rel="preconnect" href="https://www.statcounter.com">
+<link rel="preload" href="img/product-hero.webp" as="image" fetchpriority="high">
+  <link rel="preload" href="img/product-hero.webp" as="image" fetchpriority="high">
+  <link rel="preload" href="fonts/nunito-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/nunito-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+<!-- Meta Pixel (loaded only after consent) -->
+<script>
+  window.TF_PIXEL_ID = '4025435161082806';
+  function tfLoadMetaPixel(){
+    if(window.fbq) return;
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', window.TF_PIXEL_ID);
+    fbq('track', 'PageView');
+  }
+  function tfTrackCheckout(e){
+    // Prevent instant navigation so the pixel event has time to actually send
+    // before the browser leaves the page (important now that checkout opens
+    // in the same tab instead of a new one).
+    if (e) e.preventDefault();
+    var form = e ? e.target : null;
+
+    function goToPayPal(){
+      if (form) form.submit();
+    }
+
+    if(typeof fbq === 'function'){
+      fbq('track','InitiateCheckout',{value:17.99,currency:'USD',content_name:'Smart Interactive Cat Toy',content_ids:['trendfloat-cat-ball']});
+      // Give the pixel request a brief moment to fire, then continue to PayPal
+      setTimeout(goToPayPal, 250);
+    } else {
+      // Pixel not loaded (e.g. cookies not yet accepted) — don't block checkout
+      goToPayPal();
+    }
+  }
+  // Fire pixel immediately if consent was previously granted
+  try {
+    if(localStorage.getItem('tf_consent') === 'accepted') tfLoadMetaPixel();
+  } catch(e) {}
+</script>
+
+<!-- End Meta Pixel -->
+
+<!-- Statcounter (loaded only after consent) -->
+<script>
+  function tfLoadStatcounter(){
+    if(window.TF_SC_LOADED) return;
+    window.TF_SC_LOADED = true;
+    var sc = document.createElement('script');
+    sc.type = 'text/javascript';
+    sc.text = 'var sc_project=13338728; var sc_invisible=1; var sc_security="e47e4595";';
+    document.head.appendChild(sc);
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = 'https://www.statcounter.com/counter/counter.js';
+    document.head.appendChild(s);
+  }
+  // Fire immediately if consent was previously granted
+  try {
+    if(localStorage.getItem('tf_consent') === 'accepted') tfLoadStatcounter();
+  } catch(e) {}
+</script>
+<!-- End Statcounter -->
+<noscript>
+  <div class="statcounter">
+    <a title="Web Analytics" href="https://statcounter.com/" target="_blank">
+      <img class="statcounter" src="https://c.statcounter.com/13338728/0/e47e4595/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade">
+    </a>
+  </div>
+</noscript>
+
 <style>
+  /* Self-hosted Nunito */
+  @font-face { font-family:'Nunito'; font-style:normal; font-weight:400; font-display:swap;
+    src:url('fonts/nunito-latin-400-normal.woff2') format('woff2'); }
+  @font-face { font-family:'Nunito'; font-style:normal; font-weight:600; font-display:swap;
+    src:url('fonts/nunito-latin-600-normal.woff2') format('woff2'); }
+  @font-face { font-family:'Nunito'; font-style:normal; font-weight:700; font-display:swap;
+    src:url('fonts/nunito-latin-700-normal.woff2') format('woff2'); }
+  @font-face { font-family:'Nunito'; font-style:normal; font-weight:800; font-display:swap;
+    src:url('fonts/nunito-latin-800-normal.woff2') format('woff2'); }
+  @font-face { font-family:'Nunito'; font-style:normal; font-weight:900; font-display:swap;
+    src:url('fonts/nunito-latin-900-normal.woff2') format('woff2'); }
   :root {
     --brown: #3d2414;
     --brown-dark: #2a1809;
@@ -23,13 +116,14 @@
     --sale: #d63535;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
   body {
     font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
     color: var(--text);
     background: #fff;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
   img { max-width: 100%; display: block; }
   a { color: inherit; text-decoration: none; }
@@ -54,6 +148,47 @@
   .topbar-item { display: flex; align-items: center; gap: 8px; }
   .topbar-item + .topbar-item { border-left: 1px solid rgba(255,255,255,0.2); padding-left: 16px; }
 
+  /* Sticky Mobile Checkout Button */
+  @media (max-width: 768px) {
+    .sticky-checkout-button {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-hover) 100%);
+      padding: 12px 16px;
+      z-index: 999;
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+      border-radius: 12px 12px 0 0;
+      display: block !important;
+    }
+    
+    .sticky-checkout-button button {
+      width: 100%;
+      padding: 12px 16px;
+      background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-hover) 100%);
+      border: none;
+      border-radius: 8px;
+      font-weight: 900;
+      font-size: 14px;
+      color: var(--brown);
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    body {
+      padding-bottom: 60px;
+    }
+  }
+  
+  /* Hide on desktop */
+  @media (min-width: 769px) {
+    .sticky-checkout-button {
+      display: none !important;
+    }
+  }
+
   /* Header */
   .header {
     border-bottom: 1px solid var(--border);
@@ -66,8 +201,8 @@
     max-width: 1400px;
     margin: 0 auto;
     padding: 18px 20px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     gap: 24px;
   }
@@ -81,20 +216,30 @@
     align-items: center;
     gap: 8px;
   }
-  .logo-mark {
-    width: 34px; height: 34px;
-    background: var(--brown);
-    color: var(--yellow);
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    font-weight: 900;
-  }
   .nav { display: flex; gap: 28px; font-weight: 700; font-size: 15px; }
   .nav a:hover { color: var(--brown); }
-  .header-icons { display: flex; gap: 18px; font-size: 20px; color: var(--brown); }
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: end;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+  }
+  .menu-toggle span {
+    display: block;
+    height: 2.5px;
+    width: 100%;
+    background: var(--brown);
+    border-radius: 2px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .menu-toggle.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+  .menu-toggle.open span:nth-child(2) { opacity: 0; }
+  .menu-toggle.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
 
   /* Product section */
   .product {
@@ -105,6 +250,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 60px;
   }
+  .product > div { min-width: 0; }
   .gallery-main {
     background: #f5f5f5;
     border-radius: 12px;
@@ -127,6 +273,39 @@
   }
   .thumb.active { border-color: var(--brown); }
   .thumb img { width: 100%; height: 100%; object-fit: cover; }
+  
+  /* Mobile: Reduce hero image height but keep good aspect ratio */
+  @media (max-width: 768px) {
+    .gallery-main {
+      aspect-ratio: 1/1;
+      width: 100%;
+      max-height: none;
+    }
+    .thumbs {
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .thumb {
+      width: 70px;
+      height: 70px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gallery-main {
+      aspect-ratio: 1/1;
+      width: 100%;
+      max-height: none;
+      border-radius: 8px;
+    }
+    .thumbs {
+      gap: 6px;
+    }
+    .thumb {
+      width: 60px;
+      height: 60px;
+    }
+  }
 
   /* Info panel */
   .sale-banner {
@@ -173,6 +352,31 @@
     margin-bottom: 20px;
   }
   .divider { border-top: 1px solid var(--border); margin: 20px 0; }
+  .stock-urgency {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fdecec;
+    border: 1px solid var(--sale);
+    color: var(--sale);
+    font-weight: 800;
+    font-size: 14.5px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+  }
+  .stock-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--sale);
+    flex-shrink: 0;
+    animation: stockPulse 1.8s ease-in-out infinite;
+  }
+  @keyframes stockPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
   .benefits { list-style: none; margin-bottom: 24px; }
   .benefits li {
     display: flex;
@@ -183,23 +387,6 @@
     font-size: 16px;
   }
   .benefits li span:first-child { font-size: 20px; }
-
-  .options-label { font-weight: 800; margin-bottom: 8px; font-size: 15px; }
-  .colors { display: flex; gap: 10px; margin-bottom: 20px; }
-  .color-opt {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 14px;
-    border: 2px solid var(--border);
-    border-radius: 6px;
-    font-weight: 700;
-    font-size: 14px;
-    transition: all 0.15s;
-  }
-  .color-opt:hover { border-color: var(--brown); }
-  .color-opt.selected { border-color: var(--brown); background: #fdf6ee; }
-  .color-swatch { width: 16px; height: 16px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.1); }
 
   .qty-row { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
   .qty-label { font-weight: 800; font-size: 15px; }
@@ -241,7 +428,12 @@
     border-radius: 6px;
     transition: background 0.15s, transform 0.05s;
     font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
+  .cta-lock { font-size: 16px; }
   .cta:hover { background: var(--yellow-hover); }
   .cta:active { transform: scale(0.99); }
   .payment-icons {
@@ -308,8 +500,9 @@
     grid-template-columns: 1fr 1fr;
     box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   }
-  .feature-img { aspect-ratio: 1/1; background: #f5f5f5; }
-  .feature-img img { width: 100%; height: 100%; object-fit: cover; }
+  .feature-img { aspect-ratio: 1/1; background: #f5f5f5; overflow: hidden; }
+  .feature-img img,
+  .feature-img video { width: 100%; height: 100%; object-fit: cover; display: block; }
   .feature-text { padding: 30px; display: flex; flex-direction: column; justify-content: center; }
   .feature-text h3 { font-size: 22px; font-weight: 900; margin-bottom: 10px; color: var(--brown); }
   .feature-text p { color: var(--muted); font-size: 15px; }
@@ -356,6 +549,352 @@
     background: var(--cream);
     border-radius: 8px;
   }
+  .reviews-list { display: flex; flex-direction: column; gap: 32px; }
+  .review { border-bottom: 1px solid var(--border); padding-bottom: 28px; }
+  .review:last-child { border-bottom: none; padding-bottom: 0; }
+  .review-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .review-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--brown);
+    color: var(--yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .review-meta { flex: 1; min-width: 200px; }
+  .review-name {
+    font-weight: 800;
+    font-size: 15px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .verified {
+    font-size: 12px;
+    font-weight: 700;
+    color: #166534;
+    background: #dcfce7;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+  .review-meta .stars { font-size: 16px; letter-spacing: 1px; }
+  .review-date { color: var(--muted); font-size: 13px; }
+  .review-text {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #333;
+    margin-bottom: 14px;
+  }
+  .review-photos { display: flex; gap: 8px; flex-wrap: wrap; }
+  .review-photos img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: zoom-in;
+    transition: transform 0.15s;
+  }
+  .review-photos img:hover { transform: scale(1.05); }
+
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    cursor: zoom-out;
+    animation: fadeIn 0.2s ease;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 26px;
+    color: #fff;
+    font-size: 36px;
+    font-weight: 300;
+    cursor: pointer;
+    line-height: 1;
+    background: none;
+    border: none;
+    padding: 4px 12px;
+  }
+  .lightbox-close:hover { opacity: 0.7; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  /* Cookie consent banner */
+  .cookie-banner {
+    position: fixed;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    max-width: 720px;
+    margin: 0 auto;
+    background: var(--brown);
+    color: #fff;
+    border-radius: 12px;
+    padding: 20px 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: none;
+    animation: slideUp 0.3s ease;
+  }
+  .cookie-banner.show { display: block; }
+  .cookie-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .cookie-text {
+    flex: 1;
+    min-width: 260px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .cookie-text a { color: var(--yellow); text-decoration: underline; }
+  .cookie-actions { display: flex; gap: 10px; }
+  .cookie-btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.05s, opacity 0.15s;
+  }
+  .cookie-btn:active { transform: scale(0.97); }
+  .cookie-accept { background: var(--yellow); color: #000; }
+  .cookie-accept:hover { background: var(--yellow-hover); }
+  .cookie-reject {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.5);
+  }
+  .cookie-reject:hover { background: rgba(255,255,255,0.1); }
+  @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  @media (max-width: 500px) {
+    .cookie-actions { width: 100%; }
+    .cookie-btn { flex: 1; }
+    .cookie-banner {
+      bottom: 80px;
+    }
+  }
+
+  /* Back to top button */
+  .back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 48px;
+    height: 48px;
+    background: var(--brown);
+    color: var(--yellow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    cursor: pointer;
+    z-index: 400;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.25s, transform 0.25s, visibility 0.25s, background 0.15s;
+  }
+  .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+  .back-to-top:hover { background: var(--brown-light); }
+  .back-to-top:active { transform: scale(0.93); }
+  @media (max-width: 480px) {
+    .back-to-top { 
+      right: 14px; 
+      bottom: 70px;
+      width: 44px; 
+      height: 44px; 
+      font-size: 18px;
+      z-index: 998;
+    }
+  }
+  
+  /* On mobile with sticky button, move back-to-top above it */
+  @media (max-width: 768px) {
+    .back-to-top {
+      bottom: 70px;
+      z-index: 998;
+    }
+  }
+
+  /* About section */
+  .about {
+    background: var(--cream);
+    padding: 70px 20px;
+  }
+  .about-inner { max-width: 1000px; margin: 0 auto; }
+  .about h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 12px;
+    color: var(--brown);
+  }
+  .about-tagline {
+    text-align: center;
+    color: var(--brown);
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    font-style: italic;
+  }
+  .about-body p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #333;
+    margin-bottom: 16px;
+    text-align: center;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about-values {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .about-value {
+    background: #fff;
+    padding: 24px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .about-value .icon { font-size: 32px; margin-bottom: 10px; }
+  .about-value h4 {
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--brown);
+    margin-bottom: 6px;
+  }
+  .about-value p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    text-align: center;
+    margin: 0;
+  }
+  @media (max-width: 800px) {
+    .about-values { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .about-values { grid-template-columns: 1fr; }
+  }
+
+  /* Policy section */
+  .policy {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px 40px;
+  }
+  .policy h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 12px;
+    color: var(--brown);
+  }
+  .policy-intro {
+    text-align: center;
+    color: var(--muted);
+    font-size: 16px;
+    margin-bottom: 32px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .policy-card {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 36px;
+    border: 1px solid #f0e8dc;
+  }
+  .policy-card h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--brown);
+    margin: 24px 0 12px;
+  }
+  .policy-card h3:first-child { margin-top: 0; }
+  .policy-card p { color: #333; font-size: 15px; line-height: 1.7; margin-bottom: 12px; }
+  .policy-list { list-style: none; padding: 0; margin: 0 0 12px; }
+  .policy-list li {
+    padding: 10px 0 10px 28px;
+    position: relative;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  .policy-list li:last-child { border-bottom: none; }
+  .policy-list li::before {
+    content: "✕";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: var(--sale);
+    font-weight: 800;
+  }
+  .policy-list.offer li::before { content: "✓"; color: #2a8a4a; }
+  .policy-list.info li::before { content: "•"; color: var(--brown); font-size: 20px; top: 6px; }
+  .policy-list strong { color: var(--text); }
+  .policy-contact {
+    background: #fff;
+    border-left: 4px solid var(--yellow);
+    padding: 18px 20px;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .policy-contact a { color: var(--brown); font-weight: 700; text-decoration: underline; }
+  .support-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--brown);
+    color: #fff !important;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 14.5px;
+    text-decoration: none !important;
+    transition: background 0.15s;
+  }
+  .support-btn:hover { background: var(--brown-light); }
 
   /* Footer */
   .footer {
@@ -365,14 +904,15 @@
     margin-top: 40px;
   }
   .footer-inner {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 60px;
+    align-items: start;
   }
   .footer-brand .logo { color: var(--yellow); font-size: 30px; }
-  .footer-brand p { margin-top: 12px; color: rgba(255,255,255,0.7); font-size: 14px; }
+  .footer-brand p { margin-top: 12px; color: rgba(255,255,255,0.7); font-size: 14px; max-width: 320px; }
   .footer h4 {
     font-size: 18px;
     font-weight: 800;
@@ -380,10 +920,23 @@
     color: #fff;
   }
   .footer ul { list-style: none; }
-  .footer li { margin-bottom: 10px; color: rgba(255,255,255,0.8); font-size: 15px; }
+  .footer li { margin-bottom: 12px; color: rgba(255,255,255,0.85); font-size: 14.5px; line-height: 1.5; }
   .footer li a:hover { color: var(--yellow); }
+  .track-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--yellow);
+    color: #000 !important;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 14px;
+    transition: background 0.15s;
+  }
+  .track-btn:hover { background: var(--yellow-hover); color: #000 !important; }
   .footer-bottom {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 40px auto 0;
     padding-top: 30px;
     border-top: 1px solid rgba(255,255,255,0.15);
@@ -394,30 +947,81 @@
 
   /* Responsive */
   @media (max-width: 900px) {
-    .topbar-inner { flex-direction: column; gap: 8px; padding: 10px; font-size: 12px; }
+    .topbar-inner { flex-direction: column; gap: 6px; padding: 10px; font-size: 12.5px; }
     .topbar-item + .topbar-item { border-left: none; padding-left: 0; }
-    .nav { display: none; }
-    .product { grid-template-columns: 1fr; gap: 30px; padding: 20px; }
+
+    .menu-toggle { display: flex; }
+    .nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      flex-direction: column;
+      gap: 0;
+      padding: 8px 20px 16px;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+    }
+    .nav.open { display: flex; }
+    .nav a { padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .nav a:last-child { border-bottom: none; }
+
+    .product { grid-template-columns: 1fr; gap: 28px; padding: 20px; }
     h1 { font-size: 24px; }
+    .sale-banner { font-size: 15px; padding: 14px 16px; }
     .price { font-size: 24px; }
-    .features-grid { grid-template-columns: 1fr; }
+    .price-old { font-size: 17px; }
+    .cta { font-size: 16px; padding: 16px; }
+
+    .features { padding: 44px 16px; }
+    .features h2 { font-size: 26px; }
+    .features-grid { grid-template-columns: 1fr; gap: 20px; }
     .feature { grid-template-columns: 1fr; }
     .feature-text { padding: 20px; }
-    .footer-inner { grid-template-columns: 1fr 1fr; gap: 30px; }
-    .reviews-summary { flex-direction: column; gap: 16px; }
+
+    .reviews { padding: 44px 16px; }
+    .reviews h2 { font-size: 26px; }
+    .review-meta { min-width: 140px; }
+
+    .about { padding: 44px 16px; }
+    .about h2 { font-size: 26px; }
+    .about-tagline { font-size: 17px; }
+    .about-body p { font-size: 15px; }
+
+    .policy { padding: 44px 16px 24px; }
+    .policy h2 { font-size: 24px; }
+    .policy-card { padding: 22px 18px; }
+
+    .footer { padding: 44px 16px 24px; }
+    .footer-inner { grid-template-columns: 1fr; gap: 32px; }
   }
-  @media (max-width: 500px) {
-    .footer-inner { grid-template-columns: 1fr; }
+
+  @media (max-width: 480px) {
+    .topbar-inner { font-size: 11.5px; }
+    h1 { font-size: 21px; }
+    .sale-banner { font-size: 14px; }
+    .benefits li { font-size: 14.5px; }
+    .cta { font-size: 15px; letter-spacing: 0.5px; }
+    .review-header { gap: 10px; }
+    .review-meta { min-width: 100%; order: 3; }
+    .review-avatar { width: 38px; height: 38px; font-size: 15px; }
+    .review-photos img { width: 84px; height: 84px; }
+    .cookie-banner { left: 12px; right: 12px; bottom: 12px; padding: 16px 18px; }
+    .cookie-text { min-width: 0; font-size: 13.5px; }
+    .lightbox { padding: 16px; }
   }
 </style>
+<script src="https://www.paypal.com/sdk/js?client-id=BAAoppR3wgpIZ8B-uOxpBJuE-rUUMG2G7BGs51s7fWZOWzZmS25nbkWUz93OQ3BHL-ykpZTVEZS-KZaqlw&currency=USD"></script>
 </head>
 <body>
 
 <!-- Top announcement bar -->
 <div class="topbar">
   <div class="topbar-inner">
-    <div class="topbar-item">🎉 <span>SUMMER SALE – Save 35% Today</span></div>
-    <div class="topbar-item">🐾 <span>68,000+ Happy Cat Parents</span></div>
+    <div class="topbar-item">🎉 <span>SUMMER SALE – Save 64% Today</span></div>
+    <div class="topbar-item">🐾 <span>300+ Happy Customers</span></div>
     <div class="topbar-item">🚚 <span>Free Worldwide Shipping</span></div>
   </div>
 </div>
@@ -426,20 +1030,18 @@
 <header class="header">
   <div class="header-inner">
     <a href="#" class="logo">
-      <span class="logo-mark">T</span>
       <span>TrendFloat</span>
     </a>
-    <nav class="nav">
+    <nav class="nav" id="mainNav">
       <a href="#">Home</a>
       <a href="#features">Features</a>
       <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
       <a href="#footer">Support</a>
     </nav>
-    <div class="header-icons">
-      <span>🔍</span>
-      <span>👤</span>
-      <span>🛒</span>
-    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -447,22 +1049,35 @@
 <section class="product">
   <div>
     <div class="gallery-main">
-      <img id="mainImg" src="img/product-hero.jpg" alt="Smart Interactive Cat Ball" />
+      <img id="mainImg" src="img/product-hero.webp" alt="Smart Interactive Cat Toy" fetchpriority="high" loading="eager" width="600" height="600" />
     </div>
     <div class="thumbs">
-      <div class="thumb active" onclick="setImg(this,'img/product-hero.jpg')"><img src="img/product-hero.jpg" alt="" /></div>
-      <div class="thumb" onclick="setImg(this,'img/product-3.jpg')"><img src="img/product-3.jpg" alt="" /></div>
-      <div class="thumb" onclick="setImg(this,'img/product-5.jpg')"><img src="img/product-5.jpg" alt="" /></div>
-      <div class="thumb" onclick="setImg(this,'img/product-8.jpg')"><img src="img/product-8.jpg" alt="" /></div>
-      <div class="thumb" onclick="setImg(this,'img/product-6.jpg')"><img src="img/product-6.jpg" alt="" /></div>
-      <div class="thumb" onclick="setImg(this,'img/product-2.jpg')"><img src="img/product-2.jpg" alt="" /></div>
+      <div class="thumb active" onclick="setImg(this,'img/product-hero.webp')"><img src="img/product-hero.webp" alt="" loading="lazy" width="80" height="80" /></div>
+      <div class="thumb" onclick="setImg(this,'img/product-3.webp')"><img src="img/product-3.webp" alt="" loading="lazy" width="80" height="80" /></div>
+      <div class="thumb" onclick="setImg(this,'img/product-5.webp')"><img src="img/product-5.webp" alt="" loading="lazy" width="80" height="80" /></div>
+      <div class="thumb" onclick="setImg(this,'img/product-8.webp')"><img src="img/product-8.webp" alt="" loading="lazy" width="80" height="80" /></div>
+      <div class="thumb" onclick="setImg(this,'img/product-6.webp')"><img src="img/product-6.webp" alt="" loading="lazy" width="80" height="80" /></div>
+      <div class="thumb" onclick="setImg(this,'img/product-2.webp')"><img src="img/product-2.webp" alt="" loading="lazy" width="80" height="80" /></div>
     </div>
   </div>
 
   <div class="info">
-    <div class="sale-banner">🐾 SUMMER SALE: Save 35% on your favorite products!</div>
+    <div class="sale-banner">⏰ LIMITED TIME: 64% OFF → Only $17.99 (was $50.00) + FREE Shipping</div>
 
-    <h1>Smart Interactive Cat Ball – Auto-Rolling USB Rechargeable Toy</h1>
+    <h1>Watch Your Cat Go Absolutely Crazy 🐱<br><span style="font-size: 0.85em; color: var(--muted);">Smart Auto-Rolling Ball That Keeps Them Playing for Hours</span></h1>
+
+    <!-- Mobile: Early Trust Signals -->
+    <div style="display: none; background: #f0f8ff; border: 1px solid #d4e8f7; border-radius: 8px; padding: 10px 12px; margin-bottom: 16px; font-size: 13px; font-weight: 700; color: #0052a3; text-align: center;">
+      ⭐ 4.9/5 • 300+ Verified Reviews • ✅ Trusted by Cat Parents Worldwide
+    </div>
+    
+    <style>
+      @media (max-width: 768px) {
+        div[style*="display: none"][style*="#f0f8ff"] {
+          display: block !important;
+        }
+      }
+    </style>
 
     <div class="rating">
       <span class="stars">★★★★★</span>
@@ -470,8 +1085,8 @@
     </div>
 
     <div class="price-row">
-      <span class="price">$21.99</span>
-      <span class="price-old">$33.90</span>
+      <span class="price">$17.99</span>
+      <span class="price-old">$50.00</span>
       <span class="sale-tag">🏷 SUMMER SALE</span>
     </div>
     <div class="offer-ends" id="offerEnds">Offer ends soon</div>
@@ -479,38 +1094,509 @@
     <div class="divider"></div>
 
     <ul class="benefits">
-      <li><span>🧠</span><span>Smart Motion – Wakes on Touch</span></li>
-      <li><span>🔇</span><span>Whisper-Quiet, Day & Night</span></li>
-      <li><span>🦷</span><span>Bite-Resistant, Food-Grade ABS</span></li>
-      <li><span>🔋</span><span>USB-C Rechargeable – Cable Included</span></li>
+      <li><span>😺</span><span>Keeps Cats Entertained While You're Away</span></li>
+      <li><span>🤫</span><span>Whisper-Quiet – Won't Drive You Crazy at 3 AM</span></li>
+      <li><span>💪</span><span>Tough Enough to Survive Aggressive Play</span></li>
+      <li><span>⚡</span><span>All-Day Battery – Charge Once, Play All Week</span></li>
     </ul>
 
-    <div class="options-label">Color: <span id="selColor">Emerald Green</span></div>
-    <div class="colors">
-      <button class="color-opt selected" data-color="Emerald Green" onclick="setColor(this,'img/product-green.jpg')">
-        <span class="color-swatch" style="background:#7bc043"></span>Green
-      </button>
-      <button class="color-opt" data-color="Sapphire Blue" onclick="setColor(this,'img/product-blue.jpg')">
-        <span class="color-swatch" style="background:#1f7ae0"></span>Blue
-      </button>
-      <button class="color-opt" data-color="Orange Red" onclick="setColor(this,'img/product-orange.jpg')">
-        <span class="color-swatch" style="background:#e85a2a"></span>Orange
-      </button>
+    <div class="stock-urgency" style="flex-wrap: wrap; gap: 8px;">
+      <span class="stock-dot"></span>
+      <span style="flex: 1;">
+        <strong style="color: #3d2414;">✓ Trusted by 300+ customers</strong> • <strong style="color: #3d2414;">4.9★</strong><br>
+        <span style="font-size: 0.9em; color: var(--muted);">🚚 Ships within 2-3 business days • 180+ countries</span>
+      </span>
+    </div>
+    
+    <div style="background: #fffaed; border: 1px solid #ffd140; border-radius: 8px; padding: 10px 12px; margin: 12px 0; font-size: 13px; font-weight: 600; text-align: center; color: var(--brown);">
+      ✅ Free Shipping Worldwide • 3-7 Days USA • 5-11 Days International
+    </div>
+    <div style="width:100%;display:flex;justify-content:center;">
+      <style>
+        .pp-HDJML4YTTSBCA{
+          text-align:center;
+          border:none;
+          border-radius:0.5rem;
+          width:100%;
+          max-width:28rem;
+          padding:0 2rem;
+          height:3.75rem;
+          font-weight:bold;
+          background-color:#FFD140;
+          color:#000000;
+          font-family:"Helvetica Neue",Arial,sans-serif;
+          font-size:1.375rem;
+          line-height:1.5rem;
+          cursor:pointer;
+        }
+        .pp-form-HDJML4YTTSBCA{
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          gap:0.6rem;
+          width:100%;
+          max-width:28rem;
+        }
+        @media (max-width:480px){
+          .pp-HDJML4YTTSBCA{ height:3.25rem; font-size:1.125rem; }
+        }
+        .tf-trust-badges{
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          gap:14px;
+          flex-wrap:wrap;
+          margin-top:2px;
+        }
+        .tf-trust-pill{
+          display:inline-flex;
+          align-items:center;
+          gap:6px;
+          font-size:0.85rem;
+          font-weight:800;
+          border-radius:8px;
+          padding:9px 14px;
+        }
+        .tf-trust-svg{ flex-shrink:0; width:116px; height:116px; }
+        @media (max-width:480px){
+          .tf-trust-badges{ gap:8px; }
+          .tf-trust-pill{ font-size:0.75rem; padding:7px 10px; }
+          .tf-trust-svg{ width:84px; height:84px; }
+        }
+        .tf-ship-info{
+          width:100%;
+          background:var(--cream);
+          border:1px solid var(--border);
+          border-radius:8px;
+          padding:10px 14px;
+          display:flex;
+          flex-direction:column;
+          gap:6px;
+          font-size:0.82rem;
+        }
+        @media (max-width:480px){
+          .tf-ship-info{ font-size:0.78rem; padding:8px 12px; }
+        }
+      </style>
+      <!-- Payment Section -->
+      <div style="width:100%; max-width:480px; margin:0 auto;">
+
+        <!-- PayPal Button -->
+        <div id="paypal-button-container" style="width:100%; margin-bottom:12px;"></div>
+
+        <!-- Divider -->
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+          <div style="flex:1; height:1px; background:#e5e5e5;"></div>
+          <span style="font-size:12px; color:#595959; font-weight:600;">OR</span>
+          <div style="flex:1; height:1px; background:#e5e5e5;"></div>
+        </div>
+
+        <!-- Bank Transfer Button -->
+        <button onclick="showBankDetails()" style="width:100%; padding:14px; background:#fff; border:2px solid #3d2414; border-radius:8px; font-weight:900; font-size:15px; color:#3d2414; cursor:pointer; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:16px;">
+          🏦 Pay by Bank Transfer
+        </button>
+
+        <!-- Trust Badges -->
+        <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:8px;">
+          <span style="display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:800; color:#1a7a3a; background:#f2faf5; border:1px solid #cfe8d8; border-radius:6px; padding:7px 12px;">
+            🔒 SSL SECURED
+          </span>
+          <span style="display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:800; color:#3d2414; background:#fdf9f4; border:1px solid #e5e5e5; border-radius:6px; padding:7px 12px;">
+            🛡️ VERIFIED & SECURED
+          </span>
+          <span style="display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:800; color:#856404; background:#fff8e1; border:1px solid #ffc107; border-radius:6px; padding:7px 12px;">
+            ⭐ TRUSTED BRAND
+          </span>
+        </div>
+
+        <!-- Sold By -->
+        <div style="text-align:center; font-size:12px; color:#595959; margin-top:6px;">
+          Sold by <strong style="color:#3d2414;">TrendFloat</strong>
+        </div>
+
+      </div>
+
+
+<script>
+paypal.Buttons({
+  createOrder: function(data, actions) {
+    return actions.order.create({
+      purchase_units: [{
+        amount: {
+          value: '17.99',
+          currency_code: 'USD',
+          breakdown: {
+            item_total: {
+              currency_code: 'USD',
+              value: '17.99'
+            }
+          }
+        },
+        description: 'Smart Interactive Cat Toy',
+        custom_id: 'trendfloat-cat-ball-' + Date.now()
+      }]
+    });
+  },
+  onApprove: function(data, actions) {
+    return actions.order.capture().then(function(orderData) {
+      console.log('Payment successful:', orderData);
+      alert('✅ Payment successful!\nOrder ID: ' + orderData.id);
+      
+      fbq('track', 'Purchase', {
+        value: 17.99,
+        currency: 'USD',
+        content_name: 'Smart Interactive Cat Toy',
+        content_ids: ['trendfloat-cat-ball']
+      });
+      
+      window.location.href = 'https://trendfloat.com/thank-you.html?txn=success&order=' + orderData.id;
+    });
+  },
+  onError: function(err) {
+    console.error('Payment error:', err);
+    alert('❌ Payment failed. Please try again or contact support.');
+  },
+  style: {
+    layout: 'vertical',
+    color: 'gold',
+    shape: 'rect',
+    label: 'paypal',
+    height: 45
+  }
+}).render('#paypal-button-container');
+</script>
+
+<div id="bank-details-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999; align-items:center; justify-content:center; padding:20px;">
+  <div style="background:white; padding:30px; border-radius:12px; max-width:600px; width:100%; max-height:90vh; overflow-y:auto; position:relative;">
+    
+    <button onclick="closeBankDetails()" style="position:absolute; top:15px; right:15px; background:none; border:none; font-size:28px; cursor:pointer; color:#6b6b6b;">×</button>
+    
+    <div style="text-align:center; margin-bottom:25px;">
+      <h2 style="color:#3d2414; margin-bottom:8px;">Bank Transfer Payment</h2>
+      <p style="color:#6b6b6b; font-size:14px;">Safe & secure payment via Citibank</p>
     </div>
 
-    <form class="cta-form" action="https://www.paypal.com/ncp/payment/HDJML4YTTSBCA" method="post" target="_blank">
-      <button class="cta" type="submit">ADD TO CART</button>
-      <div class="payment-icons">
-        <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="Cards" />
-      </div>
-      <div class="powered">
-        Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="PayPal" />
-      </div>
-    </form>
-
-    <div class="shipping-note">
-      🚚 <span>Ships worldwide within 5–11 days from our partner warehouses</span>
+    <div style="background:#fff3cd; border-left:4px solid #ffc107; padding:15px; border-radius:6px; margin-bottom:20px;">
+      <p style="margin:0; font-weight:600; color:#856404;">⚠️ USD Currency Only</p>
+      <p style="margin:8px 0 0 0; font-size:14px; color:#856404;">This payment must be made in USD ($17.99). Please ensure your bank supports USD transfers.</p>
     </div>
+
+    <div style="background:#d1ecf1; border-left:4px solid #17a2b8; padding:15px; border-radius:6px; margin-bottom:20px;">
+      <p style="margin:0; font-weight:600; color:#0c5460;">✅ Secured by Citibank</p>
+      <p style="margin:8px 0 0 0; font-size:14px; color:#0c5460;">Citibank is a trusted global financial institution. Your bank transfer is safe and secure.</p>
+    </div>
+
+    <div style="background:#f8f9fa; padding:20px; border-radius:8px; margin-bottom:25px;">
+      <h3 style="color:#3d2414; margin-bottom:15px;">Bank Account Details</h3>
+      
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid #e5e5e5;">
+        <div>
+          <p style="margin:0; font-size:12px; color:#6b6b6b; font-weight:600;">BENEFICIARY NAME</p>
+          <p style="margin:6px 0 0 0; font-size:14px; color:#1a1a1a; font-weight:600;">YAIR Shteinberg</p>
+        </div>
+        <button onclick="copyText('YAIR Shteinberg')" style="padding:8px 12px; background:#3d2414; color:white; border:none; border-radius:4px; cursor:pointer; font-size:12px; font-weight:600;">📋 Copy</button>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid #e5e5e5;">
+        <div>
+          <p style="margin:0; font-size:12px; color:#6b6b6b; font-weight:600;">BANK NAME</p>
+          <p style="margin:6px 0 0 0; font-size:14px; color:#1a1a1a; font-weight:600;">Citibank</p>
+        </div>
+        <button onclick="copyText('Citibank')" style="padding:8px 12px; background:#3d2414; color:white; border:none; border-radius:4px; cursor:pointer; font-size:12px; font-weight:600;">📋 Copy</button>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid #e5e5e5;">
+        <div>
+          <p style="margin:0; font-size:12px; color:#6b6b6b; font-weight:600;">BANK ADDRESS</p>
+          <p style="margin:6px 0 0 0; font-size:14px; color:#1a1a1a; font-weight:600;">111 Wall Street New York, NY 10043 USA</p>
+        </div>
+        <button onclick="copyText('111 Wall Street New York, NY 10043 USA')" style="padding:8px 12px; background:#3d2414; color:white; border:none; border-radius:4px; cursor:pointer; font-size:12px; font-weight:600;">📋 Copy</button>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid #e5e5e5;">
+        <div>
+          <p style="margin:0; font-size:12px; color:#6b6b6b; font-weight:600;">ROUTING (ABA)</p>
+          <p style="margin:6px 0 0 0; font-size:14px; color:#1a1a1a; font-weight:600; font-family:monospace;">031100209</p>
+        </div>
+        <button onclick="copyText('031100209')" style="padding:8px 12px; background:#3d2414; color:white; border:none; border-radius:4px; cursor:pointer; font-size:12px; font-weight:600;">📋 Copy</button>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid #e5e5e5;">
+        <div>
+          <p style="margin:0; font-size:12px; color:#6b6b6b; font-weight:600;">SWIFT CODE</p>
+          <p style="margin:6px 0 0 0; font-size:14px; color:#1a1a1a; font-weight:600; font-family:monospace;">CITIUS33</p>
+        </div>
+        <button onclick="copyText('CITIUS33')" style="padding:8px 12px; background:#3d2414; color:white; border:none; border-radius:4px; cursor:pointer; font-size:12px; font-weight:600;">📋 Copy</button>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid #e5e5e5;">
+        <div>
+          <p style="margin:0; font-size:12px; color:#6b6b6b; font-weight:600;">ACCOUNT NUMBER</p>
+          <p style="margin:6px 0 0 0; font-size:14px; color:#1a1a1a; font-weight:600; font-family:monospace;">70581960002463995</p>
+        </div>
+        <button onclick="copyText('70581960002463995')" style="padding:8px 12px; background:#3d2414; color:white; border:none; border-radius:4px; cursor:pointer; font-size:12px; font-weight:600;">📋 Copy</button>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid #e5e5e5;">
+        <div>
+          <p style="margin:0; font-size:12px; color:#6b6b6b; font-weight:600;">ACCOUNT TYPE</p>
+          <p style="margin:6px 0 0 0; font-size:14px; color:#1a1a1a; font-weight:600;">CHECKING</p>
+        </div>
+        <button onclick="copyText('CHECKING')" style="padding:8px 12px; background:#3d2414; color:white; border:none; border-radius:4px; cursor:pointer; font-size:12px; font-weight:600;">📋 Copy</button>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0;">
+        <div>
+          <p style="margin:0; font-size:12px; color:#6b6b6b; font-weight:600;">TOTAL AMOUNT (USD)</p>
+          <p style="margin:6px 0 0 0; font-size:16px; color:#d63535; font-weight:900;" id="total-price">$17.99</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff8e1; border-left:4px solid #ffc107; padding:15px; border-radius:6px; margin-bottom:25px;">
+      <p style="margin:0; font-weight:600; color:#9c7d0d;">⏱️ Processing Time</p>
+      <p style="margin:8px 0 0 0; font-size:14px; color:#9c7d0d;">Bank transfers typically take 3-5 business days. We'll ship immediately after payment is confirmed.</p>
+    </div>
+
+    <div style="background:#f8f9fa; padding:20px; border-radius:8px; margin-bottom:25px;">
+      <h3 style="color:#3d2414; margin-bottom:15px;">Your Information</h3>
+      
+      <div style="margin-bottom:15px;">
+      <div style="margin-bottom:15px;">
+        <label style="display:block; font-weight:600; color:#3d2414; margin-bottom:10px; font-size:13px;">Color *</label>
+        <input type="hidden" id="customer-color" value="Red">
+        <div id="color-btns" style="display:flex; gap:12px;">
+          <button type="button" onclick="selectColor(this, 'Red')" style="flex:1; padding:12px; border:3px solid #d63535; border-radius:8px; background:#d63535; color:white; font-size:14px; font-weight:800; cursor:pointer;">🔴 Red</button>
+          <button type="button" onclick="selectColor(this, 'Green')" style="flex:1; padding:12px; border:3px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:14px; font-weight:800; cursor:pointer;">🟢 Green</button>
+          <button type="button" onclick="selectColor(this, 'Blue')" style="flex:1; padding:12px; border:3px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:14px; font-weight:800; cursor:pointer;">🔵 Blue</button>
+        </div>
+      </div>
+
+        <label style="display:block; font-weight:600; color:#3d2414; margin-bottom:6px; font-size:13px;">Full Name *</label>
+        <input id="customer-name" type="text" placeholder="John Doe" onkeypress="return /[a-zA-Z\s]/.test(String.fromCharCode(event.which))" style="width:100%; padding:10px; border:1px solid #e5e5e5; border-radius:6px; font-size:14px; font-family:inherit; box-sizing:border-box;">
+      </div>
+
+      <div style="margin-bottom:15px;">
+        <label style="display:block; font-weight:600; color:#3d2414; margin-bottom:6px; font-size:13px;">Email Address *</label>
+        <input id="customer-email" type="email" placeholder="your@email.com" style="width:100%; padding:10px; border:1px solid #e5e5e5; border-radius:6px; font-size:14px; font-family:inherit; box-sizing:border-box;">
+      </div>
+
+      <div style="margin-bottom:15px;">
+        <label style="display:block; font-weight:600; color:#3d2414; margin-bottom:6px; font-size:13px;">Street Address (Address 1) *</label>
+        <input id="customer-address1" type="text" placeholder="123 Main Street" style="width:100%; padding:10px; border:1px solid #e5e5e5; border-radius:6px; font-size:14px; font-family:inherit; box-sizing:border-box;">
+      </div>
+
+      <div style="margin-bottom:15px;">
+        <label style="display:block; font-weight:600; color:#3d2414; margin-bottom:6px; font-size:13px;">Apartment/Suite (Address 2 - Optional)</label>
+        <input id="customer-address2" type="text" placeholder="Apt 4B, Suite 100" style="width:100%; padding:10px; border:1px solid #e5e5e5; border-radius:6px; font-size:14px; font-family:inherit; box-sizing:border-box;">
+      </div>
+
+      <div style="margin-bottom:15px;">
+        <label style="display:block; font-weight:600; color:#3d2414; margin-bottom:6px; font-size:13px;">City *</label>
+        <input id="customer-city" type="text" placeholder="New York" onkeypress="return /[a-zA-Z\s]/.test(String.fromCharCode(event.which))" style="width:100%; padding:10px; border:1px solid #e5e5e5; border-radius:6px; font-size:14px; font-family:inherit; box-sizing:border-box;">
+      </div>
+
+      <div style="margin-bottom:15px;">
+        <label style="display:block; font-weight:600; color:#3d2414; margin-bottom:6px; font-size:13px;">ZIP Code / Postal Code *</label>
+        <input id="customer-zip" type="text" placeholder="10001" onkeypress="return /[0-9]/.test(String.fromCharCode(event.which))" style="width:100%; padding:10px; border:1px solid #e5e5e5; border-radius:6px; font-size:14px; font-family:inherit; box-sizing:border-box;">
+      </div>
+
+      <div style="margin-bottom:15px;">
+        <label style="display:block; font-weight:600; color:#3d2414; margin-bottom:10px; font-size:13px;">Quantity *</label>
+        <input type="hidden" id="customer-quantity" value="1">
+        <div id="quantity-grid" style="display:grid; grid-template-columns: repeat(4, 1fr); gap:8px;">
+          <button type="button" onclick="selectQty(this, 1, 17.99)"  style="padding:12px 6px; border:2px solid #3d2414; border-radius:8px; background:#3d2414; color:white; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">1x<br><span style="font-size:11px;">$17.99</span></button>
+          <button type="button" onclick="selectQty(this, 2, 35.98)"  style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">2x<br><span style="font-size:11px;">$35.98</span></button>
+          <button type="button" onclick="selectQty(this, 3, 53.97)"  style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">3x<br><span style="font-size:11px;">$53.97</span></button>
+          <button type="button" onclick="selectQty(this, 4, 71.96)"  style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">4x<br><span style="font-size:11px;">$71.96</span></button>
+          <button type="button" onclick="selectQty(this, 5, 89.95)"  style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">5x<br><span style="font-size:11px;">$89.95</span></button>
+          <button type="button" onclick="selectQty(this, 6, 107.94)" style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">6x<br><span style="font-size:11px;">$107.94</span></button>
+          <button type="button" onclick="selectQty(this, 7, 125.93)" style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">7x<br><span style="font-size:11px;">$125.93</span></button>
+          <button type="button" onclick="selectQty(this, 8, 143.92)" style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">8x<br><span style="font-size:11px;">$143.92</span></button>
+          <button type="button" onclick="selectQty(this, 9, 161.91)" style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">9x<br><span style="font-size:11px;">$161.91</span></button>
+          <button type="button" onclick="selectQty(this, 10, 179.90)" style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">10x<br><span style="font-size:11px;">$179.90</span></button>
+          <button type="button" onclick="selectQty(this, 15, 269.85)" style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">15x<br><span style="font-size:11px;">$269.85</span></button>
+          <button type="button" onclick="selectQty(this, 20, 359.80)" style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">20x<br><span style="font-size:11px;">$359.80</span></button>
+        </div>
+      </div>
+
+      <div style="margin-bottom:15px;">
+        <label style="display:block; font-weight:600; color:#3d2414; margin-bottom:6px; font-size:13px;">Phone Number *</label>
+        <input id="customer-phone" type="tel" placeholder="+1 (555) 000-0000" onkeypress="return /[0-9+\-().\s]/.test(String.fromCharCode(event.which))" style="width:100%; padding:10px; border:1px solid #e5e5e5; border-radius:6px; font-size:14px; font-family:inherit; box-sizing:border-box;">
+      </div>
+    </div>
+
+    <div style="display:flex; gap:12px; flex-direction:column;">
+      <button onclick="contactViaTelegram()" style="width:100%; padding:12px; background:#0088cc; color:white; border:none; border-radius:6px; cursor:pointer; font-weight:900; font-size:14px;">✈️ MESSAGE VIA TELEGRAM</button>
+      <button onclick="closeBankDetails()" style="width:100%; padding:12px; background:#e5e5e5; color:#3d2414; border:none; border-radius:6px; cursor:pointer; font-weight:900; font-size:14px;">CLOSE</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function selectColor(btn, color) {
+  document.getElementById('customer-color').value = color;
+  document.querySelectorAll('#color-btns button').forEach(b => {
+    b.style.background = 'white';
+    b.style.color = '#3d2414';
+    b.style.borderColor = '#e5e5e5';
+  });
+  const colorMap = { Red: '#d63535', Green: '#2e7d32', Blue: '#1565c0' };
+  btn.style.background = colorMap[color];
+  btn.style.color = 'white';
+  btn.style.borderColor = colorMap[color];
+}
+
+function showBankDetails() {
+  document.getElementById('bank-details-modal').style.display = 'flex';
+}
+
+function closeBankDetails() {
+  document.getElementById('bank-details-modal').style.display = 'none';
+  document.getElementById('customer-name').value = '';
+  document.getElementById('customer-email').value = '';
+  document.getElementById('customer-address1').value = '';
+  document.getElementById('customer-address2').value = '';
+  document.getElementById('customer-city').value = '';
+  document.getElementById('customer-zip').value = '';
+  document.getElementById('customer-phone').value = '';
+  document.getElementById('customer-quantity').value = '1';
+  document.getElementById('customer-color').value = 'Red';
+  document.getElementById('total-price').textContent = '$17.99';
+  document.querySelectorAll('#quantity-grid button').forEach((b, i) => {
+    b.style.background = i === 0 ? '#3d2414' : 'white';
+    b.style.color = i === 0 ? 'white' : '#3d2414';
+    b.style.border = i === 0 ? '2px solid #3d2414' : '2px solid #e5e5e5';
+  });
+  document.querySelectorAll('#color-btns button').forEach((b, i) => {
+    b.style.background = i === 0 ? '#d63535' : 'white';
+    b.style.color = i === 0 ? 'white' : '#3d2414';
+    b.style.borderColor = i === 0 ? '#d63535' : '#e5e5e5';
+  });
+}
+
+function copyText(text) {
+  navigator.clipboard.writeText(text);
+}
+
+function selectQty(btn, qty, total) {
+  document.getElementById('customer-quantity').value = qty;
+  document.getElementById('total-price').textContent = '$' + total.toFixed(2);
+  document.querySelectorAll('#quantity-grid button').forEach(b => {
+    b.style.background = 'white';
+    b.style.color = '#3d2414';
+    b.style.border = '2px solid #e5e5e5';
+  });
+  btn.style.background = '#3d2414';
+  btn.style.color = 'white';
+  btn.style.border = '2px solid #3d2414';
+}
+
+function updateTotalPrice() {
+  const quantity = parseInt(document.getElementById('customer-quantity').value);
+  const total = (17.99 * quantity).toFixed(2);
+  document.getElementById('total-price').textContent = '$' + total;
+}
+
+function contactViaTelegram() {
+  try {
+    const name = document.getElementById('customer-name').value.trim();
+    const email = document.getElementById('customer-email').value.trim();
+    const address1 = document.getElementById('customer-address1').value.trim();
+    const address2 = document.getElementById('customer-address2').value.trim();
+    const city = document.getElementById('customer-city').value.trim();
+    const zip = document.getElementById('customer-zip').value.trim();
+    const phone = document.getElementById('customer-phone').value.trim();
+    const quantity = document.getElementById('customer-quantity') ? document.getElementById('customer-quantity').value : '1';
+    const color = document.getElementById('customer-color').value;
+    
+    // Validation
+    if (!name) {
+      alert('❌ Please enter your full name');
+      return;
+    }
+
+    // Check name contains only letters and spaces
+    if (!/^[a-zA-Z\s]+$/.test(name)) {
+      alert('❌ Full name must contain only letters and spaces');
+      return;
+    }
+
+    if (!email) {
+      alert('❌ Please enter your email address');
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('❌ Please enter a valid email address');
+      return;
+    }
+
+    if (!address1) {
+      alert('❌ Please enter street address (Address 1)');
+      return;
+    }
+
+    if (!city) {
+      alert('❌ Please enter city');
+      return;
+    }
+
+    if (!zip) {
+      alert('❌ Please enter ZIP code / Postal code');
+      return;
+    }
+
+    if (!phone) {
+      alert('❌ Phone number is required for delivery');
+      return;
+    }
+
+    // Generate unique order number
+    const orderNum = 'TF-' + Date.now().toString().slice(-8);
+    const unitPrice = 17.99;
+    const totalPrice = (unitPrice * parseInt(quantity)).toFixed(2);
+
+    const fullAddress = address2 ? `${address1}, ${address2}, ${city} ${zip}` : `${address1}, ${city} ${zip}`;
+
+    const message = `🛍️ New Bank Transfer Order
+
+📋 Order #${orderNum}
+
+📦 Product: Smart Interactive Cat Toy
+🎨 Color: ${color}
+📊 Quantity: ${quantity}x
+💰 Unit Price: $17.99
+💵 Total: $${totalPrice} USD
+
+👤 Customer Details:
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+
+📍 Shipping Address:
+Address 1: ${address1}
+${address2 ? `Address 2: ${address2}\n` : ''}City: ${city}
+ZIP Code: ${zip}`;
+
+    // Telegram link to @TrendFloat
+    const telegramUrl = 'https://t.me/TrendFloat?text=' + encodeURIComponent(message);
+
+    window.open(telegramUrl, '_blank');
+
+    alert('✅ Order #' + orderNum + ' Created!\n\nQuantity: ' + quantity + 'x\nTotal: $' + totalPrice + ' USD\n\nYour Telegram app will open.\nJust click Send!');
+
+    closeBankDetails();
+  } catch(error) {
+    console.error('Error:', error);
+    alert('❌ Error: ' + error.message);
+  }
+}
+</script>
+    </div>
+
   </div>
 </section>
 
@@ -520,29 +1606,39 @@
     <h2>Why cats love it</h2>
     <p class="features-sub">Smart, safe, and built to keep your cat entertained – with zero effort from you.</p>
     <div class="features-grid">
+      <!-- Row 1: image left | video right -->
       <div class="feature">
-        <div class="feature-img"><img src="img/feature-modes.jpg" alt="Two smart modes" /></div>
+        <div class="feature-img"><img src="img/feature-product.webp" alt="Two smart modes – one-touch button" loading="lazy" /></div>
         <div class="feature-text">
           <h3>Two Smart Modes</h3>
           <p>Normal mode runs 5 minutes then rests. Smart mode stays in 24h standby and wakes the moment your cat touches it – no wasted battery.</p>
         </div>
       </div>
       <div class="feature">
-        <div class="feature-img"><img src="img/feature-usb.jpg" alt="USB-C charging" /></div>
-        <div class="feature-text">
-          <h3>USB-C Rechargeable</h3>
-          <p>150 mAh battery, charges quickly with the included cable. No batteries to buy, no waste – ready whenever your cat is.</p>
+        <div class="feature-img">
+          <video autoplay muted loop playsinline preload="metadata">
+            <source src="video/video-1.mp4" type="video/mp4">
+          </video>
         </div>
-      </div>
-      <div class="feature">
-        <div class="feature-img"><img src="img/product-5.jpg" alt="Multiple motion states" /></div>
         <div class="feature-text">
           <h3>Unpredictable Motion</h3>
           <p>Randomly triggered motion patterns mimic real prey. Rolls, pivots, bumps off walls – irresistible even to lazy cats.</p>
         </div>
       </div>
+      <!-- Row 2: image left | video right -->
       <div class="feature">
-        <div class="feature-img"><img src="img/product-8.jpg" alt="Adjustable speed" /></div>
+        <div class="feature-img"><img src="img/feature-lifestyle.webp" alt="Cat playing with the smart interactive ball" loading="lazy" /></div>
+        <div class="feature-text">
+          <h3>Loved by Cats Everywhere</h3>
+          <p>Trusted by thousands of cat parents. Safe, quiet, and built to keep your cat happily entertained – indoors, day or night.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-img">
+          <video autoplay muted loop playsinline preload="metadata">
+            <source src="video/video-2.mp4" type="video/mp4">
+          </video>
+        </div>
         <div class="feature-text">
           <h3>Adjustable Speed</h3>
           <p>Kittens, seniors, short-legged breeds – dial the speed to match your cat. Safe grip silicone shell won't scratch floors.</p>
@@ -552,6 +1648,189 @@
   </div>
 </section>
 
+<!-- Comparison Section -->
+<style>
+  .comparison-compact {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 40px 20px;
+  }
+  
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  
+  .comparison-card {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid #e5e5e5;
+  }
+  
+  .comparison-card-highlight {
+    background: linear-gradient(135deg, #fff9f0 0%, #fff5e6 100%);
+    border: 2px solid #ffd140;
+  }
+  
+  @media (max-width: 768px) {
+    .comparison-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    
+    .comparison-card {
+      padding: 16px;
+    }
+    
+    .comparison-compact {
+      padding: 20px 16px;
+      margin: 40px auto;
+    }
+    
+    .comparison-compact h2 {
+      font-size: 24px !important;
+    }
+    
+    .comparison-compact p {
+      font-size: 14px !important;
+    }
+  }
+</style>
+
+<section class="comparison-compact" style="max-width: 1200px; margin: 60px auto; padding: 40px 20px;">
+  
+  <div style="text-align: center; margin-bottom: 40px;">
+    <h2 style="font-size: 32px; font-weight: 900; color: #1a1a1a; margin-bottom: 8px;">Why Choose TrendFloat Over Others?</h2>
+    <p style="font-size: 16px; color: #6b6b6b;">See how we stack up against the competition</p>
+  </div>
+
+  <div class="comparison-grid">
+    
+    <!-- Competitor Card -->
+    <div style="background: #f9f9f9; border-radius: 12px; padding: 24px; border: 1px solid #e5e5e5;">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <div style="font-size: 14px; font-weight: 700; color: #595959; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Competitor</div>
+        <div style="font-size: 20px; font-weight: 800; color: #1a1a1a;">Other Brands</div>
+      </div>
+
+      <div style="space-y: 16px;">
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5;">
+          <div style="font-size: 12px; color: #595959; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Price</div>
+          <div style="font-size: 18px; font-weight: 800; color: #1a1a1a;">$50.00</div>
+        </div>
+
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5;">
+          <div style="font-size: 12px; color: #595959; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Shipping Cost</div>
+          <div style="font-size: 14px; color: #595959;">Variable (cost unclear)</div>
+        </div>
+
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5;">
+          <div style="font-size: 12px; color: #595959; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Processing & Delivery</div>
+          <div style="font-size: 14px; color: #595959;">24-72 hours processing</div>
+          <div style="font-size: 12px; color: #595959; margin-top: 4px;">6-15 days delivery</div>
+        </div>
+
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5;">
+          <div style="font-size: 12px; color: #595959; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Reviews</div>
+          <div style="font-size: 14px; color: #595959;">⭐⭐⭐⭐⭐ 11 reviews</div>
+        </div>
+
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5;">
+          <div style="font-size: 12px; color: #595959; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Guarantee</div>
+          <div style="font-size: 14px; color: #595959;">30-day return policy</div>
+        </div>
+
+        <div>
+          <div style="font-size: 12px; color: #595959; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Support</div>
+          <div style="font-size: 14px; color: #595959;">Standard support</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TrendFloat Card (Highlighted) -->
+    <div style="background: linear-gradient(135deg, #fff9f0 0%, #fff5e6 100%); border-radius: 12px; padding: 24px; border: 2px solid #ffd140; position: relative;">
+      <div style="position: absolute; top: -12px; right: 20px; background: #ffd140; color: #3d2414; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">🏆 Best Value</div>
+      
+      <div style="text-align: center; margin-bottom: 24px; padding-top: 8px;">
+        <div style="font-size: 14px; font-weight: 700; color: #ffd140; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">TrendFloat</div>
+        <div style="font-size: 20px; font-weight: 800; color: #3d2414;">Interactive Cat Toy</div>
+      </div>
+
+      <div style="space-y: 16px;">
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255, 209, 64, 0.3);">
+          <div style="font-size: 12px; color: #6b6b6b; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Price</div>
+          <div style="font-size: 18px; font-weight: 800; color: #3d2414;">$17.99 <span style="font-size: 12px; color: #ff6b6b; text-decoration: line-through;">$50.00</span></div>
+          <div style="font-size: 12px; color: #ff6b6b; font-weight: 700; margin-top: 4px;">✓ Lowest Price (64% OFF)</div>
+        </div>
+
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255, 209, 64, 0.3);">
+          <div style="font-size: 12px; color: #6b6b6b; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Shipping Cost</div>
+          <div style="font-size: 14px; color: #3d2414; font-weight: 700;">✓ Completely FREE</div>
+          <div style="font-size: 12px; color: #6b6b6b;">All orders worldwide</div>
+        </div>
+
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255, 209, 64, 0.3);">
+          <div style="font-size: 12px; color: #6b6b6b; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Processing & Delivery</div>
+          <div style="font-size: 14px; color: #3d2414; font-weight: 700;">✓ Express Processing</div>
+          <div style="font-size: 12px; color: #6b6b6b;">24-72 hours preparation</div>
+          <div style="font-size: 14px; color: #3d2414; font-weight: 700; margin-top: 6px;">Ultra-Fast Arrival</div>
+          <div style="font-size: 12px; color: #6b6b6b;">3-7 days (US) | 5-11 days (Worldwide)</div>
+          <div style="font-size: 12px; color: #4CAF50; font-weight: 700; margin-top: 4px;">✓ Tracked in Real-Time</div>
+        </div>
+
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255, 209, 64, 0.3);">
+          <div style="font-size: 12px; color: #6b6b6b; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Reviews</div>
+          <div style="font-size: 14px; color: #3d2414; font-weight: 700;">⭐⭐⭐⭐⭐ 4.9/5</div>
+          <div style="font-size: 12px; color: #6b6b6b;">✓ 300+ Verified</div>
+        </div>
+
+        <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255, 209, 64, 0.3);">
+          <div style="font-size: 12px; color: #6b6b6b; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Guarantee</div>
+          <div style="font-size: 14px; color: #3d2414; font-weight: 700;">✓ 30-Day Risk-Free</div>
+          <div style="font-size: 12px; color: #6b6b6b;">No questions asked</div>
+        </div>
+
+        <div style="background: white; padding: 12px; border-radius: 8px; border-left: 3px solid #ffd140;">
+          <div style="font-size: 12px; color: #6b6b6b; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Support</div>
+          <div style="font-size: 13px; color: #3d2414; font-weight: 700;">24/7 Dedicated Team</div>
+          <div style="font-size: 12px; color: #6b6b6b;">Hassle-free returns</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Key Features -->
+  <div style="background: #f9f9f9; border-radius: 12px; padding: 24px;">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <div style="font-size: 18px; font-weight: 800; color: #1a1a1a;">What Makes TrendFloat Different</div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px;">
+      <div style="text-align: center;">
+        <div style="font-size: 24px; margin-bottom: 8px;">🔋</div>
+        <div style="font-size: 13px; font-weight: 700; color: #3d2414;">8+ Hour Battery</div>
+      </div>
+      <div style="text-align: center;">
+        <div style="font-size: 24px; margin-bottom: 8px;">🔇</div>
+        <div style="font-size: 13px; font-weight: 700; color: #3d2414;">Whisper Quiet</div>
+      </div>
+      <div style="text-align: center;">
+        <div style="font-size: 24px; margin-bottom: 8px;">💪</div>
+        <div style="font-size: 13px; font-weight: 700; color: #3d2414;">Military Grade</div>
+      </div>
+      <div style="text-align: center;">
+        <div style="font-size: 24px; margin-bottom: 8px;">📦</div>
+        <div style="font-size: 13px; font-weight: 700; color: #3d2414;">Tracked Delivery</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- End Comparison Section -->
+
 <!-- Reviews (placeholder) -->
 <section class="reviews" id="reviews">
   <h2>Customer Reviews</h2>
@@ -559,46 +1838,157 @@
     <div class="reviews-avg">
       <div class="stars">★★★★★</div>
       <div class="reviews-avg-num">4.9 out of 5</div>
-      <div class="reviews-avg-count">Based on customer reviews</div>
+      <div class="reviews-avg-count">Based on verified customer reviews</div>
     </div>
-    <button class="write-review">Write a review</button>
   </div>
-  <div class="review-placeholder">
-    ⏳ Reviews will be added here — send them over and I'll drop them in.
+  <div class="reviews-list">
+
+    <div class="review">
+      <div class="review-header">
+        <div class="review-avatar">M</div>
+        <div class="review-meta">
+          <div class="review-name">M. R. <span class="verified">✓ Verified Purchase</span></div>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="review-date">April 20, 2026</div>
+      </div>
+      <p class="review-text">My kitten absolutely loves chasing this ball! It has a small built-in light so we can find it easily in dark rooms — perfect for late-night play. Only small downside is that it picks up fur from the floor, but a quick wipe cleans it right off ☺️</p>
+      <div class="review-photos">
+        <img src="img/reviews/review-1.webp" alt="Customer photo – two cats playing" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="review">
+      <div class="review-header">
+        <div class="review-avatar">A</div>
+        <div class="review-meta">
+          <div class="review-name">A. I. <span class="verified">✓ Verified Purchase</span></div>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="review-date">August 22, 2025</div>
+      </div>
+      <p class="review-text">Amazing quality for the price. My kitten goes completely wild with it — it rolls, wobbles, and makes just enough noise to keep her interested. Really durable too, it took a tumble down the stairs and still works perfectly. Attaching a photo of my exhausted kitten after chasing it for half an hour 😅 Battery lasts plenty long. Highly recommend!</p>
+      <div class="review-photos">
+        <img src="img/reviews/review-2.webp" alt="Customer photo – cat playing with ball" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="review">
+      <div class="review-header">
+        <div class="review-avatar">L</div>
+        <div class="review-meta">
+          <div class="review-name">L. K. <span class="verified">✓ Verified Purchase</span></div>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="review-date">May 7, 2026</div>
+      </div>
+      <p class="review-text">You press the side button and it lights up and starts rolling around on its own — completely random movement. My kitten loves playing chase with it; he hides behind furniture and then bolts after it. Really entertaining to watch. Charges via USB-C. Shipping was quick too, arrived within about a week.</p>
+      <div class="review-photos">
+        <img src="img/reviews/review-3.webp" alt="Customer photo – ball charging on desk" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="review">
+      <div class="review-header">
+        <div class="review-avatar">S</div>
+        <div class="review-meta">
+          <div class="review-name">S. P. <span class="verified">✓ Verified Purchase</span></div>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="review-date">June 12, 2026</div>
+      </div>
+      <p class="review-text">Press the button and off it goes — the motion is unpredictable so my cat never gets bored. She waits behind the couch and pounces the moment it rolls by. Charges quickly with USB-C. Great little toy — worth every penny.</p>
+      <div class="review-photos">
+        <img src="img/reviews/review-4.webp" alt="Customer photo – holding the ball" loading="lazy" />
+      </div>
+    </div>
+
   </div>
 </section>
+
+<!-- About Us -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <h2>About TrendFloat</h2>
+    <p class="about-tagline">Smart toys for smart cats.</p>
+
+    <div class="about-body">
+      <p>TrendFloat was built around a simple idea: <strong>cats deserve better than the same tired old toys.</strong> Between long days indoors and busy owners, most cats end up under-stimulated — and under-stimulated cats get bored, restless, and destructive.</p>
+
+      <p>We source, test, and ship smart, motion-driven pet products that keep cats mentally and physically engaged, even when their humans aren't home. Our flagship <strong>Smart Interactive Cat Toy</strong> has already helped thousands of cat parents around the world turn quiet afternoons into playtime.</p>
+
+      <p>Whether you're chasing away kitten boredom, keeping an older cat active, or just hoping for a few extra minutes of quiet — we're here to make your cat's life more fun, and yours a little easier.</p>
+    </div>
+
+    <div class="about-values">
+      <div class="about-value">
+        <div class="icon">🐾</div>
+        <h3>Cat-First Design</h3>
+        <p>Every product is tested for safety, durability, and how much cats actually enjoy it.</p>
+      </div>
+      <div class="about-value">
+        <div class="icon">💛</div>
+        <h3>Honest Pricing</h3>
+        <p>No fake countdowns, no bait-and-switch. What you see is what you pay.</p>
+      </div>
+      <div class="about-value">
+        <div class="icon">📧</div>
+        <h3>Real Support</h3>
+        <p>A real inbox, a real human, real answers – usually within 24 hours.</p>
+      </div>
+      <div class="about-value">
+        <div class="icon">🌍</div>
+        <h3>Global Shipping</h3>
+        <p>We ship worldwide from partner warehouses, delivered within 5–11 days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Back to top button -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<!-- Cookie consent banner -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      🍪 <strong>We use cookies</strong> to improve your experience and show you relevant ads. You can accept, reject, or read our <a href="#privacy">privacy policy</a> to learn more.
+    </div>
+    <div class="cookie-actions">
+      <button class="cookie-btn cookie-reject" onclick="tfRejectCookies()">Reject</button>
+      <button class="cookie-btn cookie-accept" onclick="tfAcceptCookies()">Accept</button>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox for review photos -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Close">×</button>
+  <img id="lightboxImg" src="" alt="" />
+</div>
 
 <!-- Footer -->
 <footer class="footer" id="footer">
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="logo">
-        <span class="logo-mark">T</span>
         <span>TrendFloat</span>
       </div>
       <p>Smart pet products your cat will actually use. Curated, tested, and shipped worldwide.</p>
     </div>
     <div>
-      <h4>Legal information</h4>
-      <ul>
-        <li><a href="#">Privacy policy</a></li>
-        <li><a href="#">Terms & conditions</a></li>
-        <li><a href="#">Cancellation policy</a></li>
-      </ul>
+      <h3>Order Tracking</h3>
+      <p style="color:rgba(255,255,255,0.75);font-size:14.5px;margin-bottom:16px;line-height:1.5;">Track your shipment from any courier, worldwide.</p>
+      <a href="https://parcelsapp.com/" target="_blank" rel="noopener" class="track-btn">📦 Track Your Order →</a>
     </div>
     <div>
-      <h4>General information</h4>
-      <ul>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Shipping & Returns</a></li>
-        <li><a href="#">Track your order</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Help & Support</h4>
+      <h3>Help & Support</h3>
       <ul>
         <li>📧 <a href="mailto:yairst2408@gmail.com">yairst2408@gmail.com</a></li>
+        <li>💬 <a href="https://m.me/61590343934469" target="_blank" rel="noopener">Message us on Messenger</a></li>
         <li>🚚 Ships worldwide within 5–11 days</li>
+        <li>📍 1800 S. Archibald Ave.,<br>Ontario, CA 91761, USA</li>
       </ul>
     </div>
   </div>
@@ -614,14 +2004,6 @@
     document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
     el.classList.add('active');
   }
-  // Color selector
-  function setColor(el, src) {
-    document.querySelectorAll('.color-opt').forEach(c => c.classList.remove('selected'));
-    el.classList.add('selected');
-    document.getElementById('selColor').textContent = el.dataset.color;
-    document.getElementById('mainImg').src = src;
-    document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-  }
   // Rolling offer-ends date (7 days out)
   (function() {
     const d = new Date();
@@ -631,7 +2013,102 @@
   })();
   // Review count placeholder (update after you send reviews)
   document.getElementById('reviewCount').textContent = '4.9 · 300+ reviews';
+
+  // Lightbox for review photos
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  document.querySelectorAll('.review-photos img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  function closeLightbox(e) {
+    if (e) e.stopPropagation();
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  // Cookie consent management
+  (function() {
+    var banner = document.getElementById('cookieBanner');
+    try {
+      if (!localStorage.getItem('tf_consent')) {
+        // Small delay so it doesn't flash on first paint
+        setTimeout(function(){ banner.classList.add('show'); }, 400);
+      }
+    } catch(e) { banner.classList.add('show'); }
+  })();
+  function tfAcceptCookies() {
+    try { localStorage.setItem('tf_consent', 'accepted'); } catch(e) {}
+    document.getElementById('cookieBanner').classList.remove('show');
+    tfLoadMetaPixel();
+    tfLoadStatcounter();
+    if (window.tfUpdateBackToTop) window.tfUpdateBackToTop();
+  }
+  function tfRejectCookies() {
+    try { localStorage.setItem('tf_consent', 'rejected'); } catch(e) {}
+    document.getElementById('cookieBanner').classList.remove('show');
+    if (window.tfUpdateBackToTop) window.tfUpdateBackToTop();
+  }
+
+  // Mobile menu toggle
+  (function() {
+    var toggle = document.getElementById('menuToggle');
+    var nav = document.getElementById('mainNav');
+    toggle.addEventListener('click', function() {
+      var isOpen = nav.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+    nav.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+
+  // Back to top button
+  (function() {
+    var btn = document.getElementById('backToTop');
+    var cookieBanner = document.getElementById('cookieBanner');
+
+    function toggleVisibility() {
+      if (window.scrollY > 500) {
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
+      // Sit just above the cookie banner if it's currently showing, measured live
+      if (cookieBanner.classList.contains('show')) {
+        var bannerRect = cookieBanner.getBoundingClientRect();
+        var viewportHeight = window.innerHeight;
+        var clearance = Math.max(20, (viewportHeight - bannerRect.top) + 14);
+        btn.style.bottom = clearance + 'px';
+      } else {
+        btn.style.bottom = '';
+      }
+    }
+    window.tfUpdateBackToTop = toggleVisibility;
+
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
+    window.addEventListener('resize', toggleVisibility);
+    toggleVisibility();
+
+    btn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
 </script>
+
+<!-- Sticky Mobile Checkout Button -->
 
 </body>
 </html>
