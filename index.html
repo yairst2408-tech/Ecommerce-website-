@@ -230,101 +230,6 @@
             margin: 0;
         }
 
-        .cta-section {
-            background: linear-gradient(135deg, #f5f7fa 0%, #f0f0f0 100%);
-            padding: 30px;
-            border-radius: 12px;
-            margin: 30px 0;
-        }
-
-        .cta-section h3 {
-            color: #333;
-            font-size: 16px;
-            margin-bottom: 15px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .btn {
-            padding: 12px 28px;
-            border: none;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
-        }
-
-        .btn-secondary:hover {
-            background: #f8f9ff;
-            transform: translateY(-2px);
-        }
-
-        .countdown {
-            margin: 40px 0;
-            padding: 30px;
-            background: #f8f9ff;
-            border-radius: 12px;
-            border: 2px solid #667eea;
-        }
-
-        .countdown h3 {
-            color: #333;
-            font-size: 14px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .timer {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .timer-item {
-            text-align: center;
-        }
-
-        .timer-value {
-            font-size: 32px;
-            font-weight: 900;
-            color: #667eea;
-        }
-
-        .timer-label {
-            font-size: 12px;
-            color: #999;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 5px;
-        }
-
         .newsletter {
             background: #f8f9fa;
             padding: 30px;
@@ -377,6 +282,60 @@
 
         .newsletter-form button:hover {
             background: #764ba2;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #f0f0f0 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .cta-section h3 {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #f8f9ff;
+            transform: translateY(-2px);
         }
 
         .footer {
@@ -453,14 +412,6 @@
                 width: 100%;
             }
 
-            .timer {
-                gap: 10px;
-            }
-
-            .timer-value {
-                font-size: 24px;
-            }
-
             .newsletter-form {
                 flex-direction: column;
             }
@@ -480,7 +431,7 @@
         <!-- Header -->
         <div class="header">
             <div class="header-content">
-                <h1 class="error-code">404</h1>
+                <h1 class="error-code">🌊</h1>
                 <span class="status-badge">🚧 Under Construction</span>
             </div>
         </div>
@@ -513,29 +464,6 @@
                     <div class="feature-icon">📱</div>
                     <h3>Mobile Ready</h3>
                     <p>Works perfectly on any device</p>
-                </div>
-            </div>
-
-            <!-- Countdown Timer -->
-            <div class="countdown">
-                <h3>Launching Soon</h3>
-                <div class="timer">
-                    <div class="timer-item">
-                        <div class="timer-value" id="days">00</div>
-                        <div class="timer-label">Days</div>
-                    </div>
-                    <div class="timer-item">
-                        <div class="timer-value" id="hours">00</div>
-                        <div class="timer-label">Hours</div>
-                    </div>
-                    <div class="timer-item">
-                        <div class="timer-value" id="minutes">00</div>
-                        <div class="timer-label">Minutes</div>
-                    </div>
-                    <div class="timer-item">
-                        <div class="timer-value" id="seconds">00</div>
-                        <div class="timer-label">Seconds</div>
-                    </div>
                 </div>
             </div>
 
@@ -572,38 +500,6 @@
     </div>
 
     <script>
-        // Countdown Timer
-        function startCountdown() {
-            // Set launch date to 7 days from now
-            const launchDate = new Date().getTime() + (7 * 24 * 60 * 60 * 1000);
-
-            function updateTimer() {
-                const now = new Date().getTime();
-                const timeLeft = launchDate - now;
-
-                if (timeLeft < 0) {
-                    document.getElementById('days').textContent = '00';
-                    document.getElementById('hours').textContent = '00';
-                    document.getElementById('minutes').textContent = '00';
-                    document.getElementById('seconds').textContent = '00';
-                    return;
-                }
-
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-                document.getElementById('days').textContent = String(days).padStart(2, '0');
-                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-            }
-
-            updateTimer();
-            setInterval(updateTimer, 1000);
-        }
-
         // Subscribe to newsletter
         function subscribeNewsletter() {
             const email = document.querySelector('.newsletter-form input').value;
@@ -623,9 +519,6 @@
         function contactSupport() {
             alert('📧 You can reach us at:\nsupport@trendfloat.com\n\nWe\'ll respond within 24 hours!');
         }
-
-        // Start countdown on page load
-        window.addEventListener('load', startCountdown);
 
         // Allow Enter key to submit email
         document.querySelector('.newsletter-form input')?.addEventListener('keypress', function(e) {
