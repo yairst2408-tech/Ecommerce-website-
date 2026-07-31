@@ -7,11 +7,7 @@
 <meta name="description" content="Smart Interactive Cat Toy – Auto rolling, USB rechargeable electric cat toy. Two smart modes, whisper-quiet, bite-resistant. Free worldwide shipping." />
 <link rel="preconnect" href="https://connect.facebook.net">
 <link rel="preconnect" href="https://www.paypal.com">
-<link rel="dns-prefetch" href="https://www.paypal.com">
 <link rel="preconnect" href="https://www.paypal.com">
-<link rel="preconnect" href="https://www.paypalobjects.com">
-<link rel="dns-prefetch" href="https://www.paypal.com">
-<link rel="preconnect" href="https://www.statcounter.com">
 <link rel="preload" href="img/product-hero.webp" as="image" fetchpriority="high">
   <link rel="preload" href="img/product-hero.webp" as="image" fetchpriority="high">
   <link rel="preload" href="fonts/nunito-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -1012,6 +1008,11 @@
     .cookie-text { min-width: 0; font-size: 13.5px; }
     .lightbox { padding: 16px; }
   }
+
+  @media print {
+    body { background: white; }
+    .cookie-banner, .back-to-top { display: none; }
+  }
 </style>
 <script src="https://www.paypal.com/sdk/js?client-id=BAAoppR3wgpIZ8B-uOxpBJuE-rUUMG2G7BGs51s7fWZOWzZmS25nbkWUz93OQ3BHL-ykpZTVEZS-KZaqlw&currency=USD"></script>
 </head>
@@ -1077,7 +1078,12 @@
           display: block !important;
         }
       }
-    </style>
+    
+  @media print {
+    body { background: white; }
+    .cookie-banner, .back-to-top { display: none; }
+  }
+</style>
 
     <div class="rating">
       <span class="stars">★★★★★</span>
@@ -1177,7 +1183,12 @@
         @media (max-width:480px){
           .tf-ship-info{ font-size:0.78rem; padding:8px 12px; }
         }
-      </style>
+      
+  @media print {
+    body { background: white; }
+    .cookie-banner, .back-to-top { display: none; }
+  }
+</style>
       <!-- Payment Section -->
       <div style="width:100%; max-width:480px; margin:0 auto;">
 
@@ -1697,6 +1708,11 @@ ZIP Code: ${zip}`;
     .comparison-compact p {
       font-size: 14px !important;
     }
+  }
+
+  @media print {
+    body { background: white; }
+    .cookie-banner, .back-to-top { display: none; }
   }
 </style>
 
