@@ -1207,6 +1207,45 @@
           🏦 Pay by Bank Transfer
         </button>
 
+        <!-- 30-Day Returns Policy -->
+        <div style="margin-bottom:16px; border:1px solid #e5e5e5; border-radius:10px; overflow:hidden;">
+          <div onclick="toggleReturns()" style="display:flex; align-items:center; justify-content:space-between; padding:12px 14px; background:#f8f9fa; cursor:pointer;">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span style="font-size:22px;">🔄</span>
+              <div>
+                <div style="font-weight:800; font-size:14px; color:#3d2414;">30-Day Returns & Refunds</div>
+                <div style="font-size:11px; color:#6b6b6b;">Tap to see what's covered</div>
+              </div>
+            </div>
+            <span id="returns-arrow" style="font-size:18px; color:#3d2414; transition:transform 0.3s;">▼</span>
+          </div>
+
+          <div id="returns-policy" style="display:none; padding:14px; background:#fff; font-size:12px; line-height:1.7; color:#444; border-top:1px solid #e5e5e5;">
+            <p style="font-weight:800; color:#1a7a3a; margin-bottom:8px;">✅ YOU CAN GET A REFUND OR RESEND IF:</p>
+            <ul style="margin:0; padding-left:16px; color:#555;">
+              <li style="margin-bottom:6px;"><strong>Product damaged upon arrival</strong> — If your item arrives damaged, you will receive a full refund or replacement at your choice, with no questions asked.</li>
+              <li style="margin-bottom:6px;"><strong>Wrong product received</strong> — full refund or replacement</li>
+              <li style="margin-bottom:6px;"><strong>Wrong color/size (doesn't affect function)</strong> — refund or resend with photo proof</li>
+              <li style="margin-bottom:6px;"><strong>Missing part (doesn't affect function)</strong> — partial refund or resend the part</li>
+              <li style="margin-bottom:6px;"><strong>Missing accessory</strong> — free resend</li>
+              <li style="margin-bottom:6px;"><strong>Order delayed 60+ days</strong> — open dispute with carrier (USA: 45 days, Brazil: 110 days)</li>
+            </ul>
+
+            <p style="font-weight:800; color:#d63535; margin-bottom:8px; margin-top:12px;">❌ YOU CANNOT GET A REFUND IF:</p>
+            <ul style="margin:0; padding-left:16px; color:#555;">
+              <li style="margin-bottom:6px;"><strong>Change of mind</strong> — received product in good condition as described</li>
+              <li style="margin-bottom:6px;"><strong>Tracking shows "Delivered"</strong> — unless you have non-delivery certificate from local post office</li>
+              <li style="margin-bottom:6px;"><strong>Damaged shipping box only</strong> — cosmetic damage from international transit (not product damage)</li>
+              <li style="margin-bottom:6px;"><strong>Customs issues</strong> — package held/returned due to customs clearance</li>
+              <li style="margin-bottom:6px;"><strong>Lost during delivery</strong> — carrier responsibility after leaving our warehouse</li>
+              <li style="margin-bottom:6px;"><strong>Package not picked up in time</strong> — returned to sender after 3-7 days at post office</li>
+            </ul>
+
+            <p style="font-weight:800; color:#3d2414; margin-top:12px; margin-bottom:6px;">⏱️ TIME LIMITS:</p>
+            <p style="margin:0; color:#555;">File claims within <strong>30 days of delivery</strong> for best results. Delays after 30 days may not be covered.</p>
+          </div>
+        </div>
+
         <!-- Trust Badges -->
         <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:8px;">
           <span style="display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:800; color:#1a7a3a; background:#f2faf5; border:1px solid #cfe8d8; border-radius:6px; padding:7px 12px;">
@@ -1456,6 +1495,18 @@ function selectColor(btn, color) {
   btn.style.background = colorMap[color];
   btn.style.color = 'white';
   btn.style.borderColor = colorMap[color];
+}
+
+function toggleReturns() {
+  var policy = document.getElementById('returns-policy');
+  var arrow = document.getElementById('returns-arrow');
+  if (policy.style.display === 'none') {
+    policy.style.display = 'block';
+    arrow.style.transform = 'rotate(180deg)';
+  } else {
+    policy.style.display = 'none';
+    arrow.style.transform = 'rotate(0deg)';
+  }
 }
 
 function showBankDetails() {
