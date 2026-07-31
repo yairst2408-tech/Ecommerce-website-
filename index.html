@@ -22,7 +22,6 @@
             overflow: hidden;
         }
 
-        /* Animated background elements */
         .bg-decoration {
             position: fixed;
             top: 0;
@@ -230,114 +229,6 @@
             margin: 0;
         }
 
-        .newsletter {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 12px;
-            margin: 30px 0;
-        }
-
-        .newsletter h3 {
-            color: #333;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        .newsletter p {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 10px;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 12px 16px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 14px;
-        }
-
-        .newsletter-form input:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .newsletter-form button {
-            padding: 12px 24px;
-            background: #667eea;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .newsletter-form button:hover {
-            background: #764ba2;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, #f5f7fa 0%, #f0f0f0 100%);
-            padding: 30px;
-            border-radius: 12px;
-            margin: 30px 0;
-        }
-
-        .cta-section h3 {
-            color: #333;
-            font-size: 16px;
-            margin-bottom: 15px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .btn {
-            padding: 12px 28px;
-            border: none;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
-        }
-
-        .btn-secondary:hover {
-            background: #f8f9ff;
-            transform: translateY(-2px);
-        }
-
         .footer {
             background: #f8f9fa;
             padding: 30px 40px;
@@ -403,32 +294,17 @@
             .features {
                 grid-template-columns: 1fr;
             }
-
-            .buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Animated Background -->
     <div class="bg-decoration">
         <div class="circle circle1"></div>
         <div class="circle circle2"></div>
         <div class="circle circle3"></div>
     </div>
 
-    <!-- Main Container -->
     <div class="container">
-        <!-- Header -->
         <div class="header">
             <div class="header-content">
                 <h1 class="error-code">🌊</h1>
@@ -436,14 +312,12 @@
             </div>
         </div>
 
-        <!-- Content -->
         <div class="content">
             <div class="construction-icon">🔨</div>
             
             <h1>We're Building Something Amazing!</h1>
             <p>Our team is hard at work crafting an incredible experience for you. This page is under construction, but we'll be live very soon.</p>
 
-            <!-- Features -->
             <div class="features">
                 <div class="feature">
                     <div class="feature-icon">⚡</div>
@@ -466,28 +340,8 @@
                     <p>Works perfectly on any device</p>
                 </div>
             </div>
-
-            <!-- Newsletter Signup -->
-            <div class="newsletter">
-                <h3>🎉 Get Notified When We Launch!</h3>
-                <p>Be the first to know when we go live. Join our exclusive early access list.</p>
-                <div class="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button onclick="subscribeNewsletter()">Notify Me</button>
-                </div>
-            </div>
-
-            <!-- CTA Section -->
-            <div class="cta-section">
-                <h3>What Would You Like to Do?</h3>
-                <div class="buttons">
-                    <a href="/" class="btn btn-primary">← Back to Home</a>
-                    <button class="btn btn-secondary" onclick="contactSupport()">📧 Contact Support</button>
-                </div>
-            </div>
         </div>
 
-        <!-- Footer -->
         <div class="footer">
             <p>🌊 TrendFloat © 2026 | All Rights Reserved</p>
             <div class="social-links">
@@ -498,34 +352,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        // Subscribe to newsletter
-        function subscribeNewsletter() {
-            const email = document.querySelector('.newsletter-form input').value;
-            if (!email) {
-                alert('Please enter your email address');
-                return;
-            }
-            if (!email.includes('@')) {
-                alert('Please enter a valid email address');
-                return;
-            }
-            alert('✅ Thanks for subscribing! Check your email for updates.');
-            document.querySelector('.newsletter-form input').value = '';
-        }
-
-        // Contact support
-        function contactSupport() {
-            alert('📧 You can reach us at:\nsupport@trendfloat.com\n\nWe\'ll respond within 24 hours!');
-        }
-
-        // Allow Enter key to submit email
-        document.querySelector('.newsletter-form input')?.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                subscribeNewsletter();
-            }
-        });
-    </script>
 </body>
 </html>
