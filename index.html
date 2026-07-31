@@ -6,8 +6,15 @@
 <title>Smart Interactive Cat Toy – Auto Rolling USB Rechargeable Toy | TrendFloat</title>
 <meta name="description" content="Smart Interactive Cat Toy – Auto rolling, USB rechargeable electric cat toy. Two smart modes, whisper-quiet, bite-resistant. Free worldwide shipping." />
 <link rel="preconnect" href="https://connect.facebook.net">
+<link rel="preconnect" href="https://www.paypal.com">
+<link rel="dns-prefetch" href="https://www.paypal.com">
+<link rel="preconnect" href="https://www.paypal.com">
+<link rel="preconnect" href="https://www.paypalobjects.com">
+<link rel="dns-prefetch" href="https://www.paypal.com">
 <link rel="preconnect" href="https://www.statcounter.com">
-<link rel="preload" href="fonts/nunito-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/product-hero.webp" as="image" fetchpriority="high">
+  <link rel="preload" href="img/product-hero.webp" as="image" fetchpriority="high">
+  <link rel="preload" href="fonts/nunito-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/nunito-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
 
 <!-- Meta Pixel (loaded only after consent) -->
@@ -1041,15 +1048,15 @@
 <section class="product">
   <div>
     <div class="gallery-main">
-      <img id="mainImg" src="img/product-hero.webp" alt="Smart Interactive Cat Toy" />
+      <img id="mainImg" src="img/product-hero.webp" alt="Smart Interactive Cat Toy" fetchpriority="high" loading="eager" width="600" height="600" />
     </div>
     <div class="thumbs">
-      <div class="thumb active" onclick="setImg(this,'img/product-hero.webp')"><img src="img/product-hero.webp" alt="" /></div>
-      <div class="thumb" onclick="setImg(this,'img/product-3.webp')"><img src="img/product-3.webp" alt="" /></div>
-      <div class="thumb" onclick="setImg(this,'img/product-5.webp')"><img src="img/product-5.webp" alt="" /></div>
-      <div class="thumb" onclick="setImg(this,'img/product-8.webp')"><img src="img/product-8.webp" alt="" /></div>
-      <div class="thumb" onclick="setImg(this,'img/product-6.webp')"><img src="img/product-6.webp" alt="" /></div>
-      <div class="thumb" onclick="setImg(this,'img/product-2.webp')"><img src="img/product-2.webp" alt="" /></div>
+      <div class="thumb active" onclick="setImg(this,'img/product-hero.webp')"><img src="img/product-hero.webp" alt="" loading="lazy" width="80" height="80" /></div>
+      <div class="thumb" onclick="setImg(this,'img/product-3.webp')"><img src="img/product-3.webp" alt="" loading="lazy" width="80" height="80" /></div>
+      <div class="thumb" onclick="setImg(this,'img/product-5.webp')"><img src="img/product-5.webp" alt="" loading="lazy" width="80" height="80" /></div>
+      <div class="thumb" onclick="setImg(this,'img/product-8.webp')"><img src="img/product-8.webp" alt="" loading="lazy" width="80" height="80" /></div>
+      <div class="thumb" onclick="setImg(this,'img/product-6.webp')"><img src="img/product-6.webp" alt="" loading="lazy" width="80" height="80" /></div>
+      <div class="thumb" onclick="setImg(this,'img/product-2.webp')"><img src="img/product-2.webp" alt="" loading="lazy" width="80" height="80" /></div>
     </div>
   </div>
 
@@ -1179,7 +1186,7 @@
         <!-- Divider -->
         <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
           <div style="flex:1; height:1px; background:#e5e5e5;"></div>
-          <span style="font-size:12px; color:#999; font-weight:600;">OR</span>
+          <span style="font-size:12px; color:#595959; font-weight:600;">OR</span>
           <div style="flex:1; height:1px; background:#e5e5e5;"></div>
         </div>
 
@@ -1187,6 +1194,12 @@
         <button onclick="showBankDetails()" style="width:100%; padding:14px; background:#fff; border:2px solid #3d2414; border-radius:8px; font-weight:900; font-size:15px; color:#3d2414; cursor:pointer; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:16px;">
           🏦 Pay by Bank Transfer
         </button>
+
+        <!-- Shipping Info -->
+        <div style="background:#fdf9f4; border:1px solid #e5e5e5; border-radius:8px; padding:12px 14px; margin-bottom:12px; font-size:13px; line-height:1.6;">
+          <div style="margin-bottom:4px;">🇺🇸 <strong>US:</strong> 3–7 days · tracked delivery</div>
+          <div>🚚 <strong>Worldwide:</strong> 5–11 days · free shipping · tracked</div>
+        </div>
 
         <!-- Trust Badges -->
         <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:8px;">
@@ -1202,7 +1215,7 @@
         </div>
 
         <!-- Sold By -->
-        <div style="text-align:center; font-size:12px; color:#999; margin-top:6px;">
+        <div style="text-align:center; font-size:12px; color:#595959; margin-top:6px;">
           Sold by <strong style="color:#3d2414;">TrendFloat</strong>
         </div>
 
@@ -1704,40 +1717,40 @@ ZIP Code: ${zip}`;
     <!-- Competitor Card -->
     <div style="background: #f9f9f9; border-radius: 12px; padding: 24px; border: 1px solid #e5e5e5;">
       <div style="text-align: center; margin-bottom: 24px;">
-        <div style="font-size: 14px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Competitor</div>
+        <div style="font-size: 14px; font-weight: 700; color: #595959; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Competitor</div>
         <div style="font-size: 20px; font-weight: 800; color: #1a1a1a;">Other Brands</div>
       </div>
 
       <div style="space-y: 16px;">
         <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5;">
-          <div style="font-size: 12px; color: #999; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Price</div>
+          <div style="font-size: 12px; color: #595959; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Price</div>
           <div style="font-size: 18px; font-weight: 800; color: #1a1a1a;">$50.00</div>
         </div>
 
         <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5;">
-          <div style="font-size: 12px; color: #999; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Shipping Cost</div>
-          <div style="font-size: 14px; color: #999;">Variable (cost unclear)</div>
+          <div style="font-size: 12px; color: #595959; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Shipping Cost</div>
+          <div style="font-size: 14px; color: #595959;">Variable (cost unclear)</div>
         </div>
 
         <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5;">
-          <div style="font-size: 12px; color: #999; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Processing & Delivery</div>
-          <div style="font-size: 14px; color: #999;">24-72 hours processing</div>
-          <div style="font-size: 12px; color: #999; margin-top: 4px;">6-15 days delivery</div>
+          <div style="font-size: 12px; color: #595959; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Processing & Delivery</div>
+          <div style="font-size: 14px; color: #595959;">24-72 hours processing</div>
+          <div style="font-size: 12px; color: #595959; margin-top: 4px;">6-15 days delivery</div>
         </div>
 
         <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5;">
-          <div style="font-size: 12px; color: #999; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Reviews</div>
-          <div style="font-size: 14px; color: #999;">⭐⭐⭐⭐⭐ 11 reviews</div>
+          <div style="font-size: 12px; color: #595959; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Reviews</div>
+          <div style="font-size: 14px; color: #595959;">⭐⭐⭐⭐⭐ 11 reviews</div>
         </div>
 
         <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5;">
-          <div style="font-size: 12px; color: #999; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Guarantee</div>
-          <div style="font-size: 14px; color: #999;">30-day return policy</div>
+          <div style="font-size: 12px; color: #595959; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Guarantee</div>
+          <div style="font-size: 14px; color: #595959;">30-day return policy</div>
         </div>
 
         <div>
-          <div style="font-size: 12px; color: #999; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Support</div>
-          <div style="font-size: 14px; color: #999;">Standard support</div>
+          <div style="font-size: 12px; color: #595959; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Support</div>
+          <div style="font-size: 14px; color: #595959;">Standard support</div>
         </div>
       </div>
     </div>
