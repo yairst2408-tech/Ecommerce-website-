@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Smart Interactive Cat Ball – Auto Rolling USB Rechargeable Toy | TrendFloat</title>
-<meta name="description" content="Smart Interactive Cat Ball – Auto rolling, USB rechargeable electric cat toy. Two smart modes, whisper-quiet, bite-resistant. Free worldwide shipping." />
+<title>Smart Interactive Cat Toy – Auto Rolling USB Rechargeable Toy | TrendFloat</title>
+<meta name="description" content="Smart Interactive Cat Toy – Auto rolling, USB rechargeable electric cat toy. Two smart modes, whisper-quiet, bite-resistant. Free worldwide shipping." />
 <link rel="preconnect" href="https://connect.facebook.net">
-<link rel="preconnect" href="https://www.statcounter.com">
-<link rel="preload" href="fonts/nunito-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://www.paypal.com">
+<link rel="preload" href="img/product-hero.webp" as="image" fetchpriority="high">
+  <link rel="preload" href="fonts/nunito-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/nunito-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
 
 <!-- Meta Pixel (loaded only after consent) -->
@@ -38,7 +39,7 @@
     }
 
     if(typeof fbq === 'function'){
-      fbq('track','InitiateCheckout',{value:17.99,currency:'USD',content_name:'Smart Interactive Cat Ball',content_ids:['trendfloat-cat-ball']});
+      fbq('track','InitiateCheckout',{value:17.99,currency:'USD',content_name:'Smart Interactive Cat Toy',content_ids:['trendfloat-cat-ball']});
       // Give the pixel request a brief moment to fire, then continue to PayPal
       setTimeout(goToPayPal, 250);
     } else {
@@ -51,6 +52,7 @@
     if(localStorage.getItem('tf_consent') === 'accepted') tfLoadMetaPixel();
   } catch(e) {}
 </script>
+
 <!-- End Meta Pixel -->
 
 <!-- Statcounter (loaded only after consent) -->
@@ -576,8 +578,8 @@
   .verified {
     font-size: 12px;
     font-weight: 700;
-    color: #2a8a4a;
-    background: #e8f5ec;
+    color: #166534;
+    background: #dcfce7;
     padding: 3px 8px;
     border-radius: 4px;
   }
@@ -650,7 +652,7 @@
     border-radius: 12px;
     padding: 20px 24px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-    z-index: 500;
+    z-index: 1000;
     display: none;
     animation: slideUp 0.3s ease;
   }
@@ -692,6 +694,9 @@
   @media (max-width: 500px) {
     .cookie-actions { width: 100%; }
     .cookie-btn { flex: 1; }
+    .cookie-banner {
+      bottom: 80px;
+    }
   }
 
   /* Back to top button */
@@ -783,7 +788,7 @@
     box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   }
   .about-value .icon { font-size: 32px; margin-bottom: 10px; }
-  .about-value h4 {
+  .about-value h3 {
     font-size: 16px;
     font-weight: 900;
     color: var(--brown);
@@ -1001,7 +1006,13 @@
     .cookie-text { min-width: 0; font-size: 13.5px; }
     .lightbox { padding: 16px; }
   }
+
+  @media print {
+    body { background: white; }
+    .cookie-banner, .back-to-top { display: none; }
+  }
 </style>
+<script src="https://www.paypal.com/sdk/js?client-id=BAAoppR3wgpIZ8B-uOxpBJuE-rUUMG2G7BGs51s7fWZOWzZmS25nbkWUz93OQ3BHL-ykpZTVEZS-KZaqlw&currency=USD"></script>
 </head>
 <body>
 
@@ -1009,7 +1020,7 @@
 <div class="topbar">
   <div class="topbar-inner">
     <div class="topbar-item">🎉 <span>SUMMER SALE – Save 64% Today</span></div>
-    <div class="topbar-item">🐾 <span>68,000+ Happy Cat Parents</span></div>
+    <div class="topbar-item">🐾 <span>300+ Happy Customers</span></div>
     <div class="topbar-item">🚚 <span>Free Worldwide Shipping</span></div>
   </div>
 </div>
@@ -1037,15 +1048,15 @@
 <section class="product">
   <div>
     <div class="gallery-main">
-      <img id="mainImg" src="img/product-hero.webp" alt="Smart Interactive Cat Ball" />
+      <img id="mainImg" src="img/product-hero.webp" alt="Smart Interactive Cat Toy" fetchpriority="high" loading="eager" width="600" height="600" />
     </div>
     <div class="thumbs">
-      <div class="thumb active" onclick="setImg(this,'img/product-hero.webp')"><img src="img/product-hero.webp" alt="" /></div>
-      <div class="thumb" onclick="setImg(this,'img/product-3.webp')"><img src="img/product-3.webp" alt="" /></div>
-      <div class="thumb" onclick="setImg(this,'img/product-5.webp')"><img src="img/product-5.webp" alt="" /></div>
-      <div class="thumb" onclick="setImg(this,'img/product-8.webp')"><img src="img/product-8.webp" alt="" /></div>
-      <div class="thumb" onclick="setImg(this,'img/product-6.webp')"><img src="img/product-6.webp" alt="" /></div>
-      <div class="thumb" onclick="setImg(this,'img/product-2.webp')"><img src="img/product-2.webp" alt="" /></div>
+      <div class="thumb active" onclick="setImg(this,'img/product-hero.webp')"><img src="img/product-hero.webp" alt="" loading="lazy" width="80" height="80" /></div>
+      <div class="thumb" onclick="setImg(this,'img/product-3.webp')"><img src="img/product-3.webp" alt="" loading="lazy" width="80" height="80" /></div>
+      <div class="thumb" onclick="setImg(this,'img/product-5.webp')"><img src="img/product-5.webp" alt="" loading="lazy" width="80" height="80" /></div>
+      <div class="thumb" onclick="setImg(this,'img/product-8.webp')"><img src="img/product-8.webp" alt="" loading="lazy" width="80" height="80" /></div>
+      <div class="thumb" onclick="setImg(this,'img/product-6.webp')"><img src="img/product-6.webp" alt="" loading="lazy" width="80" height="80" /></div>
+      <div class="thumb" onclick="setImg(this,'img/product-2.webp')"><img src="img/product-2.webp" alt="" loading="lazy" width="80" height="80" /></div>
     </div>
   </div>
 
@@ -1065,7 +1076,7 @@
           display: block !important;
         }
       }
-    </style>
+</style>
 
     <div class="rating">
       <span class="stars">★★★★★</span>
@@ -1091,8 +1102,8 @@
     <div class="stock-urgency" style="flex-wrap: wrap; gap: 8px;">
       <span class="stock-dot"></span>
       <span style="flex: 1;">
-        <strong style="color: #d63535;">⚡ HURRY:</strong> Only 42 units left at $17.99<br>
-        <span style="font-size: 0.9em; color: var(--muted);">🚚 Ships today if ordered in next 4 hours</span>
+        <strong style="color: #3d2414;">✓ Trusted by 300+ customers</strong> • <strong style="color: #3d2414;">4.9★</strong><br>
+        <span style="font-size: 0.9em; color: var(--muted);">🚚 Ships within 2-3 business days • 180+ countries</span>
       </span>
     </div>
     
@@ -1165,53 +1176,475 @@
         @media (max-width:480px){
           .tf-ship-info{ font-size:0.78rem; padding:8px 12px; }
         }
-      </style>
-       <form class="pp-form-HDJML4YTTSBCA" action="https://www.paypal.com/ncp/payment/HDJML4YTTSBCA?return=https%3A%2F%2Ftrendfloat.com%2Fthank-you.html%3Ftxn%3Dsuccess&cancel=https://trendfloat.com/index.html" method="post" target="_self" onsubmit="tfTrackCheckout(event);">
-        <button class="pp-HDJML4YTTSBCA" type="submit">Pay with <span style="color:#253B80;font-weight:800;">Pay</span><span style="color:#179BD7;font-weight:800;">Pal</span></button>
-        <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
-        <section style="font-size: 0.75rem;">Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
-        <section style="font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:6px;">🔒 Secure checkout · SSL encrypted · Buyer protection by PayPal</section>
+</style>
+      <!-- Payment Section -->
+      <div style="width:100%; max-width:480px; margin:0 auto;">
 
-        <section style="font-size:0.82rem;font-weight:700;color:var(--brown);display:flex;align-items:center;gap:6px;">🛡️ Covered for 30 days — damaged, wrong item, or non-arrival</section>
+        <!-- PayPal Button -->
+        <div id="paypal-button-container" style="width:100%; margin-bottom:12px;"></div>
 
-        <section class="tf-ship-info">
-          <div>🇺🇸 <strong>US customers:</strong> 3–7 days from our US warehouse, tracked delivery</div>
-          <div>🚚 <strong>Rest of world:</strong> free shipping, estimated 5–11 days from our overseas partner warehouse, tracked delivery</div>
-        </section>
+        <!-- Divider -->
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+          <div style="flex:1; height:1px; background:#e5e5e5;"></div>
+          <span style="font-size:12px; color:#595959; font-weight:600;">OR</span>
+          <div style="flex:1; height:1px; background:#e5e5e5;"></div>
+        </div>
 
-        <section class="tf-trust-badges">
-          <span class="tf-trust-pill" style="color:#1a7a3a;border:1px solid #cfe8d8;background:#f2faf5;">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 10V8a6 6 0 0112 0v2" stroke="#1a7a3a" stroke-width="2" stroke-linecap="round"/><rect x="4" y="10" width="16" height="10" rx="2" fill="#1a7a3a"/><circle cx="12" cy="15" r="1.3" fill="#fff"/></svg>
-            SSL SECURED
+        <!-- Bank Transfer Button -->
+        <button onclick="showBankDetails()" style="width:100%; padding:14px; background:#fff; border:2px solid #3d2414; border-radius:8px; font-weight:900; font-size:15px; color:#3d2414; cursor:pointer; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:16px;">
+          🏦 Pay by Bank Transfer
+        </button>
+
+        <!-- 30-Day Returns Policy -->
+        <div style="margin-bottom:16px; border:1px solid #e5e5e5; border-radius:10px; overflow:hidden;">
+          <div onclick="toggleReturns()" style="display:flex; align-items:center; justify-content:space-between; padding:12px 14px; background:#f8f9fa; cursor:pointer;">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span style="font-size:22px;">🔄</span>
+              <div>
+                <div style="font-weight:800; font-size:14px; color:#3d2414;">30-Day Returns & Refunds</div>
+                <div style="font-size:11px; color:#6b6b6b;">Tap to see what's covered</div>
+              </div>
+            </div>
+            <span id="returns-arrow" style="font-size:18px; color:#3d2414; transition:transform 0.3s;">▼</span>
+          </div>
+
+          <div id="returns-policy" style="display:none; padding:14px; background:#fff; font-size:12px; line-height:1.7; color:#444; border-top:1px solid #e5e5e5;">
+            <p style="font-weight:800; color:#1a7a3a; margin-bottom:8px;">✅ YOU CAN GET A REFUND OR RESEND IF:</p>
+            <ul style="margin:0; padding-left:16px; color:#555;">
+              <li style="margin-bottom:6px;"><strong>Product damaged upon arrival</strong> — If your item arrives damaged, you will receive a full refund or replacement at your choice, with no questions asked.</li>
+              <li style="margin-bottom:6px;"><strong>Wrong product received</strong> — full refund or replacement</li>
+              <li style="margin-bottom:6px;"><strong>Wrong color/size (doesn't affect function)</strong> — refund or resend with photo proof</li>
+              <li style="margin-bottom:6px;"><strong>Missing part (doesn't affect function)</strong> — partial refund or resend the part</li>
+              <li style="margin-bottom:6px;"><strong>Missing accessory</strong> — free resend</li>
+              <li style="margin-bottom:6px;"><strong>Order delayed 60+ days</strong> — open dispute with carrier (USA: 45 days, Brazil: 110 days)</li>
+            </ul>
+
+            <p style="font-weight:800; color:#d63535; margin-bottom:8px; margin-top:12px;">❌ YOU CANNOT GET A REFUND IF:</p>
+            <ul style="margin:0; padding-left:16px; color:#555;">
+              <li style="margin-bottom:6px;"><strong>Change of mind</strong> — received product in good condition as described</li>
+              <li style="margin-bottom:6px;"><strong>Tracking shows "Delivered"</strong> — unless you have non-delivery certificate from local post office</li>
+              <li style="margin-bottom:6px;"><strong>Damaged shipping box only</strong> — cosmetic damage from international transit (not product damage)</li>
+              <li style="margin-bottom:6px;"><strong>Customs issues</strong> — package held/returned due to customs clearance</li>
+              <li style="margin-bottom:6px;"><strong>Lost during delivery</strong> — carrier responsibility after leaving our warehouse</li>
+              <li style="margin-bottom:6px;"><strong>Package not picked up in time</strong> — returned to sender after 3-7 days at post office</li>
+            </ul>
+
+            <p style="font-weight:800; color:#3d2414; margin-top:12px; margin-bottom:6px;">⏱️ TIME LIMITS:</p>
+            <p style="margin:0; color:#555;">File claims within <strong>30 days of delivery</strong> for best results. Delays after 30 days may not be covered.</p>
+          </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:8px;">
+          <span style="display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:800; color:#1a7a3a; background:#f2faf5; border:1px solid #cfe8d8; border-radius:6px; padding:7px 12px;">
+            🔒 SSL SECURED
           </span>
-          <span class="tf-trust-pill" style="color:var(--brown);border:1px solid var(--border);background:var(--cream);">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l7 3v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V5l7-3z" fill="var(--brown)"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            VERIFIED &amp; SECURED
+          <span style="display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:800; color:#3d2414; background:#fdf9f4; border:1px solid #e5e5e5; border-radius:6px; padding:7px 12px;">
+            🛡️ VERIFIED & SECURED
           </span>
-          <svg class="tf-trust-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="Trusted Brand">
-            <defs>
-              <path id="topArc" d="M 38,100 A 62,62 0 0 1 162,100" fill="none"/>
-              <path id="botArc" d="M 42,120 A 58,58 0 0 0 158,120" fill="none"/>
-            </defs>
-            <polygon points="100,4 116,30 146,20 152,52 184,56 176,88 200,110 176,132 184,164 152,168 146,200 116,190 100,216 84,190 54,200 48,168 16,164 24,132 0,110 24,88 16,56 48,52 54,20 84,30"
-              fill="#d9b338" stroke="#a97e1e" stroke-width="2" transform="translate(0,-8) scale(0.93)"/>
-            <circle cx="100" cy="100" r="68" fill="none" stroke="#a97e1e" stroke-width="2.5"/>
-            <circle cx="100" cy="100" r="60" fill="none" stroke="#a97e1e" stroke-width="1"/>
-            <text font-family="Arial, sans-serif" font-weight="900" font-size="19" fill="#4a2f0a" letter-spacing="2">
-              <textPath href="#topArc" startOffset="50%" text-anchor="middle">TRUSTED BRAND</textPath>
-            </text>
-            <text font-family="Arial, sans-serif" font-weight="900" font-size="19" fill="#4a2f0a" letter-spacing="2">
-              <textPath href="#botArc" startOffset="50%" text-anchor="middle">TRUSTED BRAND</textPath>
-            </text>
-            <polygon points="18,92 182,92 182,116 100,102 18,116" fill="#c62828"/>
-            <polygon points="18,92 0,84 0,124 18,116" fill="#8f1c1c"/>
-            <polygon points="182,92 200,84 200,124 182,116" fill="#8f1c1c"/>
-            <text x="100" y="111" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="24" fill="#fff" letter-spacing="0.5">TRUSTED</text>
-          </svg>
-        </section>
+          <span style="display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:800; color:#856404; background:#fff8e1; border:1px solid #ffc107; border-radius:6px; padding:7px 12px;">
+            ⭐ TRUSTED BRAND
+          </span>
+        </div>
 
-        <section style="font-size:0.75rem;color:var(--muted);margin-top:2px;">Sold by <strong style="color:var(--brown);">TrendFloat</strong></section>
-      </form>
+        <!-- Sold By -->
+        <div style="text-align:center; font-size:12px; color:#595959; margin-top:6px;">
+          Sold by <strong style="color:#3d2414;">TrendFloat</strong>
+        </div>
+
+      </div>
+
+
+<script>
+paypal.Buttons({
+  createOrder: function(data, actions) {
+    return actions.order.create({
+      purchase_units: [{
+        amount: {
+          value: '17.99',
+          currency_code: 'USD',
+          breakdown: {
+            item_total: {
+              currency_code: 'USD',
+              value: '17.99'
+            }
+          }
+        },
+        description: 'Smart Interactive Cat Toy',
+        custom_id: 'trendfloat-cat-ball-' + Date.now()
+      }]
+    });
+  },
+  onApprove: function(data, actions) {
+    return actions.order.capture().then(function(orderData) {
+      console.log('Payment successful:', orderData);
+      alert('✅ Payment successful!\nOrder ID: ' + orderData.id);
+      
+      fbq('track', 'Purchase', {
+        value: 17.99,
+        currency: 'USD',
+        content_name: 'Smart Interactive Cat Toy',
+        content_ids: ['trendfloat-cat-ball']
+      });
+      
+      window.location.href = 'https://trendfloat.com/thank-you.html?txn=success&order=' + orderData.id;
+    });
+  },
+  onError: function(err) {
+    console.error('Payment error:', err);
+    alert('❌ Payment failed. Please try again or contact support.');
+  },
+  style: {
+    layout: 'vertical',
+    color: 'gold',
+    shape: 'rect',
+    label: 'paypal',
+    height: 45
+  }
+}).render('#paypal-button-container');
+</script>
+
+<div id="bank-details-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999; align-items:center; justify-content:center; padding:20px;">
+  <div style="background:white; padding:30px; border-radius:12px; max-width:600px; width:100%; max-height:90vh; overflow-y:auto; position:relative;">
+    
+    <button onclick="closeBankDetails()" style="position:absolute; top:15px; right:15px; background:none; border:none; font-size:28px; cursor:pointer; color:#6b6b6b;">×</button>
+    
+    <div style="text-align:center; margin-bottom:25px;">
+      <h2 style="color:#3d2414; margin-bottom:8px;">Bank Transfer Payment</h2>
+      <p style="color:#6b6b6b; font-size:14px;">Safe & secure payment via Citibank</p>
+    </div>
+
+    <div style="background:#fff3cd; border-left:4px solid #ffc107; padding:15px; border-radius:6px; margin-bottom:20px;">
+      <p style="margin:0; font-weight:600; color:#856404;">⚠️ USD Currency Only</p>
+      <p style="margin:8px 0 0 0; font-size:14px; color:#856404;">This payment must be made in USD ($17.99). Please ensure your bank supports USD transfers.</p>
+    </div>
+
+    <div style="background:#d1ecf1; border-left:4px solid #17a2b8; padding:15px; border-radius:6px; margin-bottom:20px;">
+      <p style="margin:0; font-weight:600; color:#0c5460;">✅ Secured by Citibank</p>
+      <p style="margin:8px 0 0 0; font-size:14px; color:#0c5460;">Citibank is a trusted global financial institution. Your bank transfer is safe and secure.</p>
+    </div>
+
+    <div style="background:#f8f9fa; padding:20px; border-radius:8px; margin-bottom:25px;">
+      <h3 style="color:#3d2414; margin-bottom:15px;">Bank Account Details</h3>
+      
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid #e5e5e5;">
+        <div>
+          <p style="margin:0; font-size:12px; color:#6b6b6b; font-weight:600;">BENEFICIARY NAME</p>
+          <p style="margin:6px 0 0 0; font-size:14px; color:#1a1a1a; font-weight:600;">YAIR Shteinberg</p>
+        </div>
+        <button onclick="copyText('YAIR Shteinberg')" style="padding:8px 12px; background:#3d2414; color:white; border:none; border-radius:4px; cursor:pointer; font-size:12px; font-weight:600;">📋 Copy</button>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid #e5e5e5;">
+        <div>
+          <p style="margin:0; font-size:12px; color:#6b6b6b; font-weight:600;">BANK NAME</p>
+          <p style="margin:6px 0 0 0; font-size:14px; color:#1a1a1a; font-weight:600;">Citibank</p>
+        </div>
+        <button onclick="copyText('Citibank')" style="padding:8px 12px; background:#3d2414; color:white; border:none; border-radius:4px; cursor:pointer; font-size:12px; font-weight:600;">📋 Copy</button>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid #e5e5e5;">
+        <div>
+          <p style="margin:0; font-size:12px; color:#6b6b6b; font-weight:600;">BANK ADDRESS</p>
+          <p style="margin:6px 0 0 0; font-size:14px; color:#1a1a1a; font-weight:600;">111 Wall Street New York, NY 10043 USA</p>
+        </div>
+        <button onclick="copyText('111 Wall Street New York, NY 10043 USA')" style="padding:8px 12px; background:#3d2414; color:white; border:none; border-radius:4px; cursor:pointer; font-size:12px; font-weight:600;">📋 Copy</button>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid #e5e5e5;">
+        <div>
+          <p style="margin:0; font-size:12px; color:#6b6b6b; font-weight:600;">ROUTING (ABA)</p>
+          <p style="margin:6px 0 0 0; font-size:14px; color:#1a1a1a; font-weight:600; font-family:monospace;">031100209</p>
+        </div>
+        <button onclick="copyText('031100209')" style="padding:8px 12px; background:#3d2414; color:white; border:none; border-radius:4px; cursor:pointer; font-size:12px; font-weight:600;">📋 Copy</button>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid #e5e5e5;">
+        <div>
+          <p style="margin:0; font-size:12px; color:#6b6b6b; font-weight:600;">SWIFT CODE</p>
+          <p style="margin:6px 0 0 0; font-size:14px; color:#1a1a1a; font-weight:600; font-family:monospace;">CITIUS33</p>
+        </div>
+        <button onclick="copyText('CITIUS33')" style="padding:8px 12px; background:#3d2414; color:white; border:none; border-radius:4px; cursor:pointer; font-size:12px; font-weight:600;">📋 Copy</button>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid #e5e5e5;">
+        <div>
+          <p style="margin:0; font-size:12px; color:#6b6b6b; font-weight:600;">ACCOUNT NUMBER</p>
+          <p style="margin:6px 0 0 0; font-size:14px; color:#1a1a1a; font-weight:600; font-family:monospace;">70581960002463995</p>
+        </div>
+        <button onclick="copyText('70581960002463995')" style="padding:8px 12px; background:#3d2414; color:white; border:none; border-radius:4px; cursor:pointer; font-size:12px; font-weight:600;">📋 Copy</button>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid #e5e5e5;">
+        <div>
+          <p style="margin:0; font-size:12px; color:#6b6b6b; font-weight:600;">ACCOUNT TYPE</p>
+          <p style="margin:6px 0 0 0; font-size:14px; color:#1a1a1a; font-weight:600;">CHECKING</p>
+        </div>
+        <button onclick="copyText('CHECKING')" style="padding:8px 12px; background:#3d2414; color:white; border:none; border-radius:4px; cursor:pointer; font-size:12px; font-weight:600;">📋 Copy</button>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0;">
+        <div>
+          <p style="margin:0; font-size:12px; color:#6b6b6b; font-weight:600;">TOTAL AMOUNT (USD)</p>
+          <p style="margin:6px 0 0 0; font-size:16px; color:#d63535; font-weight:900;" id="total-price">$17.99</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff8e1; border-left:4px solid #ffc107; padding:15px; border-radius:6px; margin-bottom:25px;">
+      <p style="margin:0; font-weight:600; color:#9c7d0d;">⏱️ Processing Time</p>
+      <p style="margin:8px 0 0 0; font-size:14px; color:#9c7d0d;">Bank transfers typically take 3-5 business days. We'll ship immediately after payment is confirmed.</p>
+    </div>
+
+    <div style="background:#f8f9fa; padding:20px; border-radius:8px; margin-bottom:25px;">
+      <h3 style="color:#3d2414; margin-bottom:15px;">Your Information</h3>
+      
+      <div style="margin-bottom:15px;">
+      <div style="margin-bottom:15px;">
+        <label style="display:block; font-weight:600; color:#3d2414; margin-bottom:10px; font-size:13px;">Color *</label>
+        <input type="hidden" id="customer-color" value="Red">
+        <div id="color-btns" style="display:flex; gap:12px;">
+          <button type="button" onclick="selectColor(this, 'Red')" style="flex:1; padding:12px; border:3px solid #d63535; border-radius:8px; background:#d63535; color:white; font-size:14px; font-weight:800; cursor:pointer;">🔴 Red</button>
+          <button type="button" onclick="selectColor(this, 'Green')" style="flex:1; padding:12px; border:3px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:14px; font-weight:800; cursor:pointer;">🟢 Green</button>
+          <button type="button" onclick="selectColor(this, 'Blue')" style="flex:1; padding:12px; border:3px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:14px; font-weight:800; cursor:pointer;">🔵 Blue</button>
+        </div>
+      </div>
+
+        <label style="display:block; font-weight:600; color:#3d2414; margin-bottom:6px; font-size:13px;">Full Name *</label>
+        <input id="customer-name" type="text" placeholder="John Doe" onkeypress="return /[a-zA-Z\s]/.test(String.fromCharCode(event.which))" style="width:100%; padding:10px; border:1px solid #e5e5e5; border-radius:6px; font-size:14px; font-family:inherit; box-sizing:border-box;">
+      </div>
+
+      <div style="margin-bottom:15px;">
+        <label style="display:block; font-weight:600; color:#3d2414; margin-bottom:6px; font-size:13px;">Email Address *</label>
+        <input id="customer-email" type="email" placeholder="your@email.com" style="width:100%; padding:10px; border:1px solid #e5e5e5; border-radius:6px; font-size:14px; font-family:inherit; box-sizing:border-box;">
+      </div>
+
+      <div style="margin-bottom:15px;">
+        <label style="display:block; font-weight:600; color:#3d2414; margin-bottom:6px; font-size:13px;">Street Address (Address 1) *</label>
+        <input id="customer-address1" type="text" placeholder="123 Main Street" style="width:100%; padding:10px; border:1px solid #e5e5e5; border-radius:6px; font-size:14px; font-family:inherit; box-sizing:border-box;">
+      </div>
+
+      <div style="margin-bottom:15px;">
+        <label style="display:block; font-weight:600; color:#3d2414; margin-bottom:6px; font-size:13px;">Apartment/Suite (Address 2 - Optional)</label>
+        <input id="customer-address2" type="text" placeholder="Apt 4B, Suite 100" style="width:100%; padding:10px; border:1px solid #e5e5e5; border-radius:6px; font-size:14px; font-family:inherit; box-sizing:border-box;">
+      </div>
+
+      <div style="margin-bottom:15px;">
+        <label style="display:block; font-weight:600; color:#3d2414; margin-bottom:6px; font-size:13px;">City *</label>
+        <input id="customer-city" type="text" placeholder="New York" onkeypress="return /[a-zA-Z\s]/.test(String.fromCharCode(event.which))" style="width:100%; padding:10px; border:1px solid #e5e5e5; border-radius:6px; font-size:14px; font-family:inherit; box-sizing:border-box;">
+      </div>
+
+      <div style="margin-bottom:15px;">
+        <label style="display:block; font-weight:600; color:#3d2414; margin-bottom:6px; font-size:13px;">ZIP Code / Postal Code *</label>
+        <input id="customer-zip" type="text" placeholder="10001" onkeypress="return /[0-9]/.test(String.fromCharCode(event.which))" style="width:100%; padding:10px; border:1px solid #e5e5e5; border-radius:6px; font-size:14px; font-family:inherit; box-sizing:border-box;">
+      </div>
+
+      <div style="margin-bottom:15px;">
+        <label style="display:block; font-weight:600; color:#3d2414; margin-bottom:10px; font-size:13px;">Quantity *</label>
+        <input type="hidden" id="customer-quantity" value="1">
+        <div id="quantity-grid" style="display:grid; grid-template-columns: repeat(4, 1fr); gap:8px;">
+          <button type="button" onclick="selectQty(this, 1, 17.99)"  style="padding:12px 6px; border:2px solid #3d2414; border-radius:8px; background:#3d2414; color:white; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">1x<br><span style="font-size:11px;">$17.99</span></button>
+          <button type="button" onclick="selectQty(this, 2, 35.98)"  style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">2x<br><span style="font-size:11px;">$35.98</span></button>
+          <button type="button" onclick="selectQty(this, 3, 53.97)"  style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">3x<br><span style="font-size:11px;">$53.97</span></button>
+          <button type="button" onclick="selectQty(this, 4, 71.96)"  style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">4x<br><span style="font-size:11px;">$71.96</span></button>
+          <button type="button" onclick="selectQty(this, 5, 89.95)"  style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">5x<br><span style="font-size:11px;">$89.95</span></button>
+          <button type="button" onclick="selectQty(this, 6, 107.94)" style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">6x<br><span style="font-size:11px;">$107.94</span></button>
+          <button type="button" onclick="selectQty(this, 7, 125.93)" style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">7x<br><span style="font-size:11px;">$125.93</span></button>
+          <button type="button" onclick="selectQty(this, 8, 143.92)" style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">8x<br><span style="font-size:11px;">$143.92</span></button>
+          <button type="button" onclick="selectQty(this, 9, 161.91)" style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">9x<br><span style="font-size:11px;">$161.91</span></button>
+          <button type="button" onclick="selectQty(this, 10, 179.90)" style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">10x<br><span style="font-size:11px;">$179.90</span></button>
+          <button type="button" onclick="selectQty(this, 15, 269.85)" style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">15x<br><span style="font-size:11px;">$269.85</span></button>
+          <button type="button" onclick="selectQty(this, 20, 359.80)" style="padding:12px 6px; border:2px solid #e5e5e5; border-radius:8px; background:white; color:#3d2414; font-size:13px; font-weight:700; cursor:pointer; text-align:center;">20x<br><span style="font-size:11px;">$359.80</span></button>
+        </div>
+      </div>
+
+      <div style="margin-bottom:15px;">
+        <label style="display:block; font-weight:600; color:#3d2414; margin-bottom:6px; font-size:13px;">Phone Number *</label>
+        <input id="customer-phone" type="tel" placeholder="+1 (555) 000-0000" onkeypress="return /[0-9+\-().\s]/.test(String.fromCharCode(event.which))" style="width:100%; padding:10px; border:1px solid #e5e5e5; border-radius:6px; font-size:14px; font-family:inherit; box-sizing:border-box;">
+      </div>
+    </div>
+
+    <div style="display:flex; gap:12px; flex-direction:column;">
+      <button onclick="contactViaTelegram()" style="width:100%; padding:12px; background:#0088cc; color:white; border:none; border-radius:6px; cursor:pointer; font-weight:900; font-size:14px;">✈️ MESSAGE VIA TELEGRAM</button>
+      <button onclick="closeBankDetails()" style="width:100%; padding:12px; background:#e5e5e5; color:#3d2414; border:none; border-radius:6px; cursor:pointer; font-weight:900; font-size:14px;">CLOSE</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function selectColor(btn, color) {
+  document.getElementById('customer-color').value = color;
+  document.querySelectorAll('#color-btns button').forEach(b => {
+    b.style.background = 'white';
+    b.style.color = '#3d2414';
+    b.style.borderColor = '#e5e5e5';
+  });
+  const colorMap = { Red: '#d63535', Green: '#2e7d32', Blue: '#1565c0' };
+  btn.style.background = colorMap[color];
+  btn.style.color = 'white';
+  btn.style.borderColor = colorMap[color];
+}
+
+function toggleReturns() {
+  var policy = document.getElementById('returns-policy');
+  var arrow = document.getElementById('returns-arrow');
+  if (policy.style.display === 'none') {
+    policy.style.display = 'block';
+    arrow.style.transform = 'rotate(180deg)';
+  } else {
+    policy.style.display = 'none';
+    arrow.style.transform = 'rotate(0deg)';
+  }
+}
+
+function showBankDetails() {
+  document.getElementById('bank-details-modal').style.display = 'flex';
+}
+
+function closeBankDetails() {
+  document.getElementById('bank-details-modal').style.display = 'none';
+  document.getElementById('customer-name').value = '';
+  document.getElementById('customer-email').value = '';
+  document.getElementById('customer-address1').value = '';
+  document.getElementById('customer-address2').value = '';
+  document.getElementById('customer-city').value = '';
+  document.getElementById('customer-zip').value = '';
+  document.getElementById('customer-phone').value = '';
+  document.getElementById('customer-quantity').value = '1';
+  document.getElementById('customer-color').value = 'Red';
+  document.getElementById('total-price').textContent = '$17.99';
+  document.querySelectorAll('#quantity-grid button').forEach((b, i) => {
+    b.style.background = i === 0 ? '#3d2414' : 'white';
+    b.style.color = i === 0 ? 'white' : '#3d2414';
+    b.style.border = i === 0 ? '2px solid #3d2414' : '2px solid #e5e5e5';
+  });
+  document.querySelectorAll('#color-btns button').forEach((b, i) => {
+    b.style.background = i === 0 ? '#d63535' : 'white';
+    b.style.color = i === 0 ? 'white' : '#3d2414';
+    b.style.borderColor = i === 0 ? '#d63535' : '#e5e5e5';
+  });
+}
+
+function copyText(text) {
+  navigator.clipboard.writeText(text);
+}
+
+function selectQty(btn, qty, total) {
+  document.getElementById('customer-quantity').value = qty;
+  document.getElementById('total-price').textContent = '$' + total.toFixed(2);
+  document.querySelectorAll('#quantity-grid button').forEach(b => {
+    b.style.background = 'white';
+    b.style.color = '#3d2414';
+    b.style.border = '2px solid #e5e5e5';
+  });
+  btn.style.background = '#3d2414';
+  btn.style.color = 'white';
+  btn.style.border = '2px solid #3d2414';
+}
+
+function updateTotalPrice() {
+  const quantity = parseInt(document.getElementById('customer-quantity').value);
+  const total = (17.99 * quantity).toFixed(2);
+  document.getElementById('total-price').textContent = '$' + total;
+}
+
+function contactViaTelegram() {
+  try {
+    const name = document.getElementById('customer-name').value.trim();
+    const email = document.getElementById('customer-email').value.trim();
+    const address1 = document.getElementById('customer-address1').value.trim();
+    const address2 = document.getElementById('customer-address2').value.trim();
+    const city = document.getElementById('customer-city').value.trim();
+    const zip = document.getElementById('customer-zip').value.trim();
+    const phone = document.getElementById('customer-phone').value.trim();
+    const quantity = document.getElementById('customer-quantity') ? document.getElementById('customer-quantity').value : '1';
+    const color = document.getElementById('customer-color').value;
+    
+    // Validation
+    if (!name) {
+      alert('❌ Please enter your full name');
+      return;
+    }
+
+    // Check name contains only letters and spaces
+    if (!/^[a-zA-Z\s]+$/.test(name)) {
+      alert('❌ Full name must contain only letters and spaces');
+      return;
+    }
+
+    if (!email) {
+      alert('❌ Please enter your email address');
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('❌ Please enter a valid email address');
+      return;
+    }
+
+    if (!address1) {
+      alert('❌ Please enter street address (Address 1)');
+      return;
+    }
+
+    if (!city) {
+      alert('❌ Please enter city');
+      return;
+    }
+
+    if (!zip) {
+      alert('❌ Please enter ZIP code / Postal code');
+      return;
+    }
+
+    if (!phone) {
+      alert('❌ Phone number is required for delivery');
+      return;
+    }
+
+    // Generate unique order number
+    const orderNum = 'TF-' + Date.now().toString().slice(-8);
+    const unitPrice = 17.99;
+    const totalPrice = (unitPrice * parseInt(quantity)).toFixed(2);
+
+    const fullAddress = address2 ? `${address1}, ${address2}, ${city} ${zip}` : `${address1}, ${city} ${zip}`;
+
+    const message = `🛍️ New Bank Transfer Order
+
+📋 Order #${orderNum}
+
+📦 Product: Smart Interactive Cat Toy
+🎨 Color: ${color}
+📊 Quantity: ${quantity}x
+💰 Unit Price: $17.99
+💵 Total: $${totalPrice} USD
+
+👤 Customer Details:
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+
+📍 Shipping Address:
+Address 1: ${address1}
+${address2 ? `Address 2: ${address2}\n` : ''}City: ${city}
+ZIP Code: ${zip}`;
+
+    // Telegram link to @TrendFloat
+    const telegramUrl = 'https://t.me/TrendFloat?text=' + encodeURIComponent(message);
+
+    window.open(telegramUrl, '_blank');
+
+    alert('✅ Order #' + orderNum + ' Created!\n\nQuantity: ' + quantity + 'x\nTotal: $' + totalPrice + ' USD\n\nYour Telegram app will open.\nJust click Send!');
+
+    closeBankDetails();
+  } catch(error) {
+    console.error('Error:', error);
+    alert('❌ Error: ' + error.message);
+  }
+}
+</script>
     </div>
 
   </div>
@@ -1329,40 +1762,40 @@
     <!-- Competitor Card -->
     <div style="background: #f9f9f9; border-radius: 12px; padding: 24px; border: 1px solid #e5e5e5;">
       <div style="text-align: center; margin-bottom: 24px;">
-        <div style="font-size: 14px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Competitor</div>
+        <div style="font-size: 14px; font-weight: 700; color: #595959; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Competitor</div>
         <div style="font-size: 20px; font-weight: 800; color: #1a1a1a;">Other Brands</div>
       </div>
 
-      <div style="space-y: 16px;">
+      <div>
         <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5;">
-          <div style="font-size: 12px; color: #999; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Price</div>
+          <div style="font-size: 12px; color: #595959; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Price</div>
           <div style="font-size: 18px; font-weight: 800; color: #1a1a1a;">$50.00</div>
         </div>
 
         <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5;">
-          <div style="font-size: 12px; color: #999; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Shipping Cost</div>
-          <div style="font-size: 14px; color: #999;">Variable (cost unclear)</div>
+          <div style="font-size: 12px; color: #595959; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Shipping Cost</div>
+          <div style="font-size: 14px; color: #595959;">Variable (cost unclear)</div>
         </div>
 
         <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5;">
-          <div style="font-size: 12px; color: #999; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Processing & Delivery</div>
-          <div style="font-size: 14px; color: #999;">24-72 hours processing</div>
-          <div style="font-size: 12px; color: #999; margin-top: 4px;">6-15 days delivery</div>
+          <div style="font-size: 12px; color: #595959; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Processing & Delivery</div>
+          <div style="font-size: 14px; color: #595959;">24-72 hours processing</div>
+          <div style="font-size: 12px; color: #595959; margin-top: 4px;">6-15 days delivery</div>
         </div>
 
         <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5;">
-          <div style="font-size: 12px; color: #999; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Reviews</div>
-          <div style="font-size: 14px; color: #999;">⭐⭐⭐⭐⭐ 11 reviews</div>
+          <div style="font-size: 12px; color: #595959; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Reviews</div>
+          <div style="font-size: 14px; color: #595959;">⭐⭐⭐⭐⭐ 11 reviews</div>
         </div>
 
         <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5;">
-          <div style="font-size: 12px; color: #999; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Guarantee</div>
-          <div style="font-size: 14px; color: #999;">30-day return policy</div>
+          <div style="font-size: 12px; color: #595959; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Guarantee</div>
+          <div style="font-size: 14px; color: #595959;">30-day return policy</div>
         </div>
 
         <div>
-          <div style="font-size: 12px; color: #999; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Support</div>
-          <div style="font-size: 14px; color: #999;">Standard support</div>
+          <div style="font-size: 12px; color: #595959; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Support</div>
+          <div style="font-size: 14px; color: #595959;">Standard support</div>
         </div>
       </div>
     </div>
@@ -1373,10 +1806,10 @@
       
       <div style="text-align: center; margin-bottom: 24px; padding-top: 8px;">
         <div style="font-size: 14px; font-weight: 700; color: #ffd140; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">TrendFloat</div>
-        <div style="font-size: 20px; font-weight: 800; color: #3d2414;">Smart Cat Ball</div>
+        <div style="font-size: 20px; font-weight: 800; color: #3d2414;">Interactive Cat Toy</div>
       </div>
 
-      <div style="space-y: 16px;">
+      <div>
         <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255, 209, 64, 0.3);">
           <div style="font-size: 12px; color: #6b6b6b; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Price</div>
           <div style="font-size: 18px; font-weight: 800; color: #3d2414;">$17.99 <span style="font-size: 12px; color: #ff6b6b; text-decoration: line-through;">$50.00</span></div>
@@ -1532,7 +1965,7 @@
     <div class="about-body">
       <p>TrendFloat was built around a simple idea: <strong>cats deserve better than the same tired old toys.</strong> Between long days indoors and busy owners, most cats end up under-stimulated — and under-stimulated cats get bored, restless, and destructive.</p>
 
-      <p>We source, test, and ship smart, motion-driven pet products that keep cats mentally and physically engaged, even when their humans aren't home. Our flagship <strong>Smart Interactive Cat Ball</strong> has already helped thousands of cat parents around the world turn quiet afternoons into playtime.</p>
+      <p>We source, test, and ship smart, motion-driven pet products that keep cats mentally and physically engaged, even when their humans aren't home. Our flagship <strong>Smart Interactive Cat Toy</strong> has already helped thousands of cat parents around the world turn quiet afternoons into playtime.</p>
 
       <p>Whether you're chasing away kitten boredom, keeping an older cat active, or just hoping for a few extra minutes of quiet — we're here to make your cat's life more fun, and yours a little easier.</p>
     </div>
@@ -1540,240 +1973,28 @@
     <div class="about-values">
       <div class="about-value">
         <div class="icon">🐾</div>
-        <h4>Cat-First Design</h4>
+        <h3>Cat-First Design</h3>
         <p>Every product is tested for safety, durability, and how much cats actually enjoy it.</p>
       </div>
       <div class="about-value">
         <div class="icon">💛</div>
-        <h4>Honest Pricing</h4>
+        <h3>Honest Pricing</h3>
         <p>No fake countdowns, no bait-and-switch. What you see is what you pay.</p>
       </div>
       <div class="about-value">
         <div class="icon">📧</div>
-        <h4>Real Support</h4>
+        <h3>Real Support</h3>
         <p>A real inbox, a real human, real answers – usually within 24 hours.</p>
       </div>
       <div class="about-value">
         <div class="icon">🌍</div>
-        <h4>Global Shipping</h4>
+        <h3>Global Shipping</h3>
         <p>We ship worldwide from partner warehouses, delivered within 5–11 days.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Cancellation & Returns Policy -->
-<section class="policy" id="policy">
-  <h2>Cancellation & Returns Policy</h2>
-  <p class="policy-intro">At TrendFloat, we want every customer to be happy with their purchase. To keep our pricing fair and our process efficient, please review the following before requesting a cancellation or refund.</p>
-
-  <div class="policy-card">
-    <h3>Requests we're unable to accept</h3>
-    <ul class="policy-list">
-      <li><strong>Change of mind</strong> — the buyer no longer wants the product after receiving it in the condition described.</li>
-      <li><strong>Subjective claims about the product description</strong> without evidence that the item was materially misrepresented.</li>
-      <li><strong>Mild manufacturing scent</strong> — pet products may have a light odor that fades with airing out. This is not considered a defect.</li>
-      <li><strong>Ordering errors by the buyer</strong>, including selecting the wrong item, quantity, or variant at checkout.</li>
-      <li><strong>Incorrect shipping address</strong> provided at checkout that results in a failed or misrouted delivery.</li>
-      <li><strong>Pre-agreed product differences</strong> that were disclosed to the buyer before the purchase was completed.</li>
-      <li><strong>Loss of tracking information</strong> caused by the shipping carrier or local post office once the parcel has left our warehouse.</li>
-      <li><strong>Customs-related issues</strong> — packages returned, discarded, or held because the recipient did not respond to customs clearance requests in line with local import regulations.</li>
-    </ul>
-
-    <h3>When to contact us</h3>
-    <p>If your product arrives damaged, faulty, or fails to arrive within our stated delivery window (5–11 business days after dispatch), please contact us within <strong>30 days of receipt</strong> and we'll do our best to make it right.</p>
-
-    <div class="policy-contact">
-      Have a question about your order or this policy?<br><br>
-      <a href="#footer" class="support-btn">💬 Contact Support</a>
-    </div>
-  </div>
-</section>
-
-<!-- Refund, Resend & Returns Policy -->
-<section class="policy" id="refund-policy">
-  <h2>Refund, Resend & Returns Policy</h2>
-  <p class="policy-intro">We stand behind every order we ship. Below is a clear breakdown of when refunds, replacements, and resends apply — and what we may need from you to process them.</p>
-
-  <div class="policy-card">
-
-    <h3>1. Delayed or Lost Orders</h3>
-    <p>We understand how frustrating it is to wait for a package. If your order is delayed or missing tracking updates, we're here to help. The following timeframes apply before we can open a formal claim with our logistics partner:</p>
-    <ul class="policy-list info">
-      <li><strong>Most countries:</strong> claims may be opened 60 days after the order departs our warehouse.</li>
-      <li><strong>United States:</strong> claims may be opened 45 days after dispatch.</li>
-      <li><strong>Brazil:</strong> due to strict customs clearance, claims may be opened 110 days after dispatch.</li>
-      <li><strong>Liquid or restricted items:</strong> claims may be opened 100 days after dispatch.</li>
-    </ul>
-    <p><strong>Please note:</strong></p>
-    <ul class="policy-list">
-      <li>Packages sometimes arrive at your local post office but show as "pending" due to an incomplete address, a missed pickup, or a failed delivery attempt. In these cases, contacting your local post office directly is often the fastest way to receive your item.</li>
-      <li>In some regions (including Israel), packages are frequently routed to self-service pickup lockers, which can lead to long delays if not collected promptly.</li>
-      <li>Occasionally, tracking shows "Delivered" but the customer reports not receiving the package. We'll investigate every case thoroughly, but resolution can take 1–2 months, and a successful outcome cannot be guaranteed.</li>
-    </ul>
-
-    <h3>2. Packages Marked "Delivered" or with Tracking Alerts</h3>
-    <p>We're unable to process a refund or resend if tracking shows the package as delivered, unless you can provide a <strong>non-delivery certificate issued by your local post office</strong> with an official seal.</p>
-    <p>If tracking shows an <strong>Alert</strong>, this typically means one of the following:</p>
-    <ul class="policy-list info">
-      <li>Incorrect or incomplete address</li>
-      <li>No such street number</li>
-      <li>Unknown recipient</li>
-      <li>Recipient refused delivery</li>
-      <li>Package not picked up in time</li>
-      <li>No safe delivery location</li>
-      <li>Package held in customs</li>
-    </ul>
-    <p><strong>Please note:</strong></p>
-    <ul class="policy-list">
-      <li>Carriers typically attempt delivery 1–3 times before returning the package to the local post office. If the package remains unclaimed, it will be held for 3–7 days before being returned to us. We cannot guarantee against loss during return transit.</li>
-      <li>If a package is returned to us because it was undeliverable, we're unable to offer a refund or resend without prior arrangement.</li>
-      <li>Packages destroyed by the carrier are not eligible for a refund.</li>
-    </ul>
-
-    <h3>3. Damaged Products</h3>
-    <p>If your order arrives damaged, we've got you covered:</p>
-    <ul class="policy-list offer">
-      <li><strong>Fully damaged packages:</strong> full refund or replacement.</li>
-      <li><strong>Partially damaged packages:</strong> partial refund or replacement (excluding minor cosmetic issues such as loose threads, slight wrinkles, or small scratches).</li>
-    </ul>
-    <p><strong>Please note:</strong></p>
-    <ul class="policy-list">
-      <li>Cosmetic damage to the outer shipping box does not qualify for a refund, as this is common with international delivery.</li>
-      <li>Please open a claim <strong>within 30 days of delivery</strong> for damaged or defective items.</li>
-    </ul>
-
-    <h3>4. Wrong or Missing Products</h3>
-    <p>Every order passes strict quality control before dispatch, but if something isn't right when it arrives, we'll make it right:</p>
-    <ul class="policy-list offer">
-      <li><strong>Wrong product received:</strong> full refund or replacement.</li>
-      <li><strong>Wrong color or size</strong> (where the item still functions as intended): refund or replacement, provided a photo or note is included.</li>
-      <li><strong>Missing part that doesn't affect function:</strong> partial refund or replacement of the missing part.</li>
-      <li><strong>Missing part that affects function:</strong> full replacement of the product.</li>
-      <li><strong>Missing accessory:</strong> we'll resend the accessory at no cost to you.</li>
-    </ul>
-    <p>For size-related concerns, please measure the product using the standard measurement method and include a clear photo of the measurement — this helps us resolve your case much faster.</p>
-
-    <h3>5. Order Cancellation</h3>
-    <ul class="policy-list offer">
-      <li><strong>Before your order is processed by our warehouse:</strong> full refund available on request.</li>
-    </ul>
-    <ul class="policy-list">
-      <li><strong>After your order is processed:</strong> cancellation is no longer possible, as the item is already being prepared for shipment.</li>
-    </ul>
-
-    <div class="policy-contact">
-      <strong>To open a claim:</strong> contact our support team with your order number, a description of the issue, and any supporting photos or documents.<br><br>
-      <a href="#footer" class="support-btn">💬 Contact Support</a>
-    </div>
-
-  </div>
-</section>
-
-<!-- Privacy Policy -->
-<section class="policy" id="privacy">
-  <h2>Privacy Policy</h2>
-  <p class="policy-intro">Last updated: July 26, 2026. This policy explains what data we and our partners collect when you visit TrendFloat, why we collect it, and what rights you have over your data.</p>
-
-  <div class="policy-card">
-
-    <h3>1. Who we are</h3>
-    <p>TrendFloat ("we", "our", "us") operates this website. For any privacy questions, please reach out via our support contact in the footer below.</p>
-
-    <h3>2. What data we collect</h3>
-    <p>TrendFloat does not directly collect personal data through this website. We do not operate customer accounts, contact forms, or newsletter sign-ups. However, the following data may be collected by us or by third parties acting on our behalf:</p>
-    <p><strong>Collected automatically by our hosting provider:</strong></p>
-    <ul class="policy-list info">
-      <li>IP address</li>
-      <li>Browser type and version</li>
-      <li>Device type and operating system</li>
-      <li>Pages visited and timestamps</li>
-      <li>Referring website</li>
-    </ul>
-    <p><strong>Collected via Meta Pixel (only if you accept cookies):</strong></p>
-    <ul class="policy-list info">
-      <li>IP address and browser/device information</li>
-      <li>Pages you visit on our site</li>
-      <li>Actions you take (e.g., clicking "Buy Now")</li>
-      <li>A Meta advertising cookie (<code>_fbp</code>)</li>
-      <li>If you are logged into Facebook or Instagram, Meta may associate this data with your account</li>
-    </ul>
-    <p><strong>Collected by PayPal (only when you proceed to checkout):</strong></p>
-    <ul class="policy-list info">
-      <li>Name, email, and shipping address</li>
-      <li>Payment method details</li>
-      <li>IP address and browser fingerprint</li>
-    </ul>
-    <p>PayPal is an independent data controller during checkout. See PayPal's own <a href="https://www.paypal.com/privacy" target="_blank" rel="noopener" style="color:var(--brown);font-weight:700;">privacy policy</a> for details.</p>
-
-    <h3>3. Why we collect it</h3>
-    <ul class="policy-list info">
-      <li><strong>Website operation and security:</strong> server logs help us keep the site running and detect abuse.</li>
-      <li><strong>Advertising and analytics (Meta):</strong> to measure the effectiveness of our ads and show relevant ads to potential customers.</li>
-      <li><strong>Payment processing (PayPal):</strong> to process your order and deliver your purchase.</li>
-    </ul>
-
-    <h3>4. Legal basis (GDPR)</h3>
-    <p>For visitors in the EU or UK, we rely on the following legal bases:</p>
-    <ul class="policy-list info">
-      <li><strong>Consent</strong> – for Meta Pixel and advertising cookies. You can withdraw consent at any time by clearing your browser cookies.</li>
-      <li><strong>Contract necessity</strong> – for processing your order through PayPal.</li>
-      <li><strong>Legitimate interest</strong> – for basic server logs required to operate the website securely.</li>
-    </ul>
-
-    <h3>5. Who we share data with</h3>
-    <ul class="policy-list info">
-      <li><strong>Meta Platforms Inc.</strong> (Facebook, Instagram) – for advertising and analytics</li>
-      <li><strong>Statcounter</strong> – for basic, aggregated website analytics</li>
-      <li><strong>PayPal Inc.</strong> – for payment processing</li>
-      <li><strong>Our hosting provider</strong> – for serving the website</li>
-      <li><strong>Shipping carriers</strong> – to deliver your order (shipping address only)</li>
-    </ul>
-    <p>We do not sell your personal data to third parties.</p>
-
-    <h3>6. International data transfers</h3>
-    <p>Your data may be transferred to and processed in the United States, where Meta and PayPal are based. These transfers are protected by the EU–US Data Privacy Framework (Meta and PayPal are certified participants) and Standard Contractual Clauses where applicable.</p>
-
-    <h3>7. How long we keep data</h3>
-    <ul class="policy-list info">
-      <li><strong>Meta Pixel data:</strong> retained by Meta for up to 180 days.</li>
-      <li><strong>PayPal data:</strong> governed by PayPal's own retention policy.</li>
-      <li><strong>Server logs:</strong> typically retained for 30 days by our hosting provider.</li>
-    </ul>
-    <p>We do not store customer data on our own servers.</p>
-
-    <h3>8. Your rights</h3>
-    <p>Depending on your jurisdiction (GDPR, UK-GDPR, CCPA, and others), you may have the right to:</p>
-    <ul class="policy-list info">
-      <li>Access the data we hold about you</li>
-      <li>Request correction of inaccurate data</li>
-      <li>Request deletion of your data</li>
-      <li>Object to processing or request data portability</li>
-      <li>Withdraw your consent at any time</li>
-    </ul>
-    <p>To exercise these rights, please contact us via our support contact in the footer below. For data held directly by Meta, visit your Facebook settings to manage ad preferences. For PayPal data, log in and visit the Privacy section.</p>
-
-    <h3>9. Cookies</h3>
-    <p>Our site uses the following cookies, and only if you have accepted via the cookie banner:</p>
-    <ul class="policy-list info">
-      <li><code>_fbp</code> – set by Meta Pixel for advertising. Lifespan: up to 90 days.</li>
-      <li><code>sc_*</code> – set by Statcounter for basic visit analytics. No personal data is collected.</li>
-    </ul>
-    <p>We do not use any other cookies. You can withdraw consent at any time by clearing your browser cookies for our domain and reloading the site.</p>
-
-    <h3>10. Children</h3>
-    <p>Our site is not intended for anyone under 16. We do not knowingly collect data from children. If you believe a child has provided data to us, please contact us and we will delete it.</p>
-
-    <h3>11. Changes to this policy</h3>
-    <p>We may update this Privacy Policy from time to time. Any changes will be posted here with an updated "Last updated" date. Continued use of the site after changes constitutes acceptance of the new policy.</p>
-
-    <div class="policy-contact">
-      Have privacy questions or requests?<br><br>
-      <a href="#footer" class="support-btn">💬 Contact Support</a>
-    </div>
-
-  </div>
-</section>
 
 <!-- Back to top button -->
 <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
@@ -1807,12 +2028,12 @@
       <p>Smart pet products your cat will actually use. Curated, tested, and shipped worldwide.</p>
     </div>
     <div>
-      <h4>Order Tracking</h4>
+      <h3>Order Tracking</h3>
       <p style="color:rgba(255,255,255,0.75);font-size:14.5px;margin-bottom:16px;line-height:1.5;">Track your shipment from any courier, worldwide.</p>
       <a href="https://parcelsapp.com/" target="_blank" rel="noopener" class="track-btn">📦 Track Your Order →</a>
     </div>
     <div>
-      <h4>Help & Support</h4>
+      <h3>Help & Support</h3>
       <ul>
         <li>📧 <a href="mailto:yairst2408@gmail.com">yairst2408@gmail.com</a></li>
         <li>💬 <a href="https://m.me/61590343934469" target="_blank" rel="noopener">Message us on Messenger</a></li>
@@ -1938,16 +2159,6 @@
 </script>
 
 <!-- Sticky Mobile Checkout Button -->
-<div class="sticky-checkout-button" id="stickyCheckout">
-  <button onclick="document.querySelector('.pp-form-HDJML4YTTSBCA').submit();" style="width: 100%; padding: 12px 16px; background: linear-gradient(135deg, #ffd140 0%, #f5c020 100%); border: none; border-radius: 8px; font-weight: 900; font-size: 14px; color: #3d2414; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px;">
-    🛒 TAP TO BUY NOW
-  </button>
-</div>
-
-<script>
-  // Sticky button is now handled by CSS media queries
-  // This ensures it works even if JavaScript doesn't load
-</script>
 
 </body>
 </html>
