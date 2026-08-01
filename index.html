@@ -66,7 +66,6 @@
     document.head.appendChild(sc);
     var s = document.createElement('script');
     s.type = 'text/javascript';
-    s.async = true;
     s.src = 'https://www.statcounter.com/counter/counter.js';
     document.head.appendChild(s);
   }
@@ -1066,13 +1065,13 @@
     <h1>Watch Your Cat Go Absolutely Crazy 🐱<br><span style="font-size: 0.85em; color: var(--muted);">Smart Auto-Rolling Ball That Keeps Them Playing for Hours</span></h1>
 
     <!-- Mobile: Early Trust Signals -->
-    <div style="display: none; background: #f0f8ff; border: 1px solid #d4e8f7; border-radius: 8px; padding: 10px 12px; margin-bottom: 16px; font-size: 13px; font-weight: 700; color: #0052a3; text-align: center;">
+    <div class="mobile-trust-signal" style="display: none; background: #f0f8ff; border: 1px solid #d4e8f7; border-radius: 8px; padding: 10px 12px; margin-bottom: 16px; font-size: 13px; font-weight: 700; color: #0052a3; text-align: center;">
       ⭐ 4.9/5 • 300+ Verified Reviews • ✅ Trusted by Cat Parents Worldwide
     </div>
-    
+
     <style>
       @media (max-width: 768px) {
-        div[style*="display: none"][style*="#f0f8ff"] {
+        .mobile-trust-signal {
           display: block !important;
         }
       }
@@ -1256,52 +1255,64 @@
 
 
 <script>
-paypal.Buttons({
-  createOrder: function(data, actions) {
-    return actions.order.create({
-      purchase_units: [{
-        amount: {
-          value: '17.99',
-          currency_code: 'USD',
-          breakdown: {
-            item_total: {
+if (typeof paypal !== 'undefined') {
+  try {
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: '17.99',
               currency_code: 'USD',
-              value: '17.99'
-            }
+              breakdown: {
+                item_total: {
+                  currency_code: 'USD',
+                  value: '17.99'
+                }
+              }
+            },
+            description: 'Smart Interactive Cat Toy',
+            custom_id: 'trendfloat-cat-ball-' + Date.now()
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(orderData) {
+          console.log('Payment successful:', orderData);
+          alert('✅ Payment successful!\nOrder ID: ' + orderData.id);
+
+          if (typeof fbq === 'function') {
+            fbq('track', 'Purchase', {
+              value: 17.99,
+              currency: 'USD',
+              content_name: 'Smart Interactive Cat Toy',
+              content_ids: ['trendfloat-cat-ball']
+            });
           }
-        },
-        description: 'Smart Interactive Cat Toy',
-        custom_id: 'trendfloat-cat-ball-' + Date.now()
-      }]
-    });
-  },
-  onApprove: function(data, actions) {
-    return actions.order.capture().then(function(orderData) {
-      console.log('Payment successful:', orderData);
-      alert('✅ Payment successful!\nOrder ID: ' + orderData.id);
-      
-      fbq('track', 'Purchase', {
-        value: 17.99,
-        currency: 'USD',
-        content_name: 'Smart Interactive Cat Toy',
-        content_ids: ['trendfloat-cat-ball']
-      });
-      
-      window.location.href = 'https://trendfloat.com/thank-you.html?txn=success&order=' + orderData.id;
-    });
-  },
-  onError: function(err) {
-    console.error('Payment error:', err);
-    alert('❌ Payment failed. Please try again or contact support.');
-  },
-  style: {
-    layout: 'vertical',
-    color: 'gold',
-    shape: 'rect',
-    label: 'paypal',
-    height: 45
+
+          window.location.href = 'https://trendfloat.com/thank-you.html?txn=success&order=' + orderData.id;
+        });
+      },
+      onError: function(err) {
+        console.error('Payment error:', err);
+        alert('❌ Payment failed. Please try again or contact support.');
+      },
+      style: {
+        layout: 'vertical',
+        color: 'gold',
+        shape: 'rect',
+        label: 'paypal',
+        height: 45
+      }
+    }).render('#paypal-button-container');
+  } catch(error) {
+    console.error('PayPal initialization error:', error);
+    document.getElementById('paypal-button-container').innerHTML = '<div style="padding:14px; background:#fff; border:2px solid #d63535; border-radius:8px; text-align:center; color:#d63535; font-weight:800; font-size:14px;">PayPal unavailable. Use Bank Transfer instead.</div>';
   }
-}).render('#paypal-button-container');
+} else {
+  console.error('PayPal SDK failed to load');
+  document.getElementById('paypal-button-container').innerHTML = '<div style="padding:14px; background:#fff; border:2px solid #d63535; border-radius:8px; text-align:center; color:#d63535; font-weight:800; font-size:14px;">PayPal unavailable. Use Bank Transfer instead.</div>';
+}
 </script>
 
 <div id="bank-details-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999; align-items:center; justify-content:center; padding:20px;">
@@ -1578,7 +1589,7 @@ function contactViaTelegram() {
     }
 
     // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(email)) {
       alert('❌ Please enter a valid email address');
       return;
